@@ -1,16 +1,41 @@
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="container">
-      <div class="hero-content" data-aos="fade-up">
-        <h1>Premium Steel Roofing Solutions</h1>
-        <p class="hero-subtitle">Delivering Quality, Durability, and Innovation in Every Sheet</p>
-        <div class="hero-cta">
-          <a routerLink="/products" class="cta-button primary">Explore Products</a>
-          <a routerLink="/contact" class="cta-button secondary">Get Quote</a>
+<section class="slider-section">
+  <div class="container">
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="assets/home/slider_1.jpeg" alt="Premium Steel Roofing Solutions" loading="lazy">
+          <div class="slide-content">
+            <h2>Premium Steel Roofing Solutions</h2>
+            <p>Experience the durability and elegance of our premium steel roofing solutions, designed to withstand the test of time.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/home/slider_2.jpeg" alt="Innovative Design" loading="lazy">
+          <div class="slide-content">
+            <h2>Innovative Design</h2>
+            <p>Our roofing solutions combine innovative design with superior craftsmanship, ensuring both functionality and aesthetics.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/home/slider_3.jpeg" alt="Sustainable Materials" loading="lazy">
+          <div class="slide-content">
+            <h2>Sustainable Materials</h2>
+            <p>We use sustainable materials that not only enhance the beauty of your property but also contribute to environmental conservation.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/home/slider_4.jpeg" alt="Custom Solutions" loading="lazy">
+          <div class="slide-content">
+            <h2>Custom Solutions</h2>
+            <p>Tailored roofing solutions to meet your specific needs, ensuring a perfect fit for every project.</p>
+          </div>
         </div>
       </div>
+      <button class="prev" (click)="prevSlide()">&#10094;</button>
+      <button class="next" (click)="nextSlide()">&#10095;</button>
     </div>
-  </section>
+  </div>
+</section>
   
   <!-- Products Section -->
   <section class="products-section">
@@ -34,7 +59,7 @@
   </section>
   
   <!-- Features Section -->
-  <section class="features-section">
+  <!-- <section class="features-section">
     <div class="container">
       <div class="features-grid">
         <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
@@ -44,4 +69,4 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
