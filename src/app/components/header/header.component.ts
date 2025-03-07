@@ -41,14 +41,14 @@ export class HeaderComponent implements OnInit {
   toggleMobileMenu(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+      document.body.classList.toggle('mobile-menu-open', this.isMobileMenuOpen);
     }
   }
 
   closeMobileMenu(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.isMobileMenuOpen = false;
-      document.body.style.overflow = '';
+      document.body.classList.remove('mobile-menu-open');
     }
   }
 
