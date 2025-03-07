@@ -183,4 +183,7 @@
       </div>
     </nav>
   </div>
+
+  <!-- Add this before closing header tag -->
+  <div class="backdrop" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
 </header>

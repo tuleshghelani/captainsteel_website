@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, inject, PLATFORM_ID } from '@angular/core';
 import { Router, NavigationEnd, RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +11,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
+  private document = inject(DOCUMENT);
   private lastScrollPosition = 0;
   
   isMobileMenuOpen = false;
@@ -41,14 +42,14 @@ export class HeaderComponent implements OnInit {
   toggleMobileMenu(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
-      document.body.classList.toggle('mobile-menu-open', this.isMobileMenuOpen);
+      this.document.body.classList.toggle('no-scroll', this.isMobileMenuOpen);
     }
   }
 
   closeMobileMenu(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.isMobileMenuOpen = false;
-      document.body.classList.remove('mobile-menu-open');
+      this.document.body.classList.remove('no-scroll');
     }
   }
 
@@ -60,7 +61,7 @@ export class HeaderComponent implements OnInit {
     const target = event.target as HTMLElement;
     if (this.isMobileMenuOpen && 
         !target.closest('.mobile-nav') && 
-        !target.closest('.mobile-menu-btn')) {
+        !target.closest('.menu-toggle')) {
       this.closeMobileMenu();
     }
   }
