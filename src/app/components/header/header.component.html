@@ -1,0 +1,175 @@
+<!-- Header Component -->
+<header class="premium-header" [class.sticky]="isSticky">
+  <!-- Top Bar -->
+  <div class="top-bar" [class.hide]="isSticky">
+    <div class="container">
+      <div class="contact-info">
+        <a href="tel:+1234567890" class="info-link">
+          <i class="fas fa-phone"></i>
+          <span>+91 1234567890</span>
+        </a>
+        <a href="mailto:info@captainsteel.com" class="info-link">
+          <i class="fas fa-envelope"></i>
+          <span>info&#64;captainsteel.com</span>
+        </a>
+      </div>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="social-link" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <div class="main-header">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo-wrapper">
+        <a routerLink="/" class="logo-link" aria-label="Captain Steel Home">
+          <img src="assets/logo/logo.jpg" 
+               alt="Captain Steel Logo" 
+               class="logo-image"
+               width="60" 
+               height="60"
+               loading="lazy">
+          <div class="brand-text">
+            <span class="company-name">Captain Steel</span>
+            <span class="tagline">Premium Steel Solutions</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a routerLink="/" 
+               routerLinkActive="active" 
+               [routerLinkActiveOptions]="{exact: true}"
+               class="nav-link">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/products" 
+               routerLinkActive="active"
+               class="nav-link">
+              <i class="fas fa-cube"></i>
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/quality" 
+               routerLinkActive="active"
+               class="nav-link">
+              <i class="fas fa-award"></i>
+              <span>Quality</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/about" 
+               routerLinkActive="active"
+               class="nav-link">
+              <i class="fas fa-building"></i>
+              <span>About Us</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/contact" 
+               routerLinkActive="active"
+               class="nav-link">
+              <i class="fas fa-envelope"></i>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <a href="tel:+1234567890" class="cta-button primary-gradient">
+          <i class="fas fa-phone"></i>
+          <span>Get Quote</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" 
+                (click)="toggleMobileMenu()"
+                [class.active]="isMobileMenuOpen"
+                aria-label="Toggle Menu">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" [class.active]="isMobileMenuOpen">
+    <nav class="mobile-menu">
+      <ul class="mobile-nav-list">
+        <li>
+          <a routerLink="/" 
+             routerLinkActive="active" 
+             [routerLinkActiveOptions]="{exact: true}"
+             (click)="closeMobileMenu()">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/products" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <i class="fas fa-cube"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/quality" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <i class="fas fa-award"></i>
+            <span>Quality</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <i class="fas fa-building"></i>
+            <span>About Us</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="mobile-contact-info">
+        <a href="tel:+1234567890" class="mobile-contact-link">
+          <i class="fas fa-phone"></i>
+          <span>Call Us</span>
+        </a>
+        <a href="mailto:info@captainsteel.com" class="mobile-contact-link">
+          <i class="fas fa-envelope"></i>
+          <span>Email Us</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
