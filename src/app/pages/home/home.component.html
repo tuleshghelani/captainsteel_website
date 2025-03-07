@@ -1,2 +1,47 @@
-<p>home works!</p>
-<p>home works!</p><p>home works!</p><p>home works!</p><p>home works!</p>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Premium Steel Roofing Solutions</h1>
+        <p class="hero-subtitle">Delivering Quality, Durability, and Innovation in Every Sheet</p>
+        <div class="hero-cta">
+          <a routerLink="/products" class="cta-button primary">Explore Products</a>
+          <a routerLink="/contact" class="cta-button secondary">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Products Section -->
+  <section class="products-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Our Premium Products</h2>
+      <div class="products-grid">
+        <div class="product-card" *ngFor="let product of products" 
+             [attr.data-aos]="'fade-up'"
+             [attr.data-aos-delay]="product.aosDelay">
+          <div class="product-image">
+            <img [src]="product.image" [alt]="product.title" loading="lazy">
+          </div>
+          <div class="product-content">
+            <h3>{{product.title}}</h3>
+            <p>{{product.description}}</p>
+            <a [routerLink]="product.link" class="product-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Premium Quality</h3>
+          <p>Superior materials and craftsmanship ensuring lasting durability</p>
+        </div>
+      </div>
+    </div>
+  </section>

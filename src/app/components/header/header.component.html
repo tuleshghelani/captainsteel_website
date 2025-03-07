@@ -71,7 +71,7 @@
                routerLinkActive="active"
                class="nav-link">
               <i class="fas fa-award"></i>
-              <span>Quality</span>
+              <span>Projects</span>
             </a>
           </li>
           <li class="nav-item">
@@ -116,6 +116,23 @@
   <!-- Mobile Navigation -->
   <div class="mobile-nav" [class.active]="isMobileMenuOpen">
     <nav class="mobile-menu">
+      <!-- Mobile Menu Header -->
+      <!-- <div class="mobile-menu-header">
+        <div class="logo-wrapper">
+          <img src="assets/logo/logo.jpg" 
+               alt="Captain Steel Logo" 
+               class="mobile-logo"
+               width="40" 
+               height="40"
+               loading="lazy">
+          <span class="company-name">Captain Steel</span>
+        </div>
+        <button class="close-menu" (click)="closeMobileMenu()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div> -->
+
+      <!-- Mobile Navigation Links -->
       <ul class="mobile-nav-list">
         <li>
           <a routerLink="/" 
@@ -123,7 +140,7 @@
              [routerLinkActiveOptions]="{exact: true}"
              (click)="closeMobileMenu()">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span style="color: white;">Home</span>
           </a>
         </li>
         <li>
@@ -131,7 +148,7 @@
              routerLinkActive="active"
              (click)="closeMobileMenu()">
             <i class="fas fa-cube"></i>
-            <span>Products</span>
+            <span style="color: white;">Products</span>
           </a>
         </li>
         <li>
@@ -139,7 +156,7 @@
              routerLinkActive="active"
              (click)="closeMobileMenu()">
             <i class="fas fa-award"></i>
-            <span>Quality</span>
+            <span style="color: white;">Quality</span>
           </a>
         </li>
         <li>
@@ -147,7 +164,7 @@
              routerLinkActive="active"
              (click)="closeMobileMenu()">
             <i class="fas fa-building"></i>
-            <span>About Us</span>
+            <span style="color: white;">About Us</span>
           </a>
         </li>
         <li>
@@ -155,11 +172,12 @@
              routerLinkActive="active"
              (click)="closeMobileMenu()">
             <i class="fas fa-envelope"></i>
-            <span>Contact</span>
+            <span style="color: white;">Contact</span>
           </a>
         </li>
       </ul>
 
+      <!-- Mobile Contact Info -->
       <div class="mobile-contact-info">
         <a href="tel:+1234567890" class="mobile-contact-link">
           <i class="fas fa-phone"></i>
@@ -173,9 +191,11 @@
           <a href="#" class="social-link" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <a href="#" class="social-link" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <a href="#" class="social-link" aria-label="Twitter">
             <i class="fab fa-twitter"></i>
           </a>

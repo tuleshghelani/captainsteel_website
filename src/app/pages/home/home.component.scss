@@ -1,0 +1,85 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles.scss';;
+
+.hero-section {
+  background: linear-gradient(rgba($accent, 0.8), rgba($accent, 0.9)),
+              url('/assets/images/hero-bg.jpg') center/cover;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+
+  .hero-content {
+    color: $text-white;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      color: $text-white;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.products-section {
+  padding: 5rem 0;
+  background: $background-secondary;
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+}
+
+.product-card {
+  background: $background-primary;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba($shadow-color, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-image {
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .product-content {
+    padding: 1.5rem;
+
+    h3 {
+      color: $primary-dark;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// Add responsive styles using mixins from your global styles
+@include mobile {
+  .hero-section {
+    min-height: 60vh;
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
