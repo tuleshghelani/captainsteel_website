@@ -476,9 +476,41 @@
     .cta-buttons {
       @media (max-width: 768px) {
         .btn {
-          padding: 0.75rem 1.5rem;
-          font-size: 0.9rem;
-          min-width: 120px;
+          padding: 0.6rem 1.2rem;
+          font-size: 0.875rem;
+          min-width: 110px;
+          margin: 0.5rem;
+          
+          &.btn-primary {
+            background: $primary;
+            border-color: $primary;
+            
+            &:hover {
+              background: darken($primary, 10%);
+              border-color: darken($primary, 10%);
+            }
+          }
+          
+          &.btn-outline {
+            border: 2px solid $text-white;
+            background: transparent;
+            
+            &:hover {
+              background: rgba($text-white, 0.1);
+            }
+          }
+        }
+      }
+
+      @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+
+        .btn {
+          width: 160px;
+          margin: 0;
         }
       }
     }
