@@ -863,3 +863,108 @@
     }
   }
 }
+
+.why-choose-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, $background-primary 0%, darken($background-primary, 5%) 100%);
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $text-primary;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: $text-secondary;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 575px) {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+      background: $background-secondary;
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba($dark, 0.1);
+
+        .icon-wrapper {
+          background: $primary;
+          color: $text-primary;
+        }
+      }
+
+      .icon-wrapper {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 2rem;
+        background: rgba($primary, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary;
+        transition: all 0.3s ease;
+        
+        svg {
+          width: 50px;
+          height: 50px;
+          transition: all 0.3s ease;
+        }
+
+        &:hover {
+          background: $primary;
+          color: $background-primary;
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba($primary, 0.2);
+          
+          svg {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $text-primary;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: $text-secondary;
+        line-height: 1.6;
+      }
+    }
+  }
+}
