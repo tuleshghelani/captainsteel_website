@@ -916,8 +916,32 @@
 
 .why-choose-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, $background-primary 0%, darken($background-primary, 5%) 100%);
+  background: linear-gradient(135deg, rgba($primary, 0.05) 0%, rgba($secondary, 0.05) 100%);
+  position: relative;
+  overflow: hidden;
   
+  // Add decorative background elements
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  &::before {
+    background: radial-gradient(circle, rgba($primary, 0.1) 0%, rgba($primary, 0) 70%);
+    top: -100px;
+    left: -100px;
+  }
+
+  &::after {
+    background: radial-gradient(circle, rgba($secondary, 0.1) 0%, rgba($secondary, 0) 70%);
+    bottom: -100px;
+    right: -100px;
+  }
+
   .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -958,18 +982,48 @@
 
     .feature-card {
       background: $background-secondary;
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       border-radius: 20px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba($primary, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba($dark, 0.05);
+
+      // Add subtle gradient border
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+        padding: 2px;
+        background: linear-gradient(135deg, $primary, $secondary);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
 
       &:hover {
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba($dark, 0.1);
 
+        &::before {
+          opacity: 1;
+        }
+
         .icon-wrapper {
-          background: $primary;
-          color: $text-primary;
+          background: linear-gradient(135deg, $primary, $secondary);
+          
+          i {
+            color: $text-white;
+            transform: scale(1.1) rotate(360deg);
+          }
         }
       }
 
@@ -977,27 +1031,17 @@
         width: 120px;
         height: 120px;
         margin: 0 auto 2rem;
-        background: rgba($primary, 0.1);
+        background: linear-gradient(135deg, rgba($primary, 0.1), rgba($secondary, 0.1));
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: $primary;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
         
         i {
           font-size: 2.5rem;
-        }
-
-        &:hover {
-          background: $primary;
-          color: $background-primary;
-          transform: translateY(-5px);
-          box-shadow: 0 15px 30px rgba($primary, 0.2);
-          
-          i {
-            transform: scale(1.1);
-          }
+          color: $primary;
+          transition: all 0.5s ease;
         }
       }
 
@@ -1006,6 +1050,19 @@
         font-weight: 600;
         color: $text-primary;
         margin-bottom: 1rem;
+        position: relative;
+        padding-bottom: 1rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50px;
+          height: 2px;
+          background: linear-gradient(to right, $primary, $secondary);
+        }
       }
 
       p {
