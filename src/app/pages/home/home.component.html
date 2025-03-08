@@ -166,7 +166,9 @@
       <div class="feature-card" *ngFor="let feature of features" 
            data-aos="fade-up"
            [attr.data-aos-delay]="feature.aosDelay">
-        <div class="icon-wrapper" [innerHTML]="feature.icon"></div>
+        <div class="icon-wrapper">
+          <i [class]="feature.icon"></i>
+        </div>
         <h3>{{feature.title}}</h3>
         <p>{{feature.description}}</p>
       </div>
