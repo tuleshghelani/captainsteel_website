@@ -85,78 +85,262 @@
 }
 
 .slider-section {
-  width: 100%;
-  height: 75vh; // Adjust height as needed
-  // position: relative;
-  display: flex;
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  
+
+  .slider-container {
+    height: 100%;
+  }
+
   .slider {
+    position: relative;
     height: 100%;
     
     .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
       height: 100%;
-      
+
       .slide {
-        min-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
-        position: relative;
-        
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+
+        &.active {
+          opacity: 1;
+        }
+
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          border-radius: 10px;
         }
-        
+
+        .slide-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.3)
+          );
+        }
+
         .slide-content {
           position: absolute;
-          bottom: 20px;
-          left: 20px;
-          color: white;
-          background: rgba(0, 0, 0, 0.5);
-          padding: 20px;
-          border-radius: 5px;
-          
-          h2 {
-            font-size: 2rem;
-            margin: 0;
-          }
-          
-          p {
-            font-size: 1.2rem;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          max-width: 1200px;
+          text-align: center;
+          color: $text-white;
+          z-index: 2;
+
+          .content-wrapper {
+            .subtitle {
+              display: inline-block;
+              font-size: 1.2rem;
+              font-weight: 500;
+              color: $secondary;
+              margin-bottom: 1rem;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              padding: 0.5rem 1rem;
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 4px;
+            }
+
+            h2 {
+              font-size: 4rem;
+              font-weight: 700;
+              margin-bottom: 1.5rem;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              line-height: 1.2;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+              color: $primary;
+
+              @include mobile {
+                font-size: 2.5rem;
+              }
+            }
+
+            p {
+              font-size: 1.25rem;
+              line-height: 1.6;
+              margin-bottom: 2rem;
+              max-width: 800px;
+              margin-left: auto;
+              margin-right: auto;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            }
+
+            .cta-buttons {
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              
+              .btn {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 50px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+
+                &.btn-primary {
+                  background: $primary;
+                  color: $text-primary;
+                  border: none;
+
+                  &:hover {
+                    background: darken($primary, 10%);
+                    transform: translateY(-2px);
+                  }
+                }
+
+                &.btn-outline {
+                  background: transparent;
+                  color: $text-white;
+                  border: 2px solid $text-white;
+
+                  &:hover {
+                    background: $text-white;
+                    color: $text-primary;
+                    transform: translateY(-2px);
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
-    
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      cursor: pointer;
-      z-index: 10;
-      
-      &:hover {
-        background: rgba(0, 0, 0, 0.8);
+
+    // Enhanced Navigation Controls
+    .slider-controls {
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba($primary, 0.8);
+        color: $text-white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 3;
+
+        &:hover {
+          background: $primary;
+          transform: translateY(-50%) scale(1.1);
+        }
+
+        &.prev {
+          left: 2rem;
+        }
+
+        &.next {
+          right: 2rem;
+        }
+
+        i {
+          font-size: 1.5rem;
+        }
       }
     }
-    
-    .prev {
-      left: 10px;
+
+    // Slide Indicators
+    .slide-indicators {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1rem;
+      z-index: 3;
+
+      button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba($text-white, 0.5);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $primary;
+          transform: scale(1.2);
+        }
+
+        &:hover {
+          background: $primary;
+        }
+      }
     }
-    
-    .next {
-      right: 10px;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .slider-section {
+    height: 80vh;
+    min-height: 500px;
+
+    .slider {
+      .slides {
+        .slide {
+          .slide-content {
+            .content-wrapper {
+              h2 {
+                font-size: 2.5rem;
+              }
+
+              p {
+                font-size: 1rem;
+              }
+
+              .cta-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .btn {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .slider-controls {
+        .nav-btn {
+          width: 40px;
+          height: 40px;
+
+          &.prev {
+            left: 1rem;
+          }
+
+          &.next {
+            right: 1rem;
+          }
+        }
+      }
     }
   }
 }

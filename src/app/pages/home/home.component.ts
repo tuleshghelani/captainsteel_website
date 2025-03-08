@@ -11,7 +11,8 @@ import Aos from 'aos';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  currentSlideIndex = 2;
+  currentSlide = 0;
+  slides = [0, 1, 2, 3, 4]; // Array for slide indicators
   products = [
     {
       title: 'Corrugated Roofing Sheets',
@@ -55,22 +56,24 @@ export class HomeComponent implements OnInit {
       duration: 1000,
       once: true
     });
+    this.startSlideShow();
   }
 
   prevSlide() {
-    this.currentSlideIndex = (this.currentSlideIndex > 0) ? this.currentSlideIndex - 1 : this.products.length - 1;
-    this.updateSlidePosition();
+    this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1;
   }
 
   nextSlide() {
-    this.currentSlideIndex = (this.currentSlideIndex < this.products.length - 1) ? this.currentSlideIndex + 1 : 0;
-    this.updateSlidePosition();
+    this.currentSlide = this.currentSlide === this.slides.length - 1 ? 0 : this.currentSlide + 1;
   }
 
-  updateSlidePosition() {
-    const slidesContainer = document.querySelector('.slides') as HTMLElement;
-    if (slidesContainer) {
-      slidesContainer.style.transform = `translateX(-${this.currentSlideIndex * 100}%)`;
-    }
+  goToSlide(index: number) {
+    this.currentSlide = index;
+  }
+
+  private startSlideShow() {
+    setInterval(() => {
+      this.nextSlide();
+    }, 5000); // Change slide every 5 seconds
   }
 }

@@ -79,7 +79,7 @@ $font-family: 'Inter', sans-serif;
 
   // Top Bar
   .top-bar {
-    background: $dark;  // Changed to dark background for better contrast
+    background: $secondary-light;  // Changed to dark background for better contrast
     color: $text-white;
     padding: 0.5rem 0;
     @include transition;
@@ -94,6 +94,7 @@ $font-family: 'Inter', sans-serif;
     }
 
     &.hide {
+      position: absolute;
       transform: translateY(-100%);
     }
 
