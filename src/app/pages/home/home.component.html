@@ -109,6 +109,52 @@
     </div>
   </div>
 </section>
+
+<!-- Add this after the products-section -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image" data-aos="fade-right">
+        <img src="assets/home/company.jpg" alt="Captain Steel Company" loading="lazy">
+        <div class="experience-badge">
+          <span class="years">{{experienceText}}</span>
+          <span class="text">Years of Excellence</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="subtitle" data-aos="fade-up">About Captain Steel</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+          Leading Manufacturer of Premium Steel Solutions
+        </h2>
+        <p class="description" data-aos="fade-up" data-aos-delay="200">
+          Captain Steel has established itself as a trusted name in the steel roofing industry since 2020. We specialize in manufacturing high-quality steel roofing solutions that combine durability, innovation, and aesthetic excellence.
+        </p>
+        <div class="features-list" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Premium Quality Materials</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Expert Installation Services</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Customized Solutions</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Nationwide Delivery</span>
+          </div>
+        </div>
+        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+          <a routerLink="/about" class="btn btn-primary">Learn More</a>
+          <a routerLink="/contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   
   <!-- Products Section -->
   <section class="products-section">
@@ -143,3 +189,35 @@
       </div>
     </div>
   </section> -->
+
+<!-- Add this after the about-section -->
+<section class="dealership-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Our Authorized Dealerships</h2>
+    <div class="dealership-carousel" data-aos="fade-up" data-aos-delay="100">
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="dealership-item" *ngFor="let dealer of dealerships">
+            <div class="dealer-logo">
+              <img [src]="dealer.image" 
+                   [alt]="dealer.alt"
+                   loading="lazy"
+                   width="200"
+                   height="100">
+            </div>
+          </div>
+          <!-- Duplicate items for infinite scroll effect -->
+          <div class="dealership-item" *ngFor="let dealer of dealerships">
+            <div class="dealer-logo">
+              <img [src]="dealer.image" 
+                   [alt]="dealer.alt"
+                   loading="lazy"
+                   width="200"
+                   height="100">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

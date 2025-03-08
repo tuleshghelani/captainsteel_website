@@ -3,6 +3,20 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import Aos from 'aos';
 
+interface Product {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  aosDelay: number;
+}
+
+interface Dealership {
+  image: string;
+  name: string;
+  alt: string;
+}
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -13,42 +27,79 @@ import Aos from 'aos';
 export class HomeComponent implements OnInit {
   currentSlide = 0;
   slides = [0, 1, 2, 3, 4]; // Array for slide indicators
-  products = [
+  products: Product[] = [
     {
       title: 'Corrugated Roofing Sheets',
       description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
       image: 'assets/home/Corrugated-roofing-sheets.jpeg',
       link: '/products/corrugated-sheets',
-      aosDelay: '0'
+      aosDelay: 200
     },
     {
       title: 'Trapezoidal Profile Sheets',
       description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
       image: 'assets/home/trapezoidal-sheets.jpeg',
       link: '/products/trapezoidal-sheets',
-      aosDelay: '100'
+      aosDelay: 200
     },
     {
       title: 'Air Ventilator',
       description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
       image: 'assets/home/air-ventilator.jpeg',
       link: '/products/air-ventilator',
-      aosDelay: '100'
+      aosDelay: 200
     },
     {
-      title: 'Air Ventilator',
+      title: 'Polycarbonate Sheets',
       description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
-      image: 'assets/home/air-ventilator.jpeg',
-      link: '/products/air-ventilator',
-      aosDelay: '100'
+      image: 'assets/home/polycarbonate-sheets.jpeg',
+      link: '/products/polycarbonate-sheets',
+      aosDelay: 200
+    },
+  ];
+  yearsOfExperience: number = new Date().getFullYear() - 2020;
+  experienceText: string = this.yearsOfExperience + '+';
+  dealerships: Dealership[] = [
+    {
+      image: 'assets/dealership/AM-NS-india.jpg',
+      name: 'AM NS India',
+      alt: 'AM NS India Logo'
     },
     {
-      title: 'Air Ventilator',
-      description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
-      image: 'assets/home/air-ventilator.jpeg',
-      link: '/products/air-ventilator',
-      aosDelay: '100'
+      image: 'assets/dealership/APL-Roof-Tuf.svg',
+      name: 'APL Roof Tuf',
+      alt: 'APL Roof Tuf Logo'
     },
+    {
+      image: 'assets/dealership/jsw-colouron-plus.png',
+      name: 'JSW Colouron Plus',
+      alt: 'JSW Colouron Plus Logo'
+    },
+    {
+      image: 'assets/dealership/jsw-pragati.png',
+      name: 'JSW Pragati',
+      alt: 'JSW Pragati Logo'
+    },
+    {
+      image: 'assets/dealership/jsw-silveron.png',
+      name: 'JSW Silveron',
+      alt: 'JSW Silveron Logo'
+    },
+    {
+      image: 'assets/dealership/primus-fastening-technology.jpeg',
+      name: 'Primus Fastening Technology',
+      alt: 'Primus Fastening Technology Logo'
+    },
+    {
+      image: 'assets/dealership/tata-bluescope-steel.png',
+      name: 'Tata BlueScope Steel',
+      alt: 'Tata BlueScope Steel Logo'
+    },
+    {
+      image: 'assets/dealership/tilara.png',
+      name: 'Tilara',
+      alt: 'Tilara Logo'
+    }
   ];
 
   ngOnInit() {
