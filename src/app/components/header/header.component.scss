@@ -162,6 +162,8 @@ $font-family: 'Inter', sans-serif;
         color: $dark;
 
         .logo-image {
+          width: 240px;
+          height: 80px;
           @include transition;
         }
 
@@ -452,7 +454,7 @@ $font-family: 'Inter', sans-serif;
     }
 
     .main-header {
-      height: 60px;
+      height: 90px;
       padding: 0;
       background: $light;
       box-shadow: 0 2px 8px rgba($dark, 0.1);
@@ -470,7 +472,7 @@ $font-family: 'Inter', sans-serif;
           
           .logo-image {
             // width: 40px;
-            height: 60px;
+            // height: 60px;
             object-fit: contain;
           }
         }
