@@ -155,6 +155,7 @@
     </div>
   </div>
 </section>
+
 <section class="why-choose-section">
   <div class="container">
     <div class="section-header" data-aos="fade-up">
@@ -176,6 +177,41 @@
   </div>
 </section>
   
+<br><br><br><br>
+<section class="design-section">
+  <button class="toggle-content" 
+          [class.active]="showDesignContent" 
+          (click)="toggleDesignContent()"
+          aria-label="Toggle design details">
+    <i class="fas" [class.fa-chevron-right]="!showDesignContent" [class.fa-chevron-left]="showDesignContent"></i>
+  </button>
+  
+  <div class="design-content" [class.show]="showDesignContent" data-aos="fade-right">
+    <div class="content-wrapper">
+      <span class="subtitle">Innovative Designs</span>
+      <h2 class="section-title">Premium Design Solutions</h2>
+      <p class="description">
+        Our innovative designs combine aesthetics with functionality, creating roofing solutions that not only protect but also enhance the architectural beauty of your space.
+      </p>
+      <ul class="design-features">
+        <li><i class="fas fa-check"></i> Modern Architectural Designs</li>
+        <li><i class="fas fa-check"></i> Customizable Solutions</li>
+        <li><i class="fas fa-check"></i> Professional Installation</li>
+        <li><i class="fas fa-check"></i> Best Performance</li>
+      </ul>
+      <div class="cta-button">
+        <a routerLink="/designs" class="btn btn-primary">Explore Designs</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="design-image" data-aos="fade-left">
+    <img src="assets/home/company_design.png" 
+         alt="Premium Steel Roofing Designs" 
+         loading="lazy">
+  </div>
+</section>
+
   <!-- Products Section -->
   <section class="products-section">
     <div class="container">

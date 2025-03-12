@@ -35,6 +35,7 @@ interface Feature {
 export class HomeComponent implements OnInit {
   currentSlide = 0;
   slides = [0, 1, 2, 3, 4]; // Array for slide indicators
+  showDesignContent = false;
   
   constructor(private sanitizer: DomSanitizer) {}
   products: Product[] = [
@@ -196,5 +197,9 @@ export class HomeComponent implements OnInit {
   
   getSafeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+
+  toggleDesignContent() {
+    this.showDesignContent = !this.showDesignContent;
   }
 }

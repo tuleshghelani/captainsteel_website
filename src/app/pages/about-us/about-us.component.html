@@ -1,0 +1,99 @@
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>About Captain Steel</h1>
+      <p>Leading the way in premium steel roofing solutions</p>
+    </div>
+  </div>
+</section>
+
+<section class="mission-section">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-content" data-aos="fade-right">
+        <span class="subtitle">Our Mission</span>
+        <h2>Revolutionizing Steel Roofing Solutions</h2>
+        <p>At Captain Steel, we're committed to delivering excellence through innovative steel roofing solutions that combine durability, sustainability, and aesthetic appeal. Our mission is to provide premium quality products that stand the test of time.</p>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="number">20+</span>
+            <span class="label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="number">1000+</span>
+            <span class="label">Projects Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="number">98%</span>
+            <span class="label">Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
+      <div class="mission-image" data-aos="fade-left">
+        <img src="assets/about/mission.jpg" alt="Captain Steel Mission" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Our Core Values</h2>
+      <p>The principles that guide our excellence</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-medal"></i>
+        <h3>Quality Excellence</h3>
+        <p>Committed to delivering premium quality in every product</p>
+      </div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-leaf"></i>
+        <h3>Sustainability</h3>
+        <p>Eco-friendly practices in all our operations</p>
+      </div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-handshake"></i>
+        <h3>Customer Focus</h3>
+        <p>Dedicated to exceeding customer expectations</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Our Leadership Team</h2>
+      <p>The experts behind our success</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card" *ngFor="let member of teamMembers; let i = index" 
+           data-aos="fade-up" 
+           [attr.data-aos-delay]="i * 100">
+        <div class="member-image">
+          <img [src]="member.image" [alt]="member.name" loading="lazy">
+        </div>
+        <div class="member-info">
+          <h3>{{member.name}}</h3>
+          <span class="position">{{member.position}}</span>
+          <p>{{member.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content" data-aos="fade-up">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Let's create something extraordinary together</p>
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="btn btn-primary">Contact Us</a>
+        <a routerLink="/products" class="btn btn-outline">View Products</a>
+      </div>
+    </div>
+  </div>
+</section>
