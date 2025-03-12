@@ -1,0 +1,28 @@
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content" data-aos="fade-up">
+      <h1 itemprop="name">Our Products</h1>
+      <p itemprop="description">Explore our premium steel roofing solutions</p>
+    </div>
+  </div>
+</section>
+
+<section class="products-section" itemprop="makesOffer" itemscope itemtype="http://schema.org/Offer">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">Our Premium Products</h2>
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of products" 
+           [attr.data-aos]="'fade-up'"
+           [attr.data-aos-delay]="product.aosDelay">
+        <div class="product-image">
+          <img [src]="product.image" [alt]="product.title" loading="lazy">
+        </div>
+        <div class="product-content">
+          <h3>{{product.title}}</h3>
+          <p>{{product.description}}</p>
+          <a [routerLink]="product.link" class="product-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

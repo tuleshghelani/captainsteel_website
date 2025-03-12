@@ -1,0 +1,90 @@
+import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router'; 
+import { CommonModule } from '@angular/common';
+import { Router } from 'express';
+import Aos from 'aos';
+
+interface Product {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  aosDelay: number;
+}
+
+@Component({
+  selector: 'app-products',
+  standalone: true,
+  imports: [RouterModule, CommonModule],
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
+})
+export class ProductsComponent implements OnInit {
+  products: Product[] = [];
+
+  // constructor(private router: Router) {}
+  ngOnInit() {
+    Aos.init({
+      duration: 1000,
+      once: true
+    });
+    this.products = [
+      {
+        title: 'Corrugated Roofing Sheets',
+        description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
+        image: 'assets/products/Corrugated-roofing-sheets.jpeg',
+        link: '/products/corrugated-sheets',
+        aosDelay: 100
+      },
+      {
+        title: 'Trapezoidal Profile Sheets',
+        description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
+        image: 'assets/products/trapezoidal-sheets.jpeg',
+        link: '/products/trapezoidal-sheets',
+        aosDelay: 200
+      },
+      {
+        title: 'Air Ventilator',
+        description: 'Efficient air ventilators for improved airflow and ventilation.',
+        image: 'assets/products/air-ventilator.jpeg',
+        link: '/products/air-ventilator',
+        aosDelay: 300
+      },
+      {
+        title: 'Insulated Metal Sheets',
+        description: 'Insulated sheets providing excellent thermal performance.',
+        image: 'assets/products/air-ventilator.jpeg',
+        link: '/products/insulated-sheets',
+        aosDelay: 400
+      },
+      {
+        title: 'Crimping',
+        description: 'High-quality crimping solutions for various applications.',
+        image: 'assets/products/air-ventilator.jpeg',
+        link: '/products/crimping',
+        aosDelay: 5000
+      },
+      {
+        title: 'Polycarbonate Sheet',
+        description: 'Durable polycarbonate sheets for versatile applications.',
+        image: 'assets/products/polycarbonate-sheets.jpeg',
+        link: '/products/polycarbonate',
+        aosDelay: 6000
+      },
+      {
+        title: 'Polycarbonate Multiwall',
+        description: 'Multiwall polycarbonate sheets for enhanced insulation.',
+        image: 'assets/products/air-ventilator.jpeg',
+        link: '/products/polycarbonate-multiwall',
+        aosDelay: 7000
+      },
+      {
+        title: 'Accessories',
+        description: 'A range of accessories to complement our roofing solutions.',
+        image: 'assets/products/air-ventilator.jpeg',
+        link: '/products/accessories',
+        aosDelay: 8000
+      }
+    ];
+  }
+}
