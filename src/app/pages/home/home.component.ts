@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 import Aos from 'aos';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -33,11 +34,21 @@ interface Feature {
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+  private platformId = inject(PLATFORM_ID);
+  
   currentSlide = 0;
   slides = [0, 1, 2, 3, 4]; // Array for slide indicators
   showDesignContent = false;
   
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private meta: Meta,
+    private title: Title
+  ) {
+    this.setupSEO();
+    this.setupStructuredData();
+  }
+
   products: Product[] = [
     {
       title: 'Corrugated Roofing Sheets',
@@ -169,13 +180,86 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  ngOnInit() {
+  private setupSEO() {
+    const description = `Captain Steel - Premium Steel Roofing Solutions with ${this.yearsOfExperience}+ years of excellence. Authorized dealer of JSW, Tata BlueScope Steel, AM NS India. Expert installation, nationwide delivery.`;
+
+    this.title.setTitle('Captain Steel - Premium Steel Roofing Solutions | Best Steel Roofing Manufacturer');
     
-    Aos.init({
-      duration: 1000,
-      once: true
-    });
-    this.startSlideShow();
+    // Meta tags for SEO
+    this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({ name: 'keywords', content: 'steel roofing, roofing sheets, corrugated sheets, trapezoidal sheets, industrial roofing, commercial roofing, JSW steel, Tata BlueScope, AM NS India' });
+    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
+    this.meta.updateTag({ name: 'author', content: 'Captain Steel' });
+
+    // Open Graph tags
+    this.meta.updateTag({ property: 'og:title', content: 'Captain Steel - Premium Steel Roofing Solutions' });
+    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:image', content: 'assets/home/company.jpg' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://captainsteelroofsolution.com' });
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
+
+    // Twitter Card tags
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Premium Steel Roofing Solutions' });
+    this.meta.updateTag({ name: 'twitter:description', content: description });
+    this.meta.updateTag({ name: 'twitter:image', content: 'assets/home/company.jpg' });
+
+    // Location tags
+    this.meta.updateTag({ name: 'geo.region', content: 'IN-GJ' });
+    this.meta.updateTag({ name: 'geo.placename', content: 'Ahmedabad' });
+  }
+
+  private setupStructuredData() {
+    const structuredData = {
+      '@context': 'http://schema.org',
+      '@type': 'Organization',
+      name: 'Captain Steel',
+      description: 'Premium Steel Roofing Solutions Provider',
+      url: 'https://captainsteelroofsolution.com',
+      logo: 'assets/logo.png',
+      foundingDate: '2020',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Ahmedabad',
+        addressRegion: 'Gujarat',
+        addressCountry: 'IN'
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+91-1234567890',
+        contactType: 'sales',
+        availableLanguage: ['English', 'Hindi', 'Gujarati']
+      },
+      // Add dynamic product data
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Steel Roofing Products',
+        itemListElement: this.products.map(product => ({
+          '@type': 'Offer',
+          name: product.title,
+          description: product.description,
+          image: product.image
+        }))
+      }
+    };
+
+    // Create script element for structured data
+    if (isPlatformBrowser(this.platformId)) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+    }
+  }
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      Aos.init({
+        duration: 1000,
+        once: true
+      });
+      this.startSlideShow();
+    }
   }
 
   prevSlide() {
