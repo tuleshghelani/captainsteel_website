@@ -170,6 +170,7 @@ export class HomeComponent implements OnInit {
   ];
 
   ngOnInit() {
+    
     Aos.init({
       duration: 1000,
       once: true

@@ -1030,6 +1030,9 @@
   position: relative;
   min-height: 600px;
   overflow: hidden;
+  @media (min-width: 991px) {
+    padding: 5rem 5rem;
+  }
 
   .toggle-content {
     position: absolute;

@@ -1,6 +1,7 @@
-import { Component, OnInit, HostListener, inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, HostListener, inject, PLATFORM_ID, } from '@angular/core';
 import { Router, NavigationEnd, RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
+import { CommonModule, isPlatformBrowser, DOCUMENT, ViewportScroller } from '@angular/common';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +13,23 @@ import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 export class HeaderComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
   private document = inject(DOCUMENT);
+  private viewportScroller = inject(ViewportScroller);
   private lastScrollPosition = 0;
   
   isMobileMenuOpen = false;
   isSticky = false;
   hideTopBar = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    // Subscribe to router events and scroll to top on navigation
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      if (isPlatformBrowser(this.platformId)) {
+        window.scrollTo(0, 0);
+      }
+    });
+  }
 
   ngOnInit(): void {
     // Close mobile menu on route change
