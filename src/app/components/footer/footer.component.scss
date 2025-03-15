@@ -455,3 +455,18 @@ body.mobile-menu-open {
   height: 100%;
   overflow: hidden;
 }
+
+.make-in-india {
+  margin: 15px 0;
+}
+
+.make-in-india-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .make-in-india-logo {
+    max-width: 100px;
+  }
+}
