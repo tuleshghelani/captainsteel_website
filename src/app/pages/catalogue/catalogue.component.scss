@@ -1,3 +1,12 @@
+@import '../../../styles.scss';
+
+// Define these for use in component
+$pdf-primary: #fcbe00;
+$pdf-primary-light: #fdd033;
+$pdf-primary-dark: #fc9e00;
+$pdf-secondary: #0db42a;
+$pdf-secondary-light: #3dc54d;
+$pdf-neutral-lightest: #f5f5f6; 
 .catalogue-container {
   padding: 2rem 0;
 }
@@ -65,6 +74,7 @@
 .catalogue-wrapper {
   width: 100%;
   overflow-x: hidden;
+  margin-top: 6rem;
 }
 
 // Common container style
@@ -75,38 +85,105 @@
   padding: 0 15px;
 }
 
-// Hero section styles
+// Hero Section
 .hero-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/images/steel-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
+    margin-top: 5rem;
+    position: relative;
+    height: 400px;
+    background-image: url('/assets/about/hero-bg_3.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
   
-  .main-heading {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    
-    @media (max-width: 768px) {
-      font-size: 2rem;
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
     }
-  }
   
-  .subheading {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-    
-    @media (max-width: 768px) {
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+  
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .section-title {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 15px;
+      text-align: center;
+      width: 100%;
+  
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: $primary;
+      }
+    }
+  
+    .section-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: 1rem;
+  
+      a {
+        color: $primary;
+        text-decoration: none;
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: $primary-light;
+        }
+      }
+  
+      i {
+        margin: 0 10px;
+        font-size: 0.8rem;
+        color: $primary;
+      }
+  
+      span {
+        color: #fff;
+      }
     }
   }
-}
 
 // Catalogue info section
 .catalogue-info {
@@ -133,10 +210,12 @@
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #fcbe00;
     
     &:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      border-top-color: #0db42a;
     }
     
     .card-content {
@@ -145,14 +224,38 @@
       h3 {
         font-size: 1.4rem;
         margin-bottom: 15px;
-        color: #333;
+        color: #fcbe00;
         font-weight: 600;
+        position: relative;
+        padding-bottom: 12px;
+        
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 50px;
+          height: 3px;
+          background: linear-gradient(to right, #fcbe00, #0db42a);
+        }
       }
       
       p {
-        color: #666;
+        color: #444443;
         line-height: 1.6;
       }
+    }
+    
+    &:nth-child(1) {
+      border-top-color: #fcbe00;
+    }
+    
+    &:nth-child(2) {
+      border-top-color: #0db42a;
+    }
+    
+    &:nth-child(3) {
+      border-top-color: #fc9e00;
     }
   }
 }
@@ -180,33 +283,94 @@
   .pdf-container {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     margin-bottom: 40px;
-    background: #f0ece3;
+    background: #f8f9fa;
     padding: 20px;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(to right, #fcbe00, #fdd033);
+    }
     
     ::ng-deep {
+      // Toolbar styling to match your theme
+      .toolbar {
+        background: linear-gradient(to right, #f8f9fa, #e9ecef) !important;
+        border-bottom: 1px solid #dee2e6 !important;
+      }
+      
+      // Button hover states
+      .toolbarButton {
+        &:hover {
+          background-color: rgba(252, 190, 0, 0.1) !important;
+        }
+        
+        &.toggled {
+          background-color: rgba(252, 190, 0, 0.2) !important;
+        }
+      }
+      
+      // Active elements
+      .splitToolbarButton.toggled > .toolbarButton.toggled,
+      .toolbarButton.toggled {
+        background-color: rgba(252, 190, 0, 0.2) !important;
+      }
+      
       // Book-like styling
       .pdfViewer {
         .page {
-          border: 1px solid #ddd;
+          border: 1px solid #dee2e6;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
           background-color: white;
           margin: 10px auto;
-          transition: transform 0.3s ease;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
           
           &:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(252, 190, 0, 0.2);
           }
         }
         
-        // Make page transitions smoother
+        // Page transitions
         .spread {
           transition: all 0.5s ease;
         }
       }
       
-      // Custom page navigation buttons
+      // Custom focus styles
+      .toolbarButton:focus,
+      .secondaryToolbarButton:focus {
+        outline: 2px solid rgba(252, 190, 0, 0.5) !important;
+      }
+      
+      // Custom scrollbar for sidebar
+      .sidebarContentItems::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      .sidebarContentItems::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      
+      .sidebarContentItems::-webkit-scrollbar-thumb {
+        background: #fcbe00;
+        border-radius: 4px;
+      }
+      
+      // Sidebar styling
+      #sidebarContainer {
+        background: #f8f9fa !important;
+        border-right: 1px solid #dee2e6 !important;
+      }
+      
+      // Page navigation buttons
       .toolbarButton.pageUp::before,
       .toolbarButton.pageDown::before {
         font-weight: bold;
@@ -216,19 +380,55 @@
       .page.animating {
         transition: transform 0.5s ease-in-out;
       }
+      
+      // Current page highlight
+      .outlineItem.currentOutlineItem {
+        color: #fcbe00 !important;
+        font-weight: bold;
+      }
+      
+      // Search highlight color
+      .highlight {
+        background-color: rgba(252, 190, 0, 0.3) !important;
+      }
+      
+      // Page number input
+      #pageNumber {
+        border: 1px solid #dee2e6 !important;
+        
+        &:focus {
+          border-color: #fcbe00 !important;
+          box-shadow: 0 0 0 2px rgba(252, 190, 0, 0.25) !important;
+        }
+      }
+      
+      // Book binding effect
+      .spreadView .page:nth-child(odd) {
+        box-shadow: -5px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .spreadView .page:nth-child(even) {
+        box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.1);
+      }
     }
   }
   
-//   .pdf-container::before {
-//     content: '';
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     height: 100%;
-//     width: 30px;
-//     background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
-//     z-index: 10;
-//   }
+  // Book spine effect with green secondary accent
+  .pdf-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to right, 
+      rgba(0, 0, 0, 0.1) 0%, 
+      rgba(13, 180, 42, 0.2) 50%,
+      rgba(0, 0, 0, 0.1) 100%);
+    z-index: 10;
+    transform: translateX(-50%);
+    opacity: 0.7;
+  }
   
   .download-cta {
     text-align: center;
@@ -241,16 +441,18 @@
     
     .download-btn {
       display: inline-block;
-      background-color: #0056b3;
+      background-color: #fcbe00;
       color: white;
       padding: 12px 25px;
       border-radius: 4px;
       text-decoration: none;
       font-weight: 600;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
       
       &:hover {
-        background-color: #003d7a;
+        background-color: #0db42a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       }
     }
   }
@@ -258,7 +460,7 @@
 
 // CTA section
 .cta-section {
-  background: linear-gradient(to right, #0056b3, #007bff);
+  background: linear-gradient(to right, #fcbe00, #fdd033);
   color: white;
   padding: 60px 0;
   margin-top: 40px;
@@ -279,8 +481,8 @@
     
     .cta-btn {
       display: inline-block;
-      background-color: white;
-      color: #0056b3;
+      background-color: #0db42a;
+      color: white;
       padding: 14px 30px;
       border-radius: 4px;
       text-decoration: none;
@@ -288,7 +490,7 @@
       transition: all 0.3s ease;
       
       &:hover {
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: #3dc54d;
         transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
@@ -304,5 +506,30 @@
   
   .pdf-section, .catalogue-info {
     padding: 50px 0;
+  }
+  
+  .pdf-container {
+    padding: 10px;
+    
+    ::ng-deep {
+      .toolbar {
+        flex-wrap: wrap;
+      }
+      
+      // Simplify toolbar on mobile
+      .hiddenSmallView, .hiddenMediumView {
+        display: none !important;
+      }
+      
+      // Increase touch targets for mobile
+      .toolbarButton {
+        padding: 3px 6px !important;
+      }
+    }
+  }
+  
+  // Hide book spine on small screens
+  .pdf-container::before {
+    display: none;
   }
 }

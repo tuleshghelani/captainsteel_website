@@ -73,6 +73,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a routerLink="/catalogue" 
+               routerLinkActive="active"
+               class="nav-link">
+              <i class="fas fa-book"></i>
+              <span>Catalogue</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a routerLink="/about-us" 
                routerLinkActive="active"
                class="nav-link">
@@ -155,6 +163,14 @@
              (click)="closeMobileMenu()">
             <i class="fas fa-award"></i>
             <span style="color: white;">Projects</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/catalogue" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <i class="fas fa-book"></i>
+            <span style="color: white;">Catalogue</span>
           </a>
         </li>
         <li>

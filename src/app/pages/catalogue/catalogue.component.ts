@@ -31,7 +31,6 @@ export class CatalogueComponent implements OnInit {
   ];
 
   @ViewChild('pdfViewer') pdfViewer!: ElementRef;
-  pageFlipSound = new Audio('assets/sounds/page-flip.mp3');
 
   ngOnInit() {
     Aos.init({
@@ -41,6 +40,5 @@ export class CatalogueComponent implements OnInit {
   }
 
   onPageChange(pageNumber: number) {
-    this.pageFlipSound.play();
   }
 }

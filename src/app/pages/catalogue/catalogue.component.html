@@ -1,13 +1,21 @@
 <div class="catalogue-wrapper">
-  <!-- Hero Section -->
-  <section class="hero-section">
+    <!-- Hero Section -->
+    <section class="hero-section">
+    <div class="hero-overlay"></div>
     <div class="container">
-      <h1 class="main-heading" data-aos="fade-up">Product Catalogues</h1>
-      <p class="subheading" data-aos="fade-up" data-aos-delay="100">
-        Explore our comprehensive range of high-quality steel products and solutions
-      </p>
+        <div class="hero-content">
+        <h1 class="section-title" data-aos="fade-up">Product Catalogues</h1>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            Explore our comprehensive range of high-quality steel products and solutions
+        </p>
+        <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+            <a routerLink="/">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Catalogue</span>
+        </div>
+        </div>
     </div>
-  </section>
+    </section>
 
   <!-- Catalogue Information -->
   <section class="catalogue-info">
@@ -42,6 +50,7 @@
           [height]="'800px'"
           [zoom]="'page-fit'"
           [scrollMode]="0"
+          [backgroundColor]="'#f5f5f6'"
           [showSidebarButton]="true"
           [showFindButton]="true"
           [showPagingButtons]="true"
