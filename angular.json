@@ -27,7 +27,27 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "robots.txt",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "sitemap_index.xml",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-extended-pdf-viewer/assets/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "node_modules/aos/dist/aos.css",

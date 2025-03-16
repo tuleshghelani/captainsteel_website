@@ -1,1 +1,78 @@
-<p>catalogue works!</p>
+<div class="catalogue-wrapper">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="main-heading" data-aos="fade-up">Product Catalogues</h1>
+      <p class="subheading" data-aos="fade-up" data-aos-delay="100">
+        Explore our comprehensive range of high-quality steel products and solutions
+      </p>
+    </div>
+  </section>
+
+  <!-- Catalogue Information -->
+  <section class="catalogue-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card" *ngFor="let item of catalogueItems" data-aos="fade-up" [attr.data-aos-delay]="item.aosDelay">
+          <div class="card-content">
+            <h3>{{item.title}}</h3>
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Viewer Section -->
+  <section class="pdf-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">View Our Catalogue</h2>
+      <p class="section-description" data-aos="fade-up" data-aos-delay="100">
+        Browse through our detailed product catalogue to find specifications, measurements, and other technical details
+      </p>
+      
+      <div class="pdf-container" data-aos="fade-up" data-aos-delay="200">
+        <ngx-extended-pdf-viewer 
+          #pdfViewer
+          [src]="pdfSrc"
+          [useBrowserLocale]="true"
+          [showToolbar]="true"
+          [pageViewMode]="'book'"
+          [spread]="'even'"
+          [height]="'800px'"
+          [zoom]="'page-fit'"
+          [scrollMode]="0"
+          [showSidebarButton]="true"
+          [showFindButton]="true"
+          [showPagingButtons]="true"
+          [showZoomButtons]="true"
+          [showPresentationModeButton]="true"
+          [showOpenFileButton]="false"
+          [showPrintButton]="true"
+          [showDownloadButton]="true"
+          [showSecondaryToolbarButton]="true"
+          [showRotateButton]="true"
+          [showHandToolButton]="true"
+          [delayFirstView]="1000"
+          (pageChange)="onPageChange($event)">
+        </ngx-extended-pdf-viewer>
+      </div>
+      
+      <div class="download-cta" data-aos="fade-up" data-aos-delay="300">
+        <p>Need offline access? Download our catalogue for future reference</p>
+        <a href="assets/catalogue/catalogue.pdf" download class="download-btn">Download PDF</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-aos="fade-up">
+        <h2>Need Custom Solutions?</h2>
+        <p>Our team of experts is ready to help you find the perfect steel solution for your project</p>
+        <a href="/contact" class="cta-btn">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</div>
