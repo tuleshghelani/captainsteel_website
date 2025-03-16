@@ -1,0 +1,195 @@
+<main class="projects-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="section-title" data-aos="fade-up">Our Premium Projects</h1>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Explore our showcase of premium steel roofing solutions delivered with excellence
+        </p>
+        <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+          <a routerLink="/">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Projects</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Categories -->
+  <section class="category-section">
+    <div class="container">
+      <div class="category-filter" data-aos="fade-up">
+        <button 
+          class="filter-btn" 
+          [class.active]="activeCategory === 'all'"
+          (click)="filterProjects('all')">
+          All Projects
+        </button>
+        <button 
+          class="filter-btn" 
+          [class.active]="activeCategory === 'commercial'"
+          (click)="filterProjects('commercial')">
+          Commercial
+        </button>
+        <button 
+          class="filter-btn" 
+          [class.active]="activeCategory === 'residential'"
+          (click)="filterProjects('residential')">
+          Residential
+        </button>
+        <button 
+          class="filter-btn" 
+          [class.active]="activeCategory === 'industrial'"
+          (click)="filterProjects('industrial')">
+          Industrial
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-grid">
+    <div class="container">
+      <div class="projects-wrapper">
+        <!-- Project Card 1 -->
+        <div class="project-card" 
+             *ngFor="let project of filteredProjects" 
+             [attr.data-category]="project.category"
+             data-aos="fade-up">
+          <div class="project-image">
+            <img [src]="project.imageUrl" [alt]="project.title" loading="lazy">
+            <div class="project-overlay">
+              <button class="view-project-btn" (click)="openProjectDetails(project)">
+                <i class="fas fa-eye"></i>
+                View Project
+              </button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">{{project.title}}</h3>
+            <p class="project-category">
+              <i class="fas fa-tag"></i>
+              {{project.category}}
+            </p>
+            <p class="project-description">{{project.shortDescription}}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="load-more-container" *ngIf="hasMoreProjects" data-aos="fade-up">
+        <button class="load-more-btn" (click)="loadMoreProjects()">
+          <i class="fas fa-plus"></i>
+          Load More Projects
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Details Modal -->
+  <div class="project-modal" [class.active]="selectedProject" (click)="closeProjectDetails()">
+    <div class="modal-content" *ngIf="selectedProject" (click)="$event.stopPropagation()">
+      <button class="close-modal" (click)="closeProjectDetails()">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body">
+        <div class="project-gallery">
+          <img [src]="selectedProject.imageUrl" [alt]="selectedProject.title" class="main-image">
+          <div class="gallery-thumbnails" *ngIf="selectedProject.galleryImages?.length">
+            <img *ngFor="let image of selectedProject.galleryImages" 
+                 [src]="image" 
+                 alt="Project Gallery Image"
+                 (click)="setMainImage(image)">
+          </div>
+        </div>
+        <div class="project-details">
+          <h2 class="modal-title">{{selectedProject.title}}</h2>
+          <div class="project-meta">
+            <div class="meta-item" *ngIf="selectedProject.location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>{{selectedProject.location}}</span>
+            </div>
+            <div class="meta-item" *ngIf="selectedProject.completionDate">
+              <i class="fas fa-calendar-alt"></i>
+              <span>{{selectedProject.completionDate}}</span>
+            </div>
+            <div class="meta-item" *ngIf="selectedProject.category">
+              <i class="fas fa-tag"></i>
+              <span>{{selectedProject.category}}</span>
+            </div>
+          </div>
+          <div class="project-description" *ngIf="selectedProject.fullDescription">
+            <p>{{selectedProject.fullDescription}}</p>
+          </div>
+          <div class="project-specs" *ngIf="selectedProject.specifications?.length">
+            <h3>Project Specifications</h3>
+            <ul class="specs-list">
+              <li *ngFor="let spec of selectedProject.specifications">{{spec}}</li>
+            </ul>
+          </div>
+          <div class="project-cta">
+            <a routerLink="/contact-us" class="btn btn-primary">Request Similar Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-wrapper">
+        <!-- Stats Section -->
+        <div class="stats-container" data-aos="fade-up">
+          <div class="stat-item">
+            <div class="stat-value">{{completedProjects}}+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">{{satisfiedClients}}+</div>
+            <div class="stat-label">Satisfied Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Quality Assurance</div>
+          </div>
+        </div>
+        
+        <!-- CTA Content -->
+        <div class="cta-content" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="cta-title">Ready to Start Your Premium Steel Roofing Project?</h2>
+          <p class="cta-description">Our team of experts is ready to deliver exceptional quality and service for your next steel roofing project. Contact us today for a free consultation and personalized quote.</p>
+          
+          <div class="cta-features">
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Premium Quality Materials</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Expert Installation</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Long-term Warranty</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+          <a routerLink="/contact-us" class="btn btn-primary">
+            <i class="fas fa-envelope"></i>
+            Request a Quote
+          </a>
+          <a href="tel:+911234567890" class="btn btn-outline">
+            <i class="fas fa-phone"></i>
+            Call Us Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
