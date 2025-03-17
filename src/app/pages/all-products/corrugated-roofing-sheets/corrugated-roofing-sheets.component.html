@@ -1,0 +1,349 @@
+<main class="product-page corrugated-sheets">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="section-title" data-aos="fade-up">Corrugated Roofing Sheets</h1>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            Premium steel roofing solutions for superior protection and aesthetics
+          </p>
+          <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+            <a routerLink="/">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a routerLink="/products">Products</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Corrugated Roofing Sheets</span>
+          </div>
+          <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+            <a routerLink="/contact-us" class="btn btn-primary">
+              <i class="fas fa-phone-alt"></i>
+              Get a Quote
+            </a>
+            <a routerLink="/catalogue" class="btn btn-outline">
+              <i class="fas fa-book"></i>
+              Download Catalogue
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Product Overview Section -->
+    <section class="overview-section">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="product-gallery" data-aos="fade-right">
+            <div class="main-image">
+              <img src="assets/products/Corrugated-roofing-sheets.jpeg" alt="Premium Corrugated Roofing Sheets" loading="lazy">
+            </div>
+            <div class="image-thumbnails">
+              <div class="thumbnail active">
+                <img src="assets/products/Corrugated-roofing-sheets.jpeg" alt="Corrugated Sheet Front View" loading="lazy">
+              </div>
+              <div class="thumbnail">
+                <img src="assets/products/Corrugated-roofing-sheets.jpeg" alt="Corrugated Sheet Side View" loading="lazy">
+              </div>
+              <div class="thumbnail">
+                <img src="assets/products/Corrugated-roofing-sheets.jpeg" alt="Corrugated Sheet Installation" loading="lazy">
+              </div>
+              <div class="thumbnail">
+                <img src="assets/products/Corrugated-roofing-sheets.jpeg" alt="Corrugated Sheet Color Options" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="product-details" data-aos="fade-left">
+            <h2 class="product-title">Premium Corrugated Roofing Sheets</h2>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="product-description">
+              Captain Steel's Premium Corrugated Roofing Sheets combine cutting-edge engineering with superior materials to deliver exceptional durability, weather resistance, and aesthetic appeal. Our corrugated sheets are manufactured using high-tensile steel with advanced coating technology to ensure long-lasting performance in all weather conditions.
+            </p>
+            <div class="product-highlights">
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>High tensile strength for superior durability</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Advanced coating for corrosion resistance</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Precision engineering for perfect installation</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Multiple color options for aesthetic appeal</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Custom lengths up to 12 meters</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Eco-friendly and 100% recyclable</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <a routerLink="/contact-us" class="btn btn-primary">Request Quotation</a>
+              <a routerLink="/projects" class="btn btn-outline">View Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Superior Features</h2>
+          <p class="section-subtitle">What makes our corrugated roofing sheets exceptional</p>
+        </div>
+        
+        <div class="features-grid">
+          <div *ngFor="let feature of features; let i = index" 
+               class="feature-card" 
+               data-aos="fade-up" 
+               [attr.data-aos-delay]="100 * i">
+            <div class="icon-wrapper">
+              <i [class]="feature.icon"></i>
+            </div>
+            <h3>{{feature.title}}</h3>
+            <p>{{feature.description}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Applications Section -->
+    <!-- Applications Section -->
+<section class="applications-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">Applications</h2>
+      <p class="section-subtitle">Ideal solutions for diverse architectural needs</p>
+    </div>
+    
+    <div class="applications-grid">
+      <div class="application-card" data-aos="fade-up" data-aos-delay="100">
+        <!-- <div class="image-container">
+          <img src="assets/products/applications/industrial.jpg" alt="Industrial Buildings" loading="lazy">
+          <div class="overlay">
+            <span class="view-details">Industrial Applications</span>
+          </div>
+        </div> -->
+        <div class="application-content">
+          <h3><i class="fas fa-industry"></i> Industrial Buildings</h3>
+          <p>Perfect for factories, warehouses, and manufacturing facilities requiring durable and low-maintenance roofing solutions.</p>
+          <ul class="application-benefits">
+            <li><i class="fas fa-check"></i> High load-bearing capacity</li>
+            <li><i class="fas fa-check"></i> Excellent sound insulation</li>
+            <li><i class="fas fa-check"></i> Long-term durability</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="application-card" data-aos="fade-up" data-aos-delay="200">
+        <!-- <div class="image-container">
+          <img src="assets/products/applications/commercial.jpg" alt="Commercial Spaces" loading="lazy">
+          <div class="overlay">
+            <span class="view-details">Commercial Applications</span>
+          </div>
+        </div> -->
+        <div class="application-content">
+          <h3><i class="fas fa-building"></i> Commercial Spaces</h3>
+          <p>Ideal for shopping centers, office buildings, and retail outlets demanding both functionality and aesthetic appeal.</p>
+          <ul class="application-benefits">
+            <li><i class="fas fa-check"></i> Modern aesthetic appeal</li>
+            <li><i class="fas fa-check"></i> Low maintenance costs</li>
+            <li><i class="fas fa-check"></i> Versatile design options</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="application-card" data-aos="fade-up" data-aos-delay="300">
+        <!-- <div class="image-container">
+          <img src="assets/products/applications/agricultural.jpg" alt="Agricultural Structures" loading="lazy">
+          <div class="overlay">
+            <span class="view-details">Agricultural Applications</span>
+          </div>
+        </div> -->
+        <div class="application-content">
+          <h3><i class="fas fa-tractor"></i> Agricultural Structures</h3>
+          <p>Reliable protection for barns, storage facilities, and livestock shelters against harsh weather conditions.</p>
+          <ul class="application-benefits">
+            <li><i class="fas fa-check"></i> Weather-resistant properties</li>
+            <li><i class="fas fa-check"></i> High corrosion resistance</li>
+            <li><i class="fas fa-check"></i> Cost-effective installation</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="application-card" data-aos="fade-up" data-aos-delay="400">
+        <!-- <div class="image-container">
+          <img src="assets/products/applications/residential.jpg" alt="Residential Projects" loading="lazy">
+          <div class="overlay">
+            <span class="view-details">Residential Applications</span>
+          </div>
+        </div> -->
+        <div class="application-content">
+          <h3><i class="fas fa-home"></i> Residential Projects</h3>
+          <p>Stylish and durable solutions for homes, garages, and outdoor structures combining performance with aesthetic value.</p>
+          <ul class="application-benefits">
+            <li><i class="fas fa-check"></i> Enhanced property value</li>
+            <li><i class="fas fa-check"></i> Multiple color options</li>
+            <li><i class="fas fa-check"></i> 25+ years lifespan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+    <!-- Installation Section -->
+    <section class="installation-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Installation Process</h2>
+          <p class="section-subtitle">Professional installation for optimal performance</p>
+        </div>
+        
+        <div class="installation-grid">
+          <div class="installation-step" data-aos="fade-up" data-aos-delay="100">
+            <div class="step-number">01</div>
+            <h3>Site Assessment</h3>
+            <p>Our experts evaluate your site conditions, measurements, and specific requirements to ensure the perfect fit.</p>
+          </div>
+          
+          <div class="installation-step" data-aos="fade-up" data-aos-delay="200">
+            <div class="step-number">02</div>
+            <h3>Custom Fabrication</h3>
+            <p>Sheets are precision-cut to your exact specifications, ensuring minimal waste and perfect alignment.</p>
+          </div>
+          
+          <div class="installation-step" data-aos="fade-up" data-aos-delay="300">
+            <div class="step-number">03</div>
+            <h3>Preparation</h3>
+            <p>The roof structure is prepared with proper purlins, insulation, and underlayment as required.</p>
+          </div>
+          
+          <div class="installation-step" data-aos="fade-up" data-aos-delay="400">
+            <div class="step-number">04</div>
+            <h3>Installation</h3>
+            <p>Our skilled technicians install the sheets with precision, ensuring proper overlap and secure fastening.</p>
+          </div>
+          
+          <div class="installation-step" data-aos="fade-up" data-aos-delay="500">
+            <div class="step-number">05</div>
+            <h3>Finishing</h3>
+            <p>Ridge caps, flashing, and accessories are installed to ensure complete weather protection.</p>
+          </div>
+          
+          <div class="installation-step" data-aos="fade-up" data-aos-delay="600">
+            <div class="step-number">06</div>
+            <h3>Final Inspection</h3>
+            <p>A thorough quality check ensures perfect installation and addresses any final adjustments.</p>
+          </div>
+        </div>
+        
+        <div class="installation-cta" data-aos="fade-up" data-aos-delay="700">
+          <p>Our professional installation services ensure optimal performance and longevity of your roofing system.</p>
+          <a routerLink="/contact-us" class="btn btn-primary">Schedule Installation Consultation</a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know about our corrugated roofing sheets</p>
+        </div>
+        
+        <div class="faq-container">
+          <div *ngFor="let faq of faqs; let i = index" 
+               class="faq-item" 
+               data-aos="fade-up" 
+               [attr.data-aos-delay]="100 * i">
+            <div class="faq-question">
+              <h3>{{faq.question}}</h3>
+              <div class="toggle-icon">
+                <i class="fas fa-plus plus-icon"></i>
+                <i class="fas fa-minus minus-icon"></i>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>{{faq.answer}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+          <h2>Ready to Transform Your Roofing Project?</h2>
+          <p>Contact us today for a personalized consultation and quotation</p>
+          <div class="cta-buttons">
+            <a routerLink="/contact-us" class="btn btn-primary">Get in Touch</a>
+            <a routerLink="/projects" class="btn btn-outline">View Our Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Related Products Section -->
+    <section class="related-products-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Related Products</h2>
+          <p class="section-subtitle">Explore our other premium roofing solutions</p>
+        </div>
+        
+        <div class="related-products-grid">
+          <div class="related-product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="image-container">
+              <img src="assets/products/trapezoidal-sheets.jpeg" alt="Trapezoidal Profile Sheets" loading="lazy">
+            </div>
+            <div class="product-content">
+              <h3>Trapezoidal Profile Sheets</h3>
+              <p>Modern roofing solution with superior strength and water drainage capabilities.</p>
+              <a routerLink="/products/trapezoidal-sheets" class="btn btn-outline">View Details</a>
+            </div>
+          </div>
+          
+          <div class="related-product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="image-container">
+              <img src="assets/products/insulated-sheets.jpeg" alt="Insulated Metal Sheets" loading="lazy">
+            </div>
+            <div class="product-content">
+              <h3>Insulated Metal Sheets</h3>
+              <p>Energy-efficient roofing with integrated thermal insulation properties.</p>
+              <a routerLink="/products/insulated-sheets" class="btn btn-outline">View Details</a>
+            </div>
+          </div>
+          
+          <div class="related-product-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="image-container">
+              <img src="assets/products/accessories.jpeg" alt="Roofing Accessories" loading="lazy">
+            </div>
+            <div class="product-content">
+              <h3>Roofing Accessories</h3>
+              <p>Complete your roofing system with our range of quality accessories.</p>
+              <a routerLink="/products/accessories" class="btn btn-outline">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>

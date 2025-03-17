@@ -28,6 +28,10 @@ export const routes: Routes = [
   {
     path: 'products/air-ventilator',
     loadComponent: () => import('./pages/all-products/air-ventilator/air-ventilator.component').then(m => m.AirVentilatorComponent)
+  },
+  {
+    path: 'products/corrugated-roofing-sheets',
+    loadComponent: () => import('./pages/all-products/corrugated-roofing-sheets/corrugated-roofing-sheets.component').then(m => m.CorrugatedRoofingSheetsComponent)
   }
   // ... other routes
 ];

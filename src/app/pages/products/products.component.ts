@@ -33,7 +33,7 @@ export class ProductsComponent implements OnInit {
         title: 'Corrugated Roofing Sheets',
         description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
         image: 'assets/products/Corrugated-roofing-sheets.jpeg',
-        link: '/products/corrugated-sheets',
+        link: '/products/corrugated-roofing-sheets',
         aosDelay: 100
       },
       {
