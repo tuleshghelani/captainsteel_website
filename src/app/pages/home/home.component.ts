@@ -220,13 +220,13 @@ export class HomeComponent implements OnInit {
       foundingDate: '2020',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Ahmedabad',
+        addressLocality: 'Rajkot',
         addressRegion: 'Gujarat',
         addressCountry: 'IN'
       },
       contactPoint: {
         '@type': 'ContactPoint',
-        telephone: '+91-1234567890',
+        telephone: '+91-9879109091',
         contactType: 'sales',
         availableLanguage: ['English', 'Hindi', 'Gujarati']
       },
