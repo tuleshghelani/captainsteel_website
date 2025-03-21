@@ -67,7 +67,7 @@ export class ProductsComponent implements OnInit {
       {
         title: 'Polycarbonate Sheet',
         description: 'Durable polycarbonate sheets for versatile applications.',
-        image: 'assets/products/polycarbonate-sheets.jpeg',
+        image: 'assets/products/polycarbonate-sheets.jpg',
         link: '/products/polycarbonate',
         aosDelay: 6000
       },

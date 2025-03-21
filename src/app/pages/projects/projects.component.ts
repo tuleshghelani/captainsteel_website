@@ -44,7 +44,7 @@ export class ProjectsComponent implements OnInit {
       imageUrl: 'assets/products/air-ventilator.jpeg',
       galleryImages: [
         'assets/products/air-ventilator.jpeg',
-        'assets/products/polycarbonate-sheets.jpeg',
+        'assets/products/polycarbonate-sheets.jpg',
         'assets/products/trapezoidal-sheets.jpeg'
       ],
       location: 'Mumbai, Maharashtra',
@@ -65,7 +65,7 @@ export class ProjectsComponent implements OnInit {
       imageUrl: 'assets/products/air-ventilator.jpeg',
       galleryImages: [
         'assets/products/air-ventilator.jpeg',
-        'assets/products/polycarbonate-sheets.jpeg',
+        'assets/products/polycarbonate-sheets.jpg',
         'assets/products/trapezoidal-sheets.jpeg'
       ],
       location: 'Pune, Maharashtra',
@@ -86,7 +86,7 @@ export class ProjectsComponent implements OnInit {
       imageUrl: 'assets/products/air-ventilator.jpeg',
       galleryImages: [
         'assets/products/air-ventilator.jpeg',
-        'assets/products/polycarbonate-sheets.jpeg',
+        'assets/products/polycarbonate-sheets.jpg',
         'assets/products/trapezoidal-sheets.jpeg'
       ],
       location: 'Ahmedabad, Gujarat',
