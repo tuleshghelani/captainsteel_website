@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import Aos from 'aos';
@@ -12,7 +12,8 @@ import Aos from 'aos';
   styleUrl: './air-ventilator.component.scss'
 })
 export class AirVentilatorComponent implements OnInit {
-  
+  private platformId = inject(PLATFORM_ID);
+
   constructor(
     private meta: Meta,
     private titleService: Title
@@ -42,24 +43,27 @@ export class AirVentilatorComponent implements OnInit {
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/air-ventilator.jpeg' }
     ]);
     
-    // Initialize AOS animations
-    Aos.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
-    
-    // Add click event listeners to FAQ items after view is initialized
-    setTimeout(() => {
-      const faqItems = document.querySelectorAll('.faq-question');
-      faqItems.forEach(item => {
-        item.addEventListener('click', () => {
-          const parent = item.parentElement;
-          if (parent) {
-            parent.classList.toggle('active');
-          }
-        });
+    // Only run browser-specific code if we are in a browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      // Initialize AOS animations
+      Aos.init({
+        duration: 1000,
+        once: true,
+        offset: 100
       });
-    }, 500);
+      
+      // Add click event listeners to FAQ items after view is initialized
+      setTimeout(() => {
+        const faqItems = document.querySelectorAll('.faq-question');
+        faqItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            if (parent) {
+              parent.classList.toggle('active');
+            }
+          });
+        });
+      }, 500);
+    }
   }
 }

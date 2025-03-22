@@ -40,7 +40,7 @@ export class ProductsComponent implements OnInit {
         title: 'Trapezoidal Profile Sheets',
         description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
         image: 'assets/products/trapezoidal-sheets.jpeg',
-        link: '/products/trapezoidal-sheets',
+        link: '/products/trapezoidal-profile-sheets',
         aosDelay: 200
       },
       {
@@ -54,7 +54,7 @@ export class ProductsComponent implements OnInit {
         title: 'Insulated Metal Sheets',
         description: 'Insulated sheets providing excellent thermal performance.',
         image: 'assets/products/air-ventilator.jpeg',
-        link: '/products/insulated-sheets',
+        link: '/products/insulated-metal-sheets',
         aosDelay: 400
       },
       {

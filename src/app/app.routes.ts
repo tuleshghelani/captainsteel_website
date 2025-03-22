@@ -32,6 +32,13 @@ export const routes: Routes = [
   {
     path: 'products/corrugated-roofing-sheets',
     loadComponent: () => import('./pages/all-products/corrugated-roofing-sheets/corrugated-roofing-sheets.component').then(m => m.CorrugatedRoofingSheetsComponent)
+  },
+  {
+    path: 'products/trapezoidal-profile-sheets',
+    loadComponent: () => import('./pages/all-products/trapezoidal-profile-sheets/trapezoidal-profile-sheets.component').then(m => m.TrapezoidalProfileSheetsComponent)
+  },
+  {
+    path: 'products/insulated-metal-sheets',
+    loadComponent: () => import('./pages/all-products/insulated-metal-sheets/insulated-metal-sheets.component').then(m => m.InsulatedMetalSheetsComponent)
   }
-  // ... other routes
 ];
