@@ -93,14 +93,14 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
       // Open Graph tags for social sharing
       { property: 'og:title', content: 'Premium Trapezoidal Profile Sheets | Modern Steel Roofing' },
       { property: 'og:description', content: 'Premium trapezoidal profile sheets with superior strength, durability, and modern aesthetics. Ideal for industrial, commercial & architectural applications.' },
-      { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/trapezoidal-sheets.jpeg' },
+      { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/trapezoidal-profile-sheets.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/trapezoidal-sheets' },
       { property: 'og:type', content: 'product' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Premium Trapezoidal Profile Sheets | Modern Steel Roofing' },
       { name: 'twitter:description', content: 'Premium trapezoidal profile sheets with superior strength, durability, and modern aesthetics for all roofing applications.' },
-      { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/trapezoidal-sheets.jpeg' }
+      { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/trapezoidal-profile-sheets.jpg' }
     ]);
     
     // Only run browser-specific code if we are in a browser environment

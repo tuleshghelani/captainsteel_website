@@ -32,14 +32,14 @@ export class ProductsComponent implements OnInit {
       {
         title: 'Corrugated Roofing Sheets',
         description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
-        image: 'assets/products/Corrugated-roofing-sheets.jpeg',
+        image: 'assets/products/corrugated-roofing-sheets.jpg',
         link: '/products/corrugated-roofing-sheets',
         aosDelay: 100
       },
       {
         title: 'Trapezoidal Profile Sheets',
         description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
-        image: 'assets/products/trapezoidal-sheets.jpeg',
+        image: 'assets/products/trapezoidal-profile-sheets.jpg',
         link: '/products/trapezoidal-profile-sheets',
         aosDelay: 200
       },
@@ -53,35 +53,35 @@ export class ProductsComponent implements OnInit {
       {
         title: 'Insulated Metal Sheets',
         description: 'Insulated sheets providing excellent thermal performance.',
-        image: 'assets/products/air-ventilator.jpeg',
+        image: 'assets/products/insulated-metal-roofing-sheets.jpg',
         link: '/products/insulated-metal-sheets',
         aosDelay: 400
       },
       {
         title: 'Crimping',
         description: 'High-quality crimping solutions for various applications.',
-        image: 'assets/products/air-ventilator.jpeg',
+        image: 'assets/products/crimping-and-accessories.jpg',
         link: '/products/crimping',
         aosDelay: 5000
       },
       {
         title: 'Polycarbonate Sheet',
         description: 'Durable polycarbonate sheets for versatile applications.',
-        image: 'assets/products/polycarbonate-sheets.jpg',
+        image: 'assets/products/polycarbonate-sheets-2.jpg',
         link: '/products/polycarbonate',
         aosDelay: 6000
       },
       {
         title: 'Polycarbonate Multiwall',
         description: 'Multiwall polycarbonate sheets for enhanced insulation.',
-        image: 'assets/products/air-ventilator.jpeg',
+        image: 'assets/products/polycarbonate-sheets.jpg',
         link: '/products/polycarbonate-multiwall',
         aosDelay: 7000
       },
       {
         title: 'Accessories',
         description: 'A range of accessories to complement our roofing solutions.',
-        image: 'assets/products/air-ventilator.jpeg',
+        image: 'assets/products/crimping-and-accessories-2.jpg',
         link: '/products/accessories',
         aosDelay: 8000
       }

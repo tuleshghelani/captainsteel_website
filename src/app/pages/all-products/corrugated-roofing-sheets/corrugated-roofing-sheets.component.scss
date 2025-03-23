@@ -1101,96 +1101,74 @@ $spec-row-alt: rgba($dark, 0.03);
 
 // CTA Section
 .cta-section {
-  padding: 100px 0;
-  background-image: url('/assets/products/cta-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
+  background: linear-gradient(to right, $primary, $primary-dark);
+  color: white;
+  text-align: center;
   
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba($dark, 0.8), rgba($dark, 0.8));
-  }
-
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    position: relative;
-    z-index: 1;
-  }
-
   .cta-content {
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
     
     h2 {
-      font-size: 2.5rem;
-      color: #fff;
-      margin-bottom: 20px;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
       
       @media (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
     }
     
     p {
-      font-size: 1.2rem;
-      color: rgba(#fff, 0.8);
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
     }
     
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+    .cta-button {
+      display: inline-block;
+      background-color: $secondary;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
       
-      @media (max-width: 576px) {
-        flex-direction: column;
-        align-items: center;
+      &:hover {
+        background-color: $secondary-light;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
+    }
+    
+    .secondary-button {
+      display: inline-block;
+      background-color: transparent;
+      color: white;
+      padding: 13px 29px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid white;
+      transition: all 0.3s ease;
       
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px 30px;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        
-        &.btn-primary {
-          background-color: $primary;
-          color: $dark;
-          border: 2px solid $primary;
-          
-          &:hover {
-            background-color: darken($primary, 10%);
-            border-color: darken($primary, 10%);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba($primary, 0.3);
-          }
-        }
-        
-        &.btn-outline {
-          background-color: transparent;
-          color: #fff;
-          border: 2px solid #fff;
-          
-          &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-          }
-        }
+      &:hover {
+        background-color: white;
+        color: $primary;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
     }
   }

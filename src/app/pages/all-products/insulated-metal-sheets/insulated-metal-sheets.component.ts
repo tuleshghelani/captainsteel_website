@@ -95,14 +95,14 @@ export class InsulatedMetalSheetsComponent implements OnInit {
       // Open Graph tags for social sharing
       { property: 'og:title', content: 'Premium Insulated Metal Sheets | Energy Efficient Building Solutions' },
       { property: 'og:description', content: 'Premium insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Ideal for commercial, industrial, and cold storage facilities.' },
-      { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/trapezoidal-sheets.jpeg' },
+      { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/insulated-sheets' },
       { property: 'og:type', content: 'product' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Premium Insulated Metal Sheets | Energy Efficient Building Solutions' },
       { name: 'twitter:description', content: 'Premium insulated metal sheets offering superior thermal efficiency, energy savings, and climate control for all building applications.' },
-      { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/trapezoidal-sheets.jpeg' }
+      { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' }
     ]);
     
     // Only run browser-specific code if we are in a browser environment
