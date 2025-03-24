@@ -53,14 +53,14 @@ export class HomeComponent implements OnInit {
     {
       title: 'Corrugated Roofing Sheets',
       description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
-      image: 'assets/products/Corrugated-roofing-sheets.jpeg',
+      image: 'assets/products/corrugated-roofing-sheets.jpg',
       link: '/products/corrugated-sheets',
       aosDelay: 200
     },
     {
       title: 'Trapezoidal Profile Sheets',
       description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
-      image: 'assets/products/trapezoidal-sheets.jpeg',
+      image: 'assets/products/trapezoidal-profile-sheets.jpg',
       link: '/products/trapezoidal-sheets',
       aosDelay: 200
     },
@@ -74,8 +74,8 @@ export class HomeComponent implements OnInit {
     {
       title: 'Polycarbonate Sheets',
       description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
-      image: 'assets/products/polycarbonate-sheets.jpg',
-      link: '/products/polycarbonate-sheets',
+      image: 'assets/products/polycarbonate-sheets-2.jpg',
+      link: '/products/polycarbonate-sheet',
       aosDelay: 200
     },
   ];
