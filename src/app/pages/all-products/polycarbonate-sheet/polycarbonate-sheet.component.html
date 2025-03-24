@@ -1,0 +1,308 @@
+<div class="product-page-container">
+  <!-- Hero Section -->
+  <section class="product-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="product-title" data-aos="fade-up">Polycarbonate Sheet</h1>
+        <p class="product-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Premium transparent roofing and glazing solutions with exceptional durability, light transmission, and impact resistance
+        </p>
+        <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+          <a routerLink="/">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <a routerLink="/products">Products</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Polycarbonate Sheet</span>
+        </div>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+          <a routerLink="/contact-us" class="btn btn-primary">
+            <i class="fas fa-phone-alt"></i>
+            Get a Quote
+          </a>
+          <a routerLink="/catalogue" class="btn btn-outline">
+            <i class="fas fa-book"></i>
+            Download Catalogue
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Overview -->
+  <section class="product-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content" data-aos="fade-right">
+          <h2>Premium Polycarbonate Sheets</h2>
+          <p class="lead-text">
+            Captain Steel's polycarbonate sheets combine exceptional transparency with unmatched durability for versatile architectural and construction applications.
+          </p>
+          <p>
+            Our premium polycarbonate sheets are manufactured using advanced engineering processes and high-grade resins to deliver outstanding optical clarity, impact resistance, and weather durability. These lightweight yet incredibly strong sheets are up to 200 times stronger than glass while weighing only half as much.
+          </p>
+          <p>
+            With excellent UV protection, thermal insulation properties, and fire resistance, our polycarbonate sheets are the ideal solution for skylights, canopies, greenhouse glazing, industrial rooflights, architectural features, and numerous other applications requiring transparent, durable material with superior performance characteristics.
+          </p>
+          <div class="badges">
+            <div class="badge">
+              <i class="fas fa-shield-alt"></i>
+              <span>Impact Resistant</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-sun"></i>
+              <span>UV Protected</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-fire-alt"></i>
+              <span>Fire Resistant</span>
+            </div>
+          </div>
+        </div>
+        <div class="overview-image" data-aos="fade-left">
+          <img src="assets/products/polycarbonate-sheets-2.jpg" alt="Premium Polycarbonate Sheets - Versatile Transparent Building Solution" class="main-product-image">
+          <div class="image-overlay">
+            <span class="premium-tag">Premium Quality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Key Features</h2>
+      <p class="section-description" data-aos="fade-up" data-aos-delay="100">
+        Our polycarbonate sheets are engineered with advanced features for optimal performance across diverse applications
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feature of features; let i = index" 
+             data-aos="fade-up" [attr.data-aos-delay]="100 + (i * 50)">
+          <div class="feature-icon">
+            <i [class]="feature.icon"></i>
+          </div>
+          <h3>{{feature.title}}</h3>
+          <p>{{feature.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications -->
+  <section class="specs-section" id="specifications">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Technical Specifications</h2>
+      <div class="specs-content" data-aos="fade-up" data-aos-delay="100">
+        <div class="specs-table-container">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Specification</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let spec of specifications">
+                <td>Thickness</td>
+                <td>{{spec.thickness}}</td>
+                <td>{{spec.thicknessOptions}}</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Width</td>
+                <td>{{spec.width}}</td>
+                <td>{{spec.widthOptions}}</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Length</td>
+                <td>{{spec.length}}</td>
+                <td>{{spec.lengthOptions}}</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Light Transmission</td>
+                <td>{{spec.lightTransmission}}</td>
+                <td>Varies by color and thickness</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Impact Resistance</td>
+                <td>{{spec.impactResistance}}</td>
+                <td>200 times stronger than glass</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>UV Protection</td>
+                <td>{{spec.uvProtection}}</td>
+                <td>Co-extruded UV protection available</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Colors</td>
+                <td>{{spec.colors}}</td>
+                <td>{{spec.colorOptions}}</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Temperature Resistance</td>
+                <td>{{spec.temperatureResistance}}</td>
+                <td>Handles extreme weather conditions</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Fire Rating</td>
+                <td>{{spec.fireRating}}</td>
+                <td>Meets international standards</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Warranty</td>
+                <td>{{spec.warranty}}</td>
+                <td>Against yellowing and breakage</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="specs-note">
+          <p><strong>Note:</strong> All specifications can be customized to meet specific project requirements. Please contact our team for detailed information and custom solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Section -->
+  <section class="applications-section" id="applications">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Applications</h2>
+      <p class="section-description" data-aos="fade-up" data-aos-delay="100">
+        Discover the versatility of our polycarbonate sheets across diverse industries and applications
+      </p>
+      
+      <div class="applications-grid">
+        <div class="application-card" *ngFor="let application of applications; let i = index" 
+             data-aos="fade-up" [attr.data-aos-delay]="100 + (i * 100)">
+          <div class="application-content">
+            <h3><i [class]="application.icon"></i> {{application.title}}</h3>
+            <p>{{application.description}}</p>
+            <ul class="application-benefits">
+              <li *ngFor="let benefit of application.benefits">
+                <i class="fas fa-check"></i> {{benefit}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section" id="benefits">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Benefits</h2>
+      <div class="benefits-grid">
+        <div class="benefits-content" data-aos="fade-right">
+          <ul class="benefits-list">
+            <li *ngFor="let benefit of benefits; let i = index" 
+                data-aos="fade-up" [attr.data-aos-delay]="100 + (i * 50)">
+              <div class="benefit-icon">
+                <i [class]="benefit.icon"></i>
+              </div>
+              <div class="benefit-details">
+                <h3>{{benefit.title}}</h3>
+                <p>{{benefit.description}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="benefits-image" data-aos="fade-left">
+          <img src="assets/products/polycarbonate-sheets.jpg" alt="Polycarbonate Sheets Benefits - Transparent Roofing and Glazing Solution" class="benefits-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products Section -->
+  <section class="related-products-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Related Products</h2>
+        <p class="section-subtitle">Explore our other premium roofing solutions</p>
+      </div>
+      
+      <div class="related-products-grid">
+        <div class="related-product-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="image-container">
+            <img src="assets/products/polycarbonate-sheets.jpg" alt="Polycarbonate Multiwall" loading="lazy">
+          </div>
+          <div class="product-content">
+            <h3>Polycarbonate Multiwall</h3>
+            <p>Multi-layered polycarbonate sheets with superior thermal insulation and structural strength.</p>
+            <a routerLink="/products/polycarbonate-multiwall" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+        
+        <div class="related-product-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="image-container">
+            <img src="assets/products/corrugated-roofing-sheets.jpg" alt="Corrugated Roofing Sheets" loading="lazy">
+          </div>
+          <div class="product-content">
+            <h3>Corrugated Roofing Sheets</h3>
+            <p>Durable steel roofing solution with superior weather resistance and longevity.</p>
+            <a routerLink="/products/corrugated-roofing-sheets" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+        
+        <div class="related-product-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="image-container">
+            <img src="assets/products/insulated-metal-roofing-sheets.jpg" alt="Insulated Metal Sheets" loading="lazy">
+          </div>
+          <div class="product-content">
+            <h3>Insulated Metal Sheets</h3>
+            <p>Energy-efficient roofing with integrated thermal insulation properties.</p>
+            <a routerLink="/products/insulated-metal-sheets" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Schema Markup for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Premium Polycarbonate Sheets",
+    "image": [
+      "https://captainsteelroofsolution.com/assets/products/polycarbonate-sheets-2.jpg"
+    ],
+    "description": "Premium polycarbonate sheets offering exceptional transparency, impact resistance, and UV protection. Ideal for skylights, canopies, greenhouses, and architectural applications with 200x the strength of glass at half the weight.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Captain Steel"
+    },
+    "manufacturer": "Captain Steel Roof Solutions",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "350",
+      "highPrice": "1500",
+      "offerCount": "12",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "172"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Architectural Innovations Ltd."
+      },
+      "reviewBody": "We've used Captain Steel's polycarbonate sheets for multiple architectural projects and have been consistently impressed with their clarity, strength, and durability. The sheets allow excellent natural light while providing UV protection and impact resistance. Installation is straightforward, and the finished appearance is excellent."
+    }
+  }
+  </script>
+</div>

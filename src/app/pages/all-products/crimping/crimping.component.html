@@ -1,0 +1,356 @@
+<div class="product-page-container">
+  <!-- Hero Section -->
+  <section class="product-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="product-title" data-aos="fade-up">Premium Crimping Solutions</h1>
+        <p class="product-subtitle" data-aos="fade-up" data-aos-delay="100">
+          High-quality crimping solutions for secure, reliable connections
+        </p>
+        <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+          <a routerLink="/">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <a routerLink="/products">Products</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Crimping</span>
+        </div>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+          <a routerLink="/contact-us" class="btn btn-primary">
+            <i class="fas fa-phone-alt"></i>
+            Get a Quote
+          </a>
+          <a routerLink="/catalogue" class="btn btn-outline">
+            <i class="fas fa-book"></i>
+            Download Catalogue
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Overview -->
+  <section class="product-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content" data-aos="fade-right">
+          <h2>Premium Stainless Steel Crimping Solutions</h2>
+          <p class="lead-text">
+            Captain Steel's premium crimping and crimp banding products deliver exceptional performance, durability, and reliability for all your connection needs.
+          </p>
+          <p>
+            Our high-quality crimping solutions are engineered with precision to provide superior joining strength and reliable connections in demanding environments. Manufactured from premium-grade galvanized and stainless steel, our crimping products offer exceptional corrosion resistance and long-term durability.
+          </p>
+          <p>
+            Whether for industrial applications, construction projects, or roofing installations, our crimping products ensure secure and dependable connections every time. With easy installation and a wide range of size options, Captain Steel crimping solutions are the professional's choice for quality fastening systems.
+          </p>
+          <div class="badges">
+            <div class="badge">
+              <i class="fas fa-medal"></i>
+              <span>Premium Quality</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-shield-alt"></i>
+              <span>Corrosion Resistant</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-tools"></i>
+              <span>Professional Grade</span>
+            </div>
+          </div>
+        </div>
+        <div class="overview-image" data-aos="fade-left">
+          <img src="assets/products/crimping-and-accessories.jpg" alt="Premium Stainless Steel Crimping - Industrial Fastening Solutions" class="main-product-image">
+          <div class="image-overlay">
+            <span class="premium-tag">Premium Quality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Key Features</h2>
+      <p class="section-description" data-aos="fade-up" data-aos-delay="100">
+        Our crimping solutions are engineered with advanced features for optimal performance and reliability
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let feature of features; let i = index" data-aos="fade-up" [attr.data-aos-delay]="100 + (i * 50)">
+          <div class="feature-icon">
+            <i [class]="feature.icon"></i>
+          </div>
+          <h3>{{feature.title}}</h3>
+          <p>{{feature.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications -->
+  <section class="specs-section" id="specifications">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Technical Specifications</h2>
+      <div class="specs-content" data-aos="fade-up" data-aos-delay="100">
+        <div class="specs-table-container">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Specification</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let spec of specifications">
+                <td>Material Thickness</td>
+                <td>{{spec.thickness}}</td>
+                <td>Standard & custom available</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Band Width</td>
+                <td>{{spec.width}}</td>
+                <td>Customizable per application</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Length</td>
+                <td>{{spec.length}}</td>
+                <td>Cut-to-order available</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Material</td>
+                <td>{{spec.material}}</td>
+                <td>Premium-grade options</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Surface Finish</td>
+                <td>{{spec.finish}}</td>
+                <td>Multiple finish options</td>
+              </tr>
+              <tr *ngFor="let spec of specifications">
+                <td>Applications</td>
+                <td>{{spec.applications}}</td>
+                <td>Multi-industry solutions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="custom-solutions">
+          <h3>Custom Specifications Available</h3>
+          <p>Contact us for customized crimping solutions tailored to your specific requirements.</p>
+          <a routerLink="/contact-us" class="btn btn-primary">Request Custom Specifications</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Section -->
+  <section class="applications-section" id="applications">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Applications</h2>
+      <p class="section-description" data-aos="fade-up" data-aos-delay="100">
+        Our crimping and crimp banding solutions are designed for a wide range of industries and applications
+      </p>
+
+      <div class="applications-container">
+        <div class="application-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="application-content">
+            <h3><i class="fas fa-hard-hat"></i> Construction Industry</h3>
+            <p>Reliable fastening solutions for roofing, HVAC ducting, and general construction applications.</p>
+            <ul class="application-benefits">
+              <li><i class="fas fa-check"></i> Secure connections for roofing components</li>
+              <li><i class="fas fa-check"></i> Weather-resistant duct sealing</li>
+              <li><i class="fas fa-check"></i> Reliable pipe and conduit fastening</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="application-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="application-content">
+            <h3><i class="fas fa-industry"></i> Industrial Applications</h3>
+            <p>Heavy-duty crimping solutions for manufacturing, processing, and industrial facilities.</p>
+            <ul class="application-benefits">
+              <li><i class="fas fa-check"></i> High-pressure hose connections</li>
+              <li><i class="fas fa-check"></i> Vibration-resistant fastening</li>
+              <li><i class="fas fa-check"></i> Chemical-resistant connections</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="application-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="application-content">
+            <h3><i class="fas fa-car"></i> Automotive Sector</h3>
+            <p>Precision crimping for automotive exhaust systems, hoses, and fluid lines.</p>
+            <ul class="application-benefits">
+              <li><i class="fas fa-check"></i> Heat-resistant exhaust connections</li>
+              <li><i class="fas fa-check"></i> Leak-proof fluid line sealing</li>
+              <li><i class="fas fa-check"></i> Vibration-dampening solutions</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="application-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="application-content">
+            <h3><i class="fas fa-water"></i> Marine Environment</h3>
+            <p>Corrosion-resistant crimping solutions specifically designed for marine and coastal applications.</p>
+            <ul class="application-benefits">
+              <li><i class="fas fa-check"></i> Salt-water resistant materials</li>
+              <li><i class="fas fa-check"></i> UV and weather protection</li>
+              <li><i class="fas fa-check"></i> Long-lasting performance in harsh conditions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section" id="benefits">
+    <div class="container">
+      <div class="benefits-content">
+        <div class="benefits-text" data-aos="fade-right">
+          <h2 class="section-title">Why Choose Our Crimping Solutions?</h2>
+          <p class="section-intro">Our premium crimping products offer numerous advantages over conventional alternatives.</p>
+          
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="benefit-details">
+                <h3>Extended Lifespan</h3>
+                <p>Premium stainless steel construction ensures decades of reliable performance without degradation.</p>
+              </div>
+            </div>
+            
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="benefit-details">
+                <h3>Quick Installation</h3>
+                <p>Engineered for ease of use, reducing installation time and labor costs by up to 40%.</p>
+              </div>
+            </div>
+            
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-lock"></i>
+              </div>
+              <div class="benefit-details">
+                <h3>Superior Grip</h3>
+                <p>Advanced design provides up to 30% stronger holding power compared to standard fasteners.</p>
+              </div>
+            </div>
+            
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-cog"></i>
+              </div>
+              <div class="benefit-details">
+                <h3>Maintenance-Free</h3>
+                <p>Once installed, our crimping solutions require zero maintenance throughout their service life.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="benefits-image" data-aos="fade-left">
+          <img src="assets/products/crimping-and-accessories.jpg" alt="Premium Stainless Steel Crimping Benefits - Superior Industrial Fastening Solutions" class="benefits-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products Section -->
+  <section class="related-products-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Related Products</h2>
+        <p class="section-subtitle">Explore our other premium roofing solutions</p>
+      </div>
+      
+      <div class="related-products-grid">
+        <div class="related-product-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="image-container">
+            <img src="assets/products/corrugated-roofing-sheets.jpg" alt="Corrugated Roofing Sheets" loading="lazy">
+          </div>
+          <div class="product-content">
+            <h3>Corrugated Roofing Sheets</h3>
+            <p>Durable roofing solution with superior weather resistance and longevity.</p>
+            <a routerLink="/products/corrugated-roofing-sheets" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+        
+        <div class="related-product-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="image-container">
+            <img src="assets/products/trapezoidal-profile-sheets.jpg" alt="Trapezoidal Profile Sheets" loading="lazy">
+          </div>
+          <div class="product-content">
+            <h3>Trapezoidal Profile Sheets</h3>
+            <p>Modern roofing solution with enhanced structural integrity and water drainage.</p>
+            <a routerLink="/products/trapezoidal-profile-sheets" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+        
+        <div class="related-product-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="image-container">
+            <img src="assets/products/crimping-and-accessories-2.jpg" alt="Roofing Accessories" loading="lazy">
+          </div>
+          <div class="product-content">
+            <h3>Roofing Accessories</h3>
+            <p>Complete your roofing system with our range of quality accessories.</p>
+            <a routerLink="/products/accessories" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Schema Markup for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Premium Stainless Steel Crimping and Clamps",
+    "image": [
+      "https://captainsteelroofsolution.com/assets/products/crimping-and-accessories.jpg"
+    ],
+    "description": "Premium quality crimping, crimp banding, and stainless steel clamps for industrial, construction, and roofing applications. Our stainless steel clamps provide superior holding strength, corrosion resistance, and long-term durability for all fastening needs.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Captain Steel"
+    },
+    "manufacturer": "Captain Steel Roof Solutions",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "120",
+      "highPrice": "500",
+      "offerCount": "12",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "157"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Industrial Solutions Ltd."
+      },
+      "reviewBody": "We've used Captain Steel's crimping solutions for multiple industrial projects and have been consistently impressed with their quality, durability, and corrosion resistance. The installation is straightforward, and the holding power is excellent even in demanding environments."
+    }
+  }
+  </script>
+</div>

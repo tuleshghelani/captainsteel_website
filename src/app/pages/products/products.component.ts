@@ -68,14 +68,14 @@ export class ProductsComponent implements OnInit {
         title: 'Polycarbonate Sheet',
         description: 'Durable polycarbonate sheets for versatile applications.',
         image: 'assets/products/polycarbonate-sheets-2.jpg',
-        link: '/products/polycarbonate',
+        link: '/products/polycarbonate-sheet',
         aosDelay: 6000
       },
       {
         title: 'Polycarbonate Multiwall',
         description: 'Multiwall polycarbonate sheets for enhanced insulation.',
         image: 'assets/products/polycarbonate-sheets.jpg',
-        link: '/products/polycarbonate-multiwall',
+        link: '/products/polycarbonate-sheet',
         aosDelay: 7000
       },
       {

@@ -1,0 +1,689 @@
+@import '../../../../styles.scss';
+
+// Product page container
+.product-page-container {
+  margin-top: 5rem;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// Common container style
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// Common section spacing
+section {
+  padding: 80px 0;
+  
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+// Section titles
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: $accent;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 15px;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, $primary, $secondary);
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: $neutral-dark;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+// Hero Section
+.product-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/products/polycarbonate-sheets-2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .product-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  
+  .product-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+  
+  .breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-light;
+      }
+    }
+
+    i {
+      margin: 0 10px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    span {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+  
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    
+    .btn {
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      
+      i {
+        margin-right: 10px;
+      }
+      
+      &.btn-primary {
+        background: $primary;
+        color: white;
+        border: 2px solid $primary;
+        
+        &:hover {
+          background: darken($primary, 10%);
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+      }
+      
+      &.btn-outline {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+// Product Overview
+.product-overview {
+  padding: 100px 0;
+  background-color: white;
+  
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .overview-content {
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $accent;
+      margin-bottom: 20px;
+      
+      @media (max-width: 768px) {
+        font-size: 1.7rem;
+      }
+    }
+    
+    .lead-text {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: $neutral-dark;
+      font-weight: 500;
+    }
+    
+    p {
+      color: $neutral-medium;
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+    
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+      
+      .badge {
+        background: linear-gradient(135deg, rgba($primary, 0.1), rgba($secondary, 0.1));
+        border: 1px solid rgba($primary, 0.2);
+        padding: 10px 15px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        
+        i {
+          color: $primary;
+          margin-right: 8px;
+          font-size: 1rem;
+        }
+        
+        span {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: $neutral-dark;
+        }
+      }
+    }
+  }
+  
+  .overview-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+      
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+    
+    .image-overlay {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      
+      .premium-tag {
+        background: linear-gradient(135deg, $primary, $secondary);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+// Features Section
+.features-section {
+    background-color: $neutral-lightest;
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .feature-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-bottom: 4px solid transparent;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border-bottom-color: $primary;
+        
+        .feature-icon {
+          background-color: $primary;
+          color: white;
+        }
+      }
+      
+      &:nth-child(even):hover {
+        border-bottom-color: $secondary;
+        
+        .feature-icon {
+          background-color: $secondary;
+        }
+      }
+      
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: $neutral-lightest;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        
+        i {
+          font-size: 1.8rem;
+          color: $accent;
+          transition: all 0.3s ease;
+        }
+      }
+      
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: $accent;
+      }
+      
+      p {
+        color: $neutral-dark;
+        line-height: 1.6;
+      }
+    }
+}
+
+// Specifications Section
+.specs-section {
+  background-color: white;
+  
+  .specs-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .specs-table-container {
+    overflow-x: auto;
+  }
+  
+  .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid $neutral-light;
+    }
+    
+    th {
+      background-color: $primary;
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: $neutral-lightest;
+    }
+    
+    tr:hover {
+      background-color: rgba($primary, 0.05);
+    }
+    
+    td:first-child {
+      font-weight: 600;
+      color: $neutral-dark;
+    }
+  }
+  
+  .specs-note {
+    padding: 20px;
+    background-color: rgba($primary, 0.05);
+    border-top: 1px solid $neutral-light;
+    font-size: 0.9rem;
+    
+    p {
+      color: $neutral-dark;
+      
+      strong {
+        color: $accent;
+      }
+    }
+  }
+}
+
+// Applications Section
+.applications-section {
+  background-color: $neutral-lightest;
+  
+  .applications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .application-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .application-content {
+      padding: 30px;
+      
+      h3 {
+        color: $neutral-dark;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        
+        i {
+          color: $primary;
+          margin-right: 15px;
+          font-size: 1.5rem;
+        }
+      }
+      
+      p {
+        color: $neutral-medium;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      
+      .application-benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 10px;
+          
+          i {
+            color: $secondary;
+            margin-right: 10px;
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Benefits Section
+.benefits-section {
+  background-color: white;
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .benefits-content {
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        display: flex;
+        margin-bottom: 30px;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        .benefit-icon {
+          flex-shrink: 0;
+          width: 50px;
+          height: 50px;
+          background: linear-gradient(135deg, $primary, $secondary);
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 20px;
+          
+          i {
+            color: white;
+            font-size: 1.2rem;
+          }
+        }
+        
+        .benefit-details {
+          h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: $neutral-dark;
+            margin-bottom: 10px;
+          }
+          
+          p {
+            color: $neutral-medium;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+  
+  .benefits-image {
+    position: relative;
+    
+    img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// Related Products Section
+.related-products-section {
+  background-color: $neutral-lightest;
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    .section-title {
+      margin-bottom: 15px;
+    }
+    
+    .section-subtitle {
+      color: $neutral-medium;
+      font-size: 1.1rem;
+    }
+  }
+  
+  .related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .related-product-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      
+      .image-container img {
+        transform: scale(1.05);
+      }
+    }
+    
+    .image-container {
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+    }
+    
+    .product-content {
+      padding: 25px;
+      
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $neutral-dark;
+        margin-bottom: 10px;
+      }
+      
+      p {
+        color: $neutral-medium;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        min-height: 60px;
+      }
+      
+      .btn-outline {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: $primary;
+        border: 2px solid $primary;
+        background-color: transparent;
+        text-decoration: none;
+        font-weight: 600;
+        border: 2px solid white;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background-color: white;
+          color: $primary;
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .product-hero {
+    padding: 80px 20px;
+  }
+  
+  .product-overview .overview-image {
+    margin-top: 30px;
+  }
+  
+  .benefits-section .benefits-image {
+    margin-top: 40px;
+  }
+  
+  .feature-card, .application-card {
+    padding: 25px 20px;
+  }
+}
+
+// Add smooth scrolling for anchor links
+html {
+  scroll-behavior: smooth;
+}

@@ -29,7 +29,7 @@ export class ProjectsComponent implements OnInit {
   activeCategory: string = 'all';
   selectedProject: Project | null = null;
   hasMoreProjects: boolean = true;
-  visibleProjects: number = 6;
+  visibleProjects: number = 8;
   completedProjects: number = 500;
   satisfiedClients: number = 100; 
   
@@ -41,13 +41,12 @@ export class ProjectsComponent implements OnInit {
       shortDescription: 'Premium steel roofing for a large commercial complex with innovative design elements.',
       fullDescription: 'This landmark commercial complex features our state-of-the-art steel roofing solution that provides exceptional durability and weather resistance. The project incorporated custom design elements to match the modern architecture while ensuring optimal energy efficiency and sustainability.',
       category: 'commercial',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
+      imageUrl: 'assets/projects/DJI_0013.JPG',
       galleryImages: [
-        'assets/products/air-ventilator.jpeg',
-        'assets/products/polycarbonate-sheets.jpg',
-        'assets/products/trapezoidal-sheets.jpeg'
+        'assets/projects/DJI_0013.JPG',
+        'assets/projects/DJI_0014.JPG',
       ],
-      location: 'Mumbai, Maharashtra',
+      location: 'Rajkot, Gujarat',
       completionDate: 'January 2023',
       specifications: [
         'Total area: 75,000 sq ft',
@@ -62,13 +61,14 @@ export class ProjectsComponent implements OnInit {
       shortDescription: 'Custom steel roofing solution for a premium residential property with aesthetic appeal.',
       fullDescription: 'We delivered a bespoke steel roofing solution for this luxury villa that combines aesthetic elegance with superior functionality. The design incorporated special weather-resistant features while maintaining the high-end appearance required by the client.',
       category: 'residential',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
+      imageUrl: 'assets/projects/DJI_0054.JPG',
       galleryImages: [
-        'assets/products/air-ventilator.jpeg',
-        'assets/products/polycarbonate-sheets.jpg',
-        'assets/products/trapezoidal-sheets.jpeg'
+        'assets/projects/DJI_0054.JPG',
+        'assets/projects/DJI_0060.JPG',
+        'assets/projects/DJI_0062.JPG',
+        'assets/projects/DJI_0063.JPG'
       ],
-      location: 'Pune, Maharashtra',
+      location: 'Rajkot, Gujarat',
       completionDate: 'March 2023',
       specifications: [
         'Total area: 5,200 sq ft',
@@ -83,11 +83,10 @@ export class ProjectsComponent implements OnInit {
       shortDescription: 'Heavy-duty industrial roofing solution designed for extreme conditions and longevity.',
       fullDescription: 'This large-scale industrial project required a robust roofing solution capable of withstanding harsh environmental conditions. We implemented our industrial-grade steel roofing system with reinforced supports and specialized insulation to ensure optimal performance for decades to come.',
       category: 'industrial',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
+      imageUrl: 'assets/projects/DJI_0071.JPG',
       galleryImages: [
-        'assets/products/air-ventilator.jpeg',
-        'assets/products/polycarbonate-sheets.jpg',
-        'assets/products/trapezoidal-sheets.jpeg'
+        'assets/projects/DJI_0071.JPG',
+        'assets/projects/DJI_0072.JPG'
       ],
       location: 'Ahmedabad, Gujarat',
       completionDate: 'November 2022',
@@ -104,8 +103,14 @@ export class ProjectsComponent implements OnInit {
       shortDescription: 'Sleek steel roofing design for a contemporary office building in the heart of the city.',
       fullDescription: 'Our team provided a comprehensive roofing solution for this innovative office tower, featuring a sleek design that complemented the building\'s modern architecture while ensuring superior protection against the elements.',
       category: 'commercial',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
-      location: 'Bangalore, Karnataka',
+      imageUrl: 'assets/projects/DJI_0084.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0084.JPG',
+        'assets/projects/DJI_0088.JPG',
+        'assets/projects/DJI_0096.JPG',
+        'assets/projects/DJI_0086.JPG'
+      ],
+      location: 'Rajkot, Gujarat',
       completionDate: 'May 2023',
       specifications: [
         'Total area: 45,000 sq ft',
@@ -120,8 +125,13 @@ export class ProjectsComponent implements OnInit {
       shortDescription: 'Multi-unit residential complex featuring durable and aesthetically pleasing steel roofing.',
       fullDescription: 'This project involved providing roofing solutions for an entire residential complex comprising 35 individual units. We implemented a standardized yet customizable approach that ensured consistency in quality while allowing for aesthetic variations.',
       category: 'residential',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
-      location: 'Chennai, Tamil Nadu',
+      imageUrl: 'assets/projects/DJI_0103.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0103.JPG',
+        'assets/projects/DJI_0104.JPG',
+        'assets/projects/DJI_0110.JPG'
+      ],
+      location: 'Rajkot, Gujarat',
       completionDate: 'February 2023',
       specifications: [
         'Total area: 65,000 sq ft',
@@ -132,12 +142,16 @@ export class ProjectsComponent implements OnInit {
     },
     {
       id: 6,
-      title: 'Project 6',
+      title: 'Porus Agri Export',
       shortDescription: 'Large-scale warehouse facility with specialized industrial roofing solution.',
       fullDescription: 'For this expansive warehouse project, we developed a customized industrial roofing system designed to maximize durability and minimize maintenance requirements over an extended operational lifespan.',
       category: 'industrial',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
-      location: 'Delhi NCR',
+      imageUrl: 'assets/projects/DJI_0115.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0115.JPG',
+        'assets/projects/DJI_0117.JPG'
+      ],
+      location: 'Rajkot, Gujarat',
       completionDate: 'August 2022',
       specifications: [
         'Total area: 95,000 sq ft',
@@ -152,8 +166,12 @@ export class ProjectsComponent implements OnInit {
       shortDescription: 'Complete roof renovation for an existing shopping mall with minimal disruption.',
       fullDescription: 'This challenging project involved completely replacing the existing roof structure of an operational shopping mall with minimal disruption to daily activities. Our team executed the project in phases, employing specialized techniques to ensure safety and efficiency.',
       category: 'commercial',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
-      location: 'Hyderabad, Telangana',
+      imageUrl: 'assets/projects/DJI_0122.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0122.JPG',
+        'assets/projects/DJI_0124.JPG'
+      ],
+      location: 'Rajkot, Gujarat',
       completionDate: 'April 2023',
       specifications: [
         'Total area: 85,000 sq ft',
@@ -168,8 +186,13 @@ export class ProjectsComponent implements OnInit {
       shortDescription: 'Premium steel roofing solution for a high-end apartment complex with coastal exposure.',
       fullDescription: 'Located in a coastal area, this luxury apartment complex required specialized roofing solutions to withstand salt exposure and high winds. We developed a custom system using marine-grade materials with enhanced corrosion resistance.',
       category: 'residential',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
-      location: 'Goa',
+      imageUrl: 'assets/projects/DJI_0127.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0127.JPG',
+        'assets/projects/DJI_0133.JPG',
+        'assets/projects/DJI_0136.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
       completionDate: 'July 2023',
       specifications: [
         'Total area: 40,000 sq ft',
@@ -184,8 +207,211 @@ export class ProjectsComponent implements OnInit {
       shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
       fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
       category: 'industrial',
-      imageUrl: 'assets/products/air-ventilator.jpeg',
-      location: 'Jamshedpur, Jharkhand',
+      imageUrl: 'assets/projects/DJI_0146.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0146.JPG',
+        'assets/projects/DJI_0139.JPG',
+        'assets/projects/DJI_0141.JPG',
+        'assets/projects/DJI_0149.JPG',
+        'assets/projects/DJI_0151.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    
+    {
+      id: 10,
+      title: 'Project 10',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0169.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0169.JPG',
+        'assets/projects/DJI_0173.JPG',
+        'assets/projects/DJI_0174.JPG',
+        'assets/projects/DJI_0176.JPG',
+        'assets/projects/DJI_0180.JPG',
+        'assets/projects/DJI_0181.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    {
+      id: 11,
+      title: 'Project 11',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0193.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0193.JPG',
+        'assets/projects/DJI_0202.JPG',
+        'assets/projects/DJI_0206.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    {
+      id: 12,
+      title: 'Project 12',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0216.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0216.JPG',
+        'assets/projects/DJI_0217.JPG',
+        'assets/projects/DJI_0220.JPG',
+        'assets/projects/DJI_0224.JPG',
+        'assets/projects/DJI_0230.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    {
+      id: 13,
+      title: 'Project 13',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0233.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0233.JPG',
+        'assets/projects/DJI_0236.JPG',
+        'assets/projects/DJI_0238.JPG',
+        'assets/projects/DJI_0240.JPG'
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    {
+      id: 14,
+      title: 'Project 14',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0245.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0245.JPG',
+        'assets/projects/DJI_0246.JPG',
+        'assets/projects/DJI_0256.JPG',
+        'assets/projects/DJI_0270.JPG'
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    {
+      id: 15,
+      title: 'Project 15',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0276.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0276.JPG',
+        'assets/projects/DJI_0278.JPG',
+        'assets/projects/DJI_0279.JPG',
+        'assets/projects/DJI_0283.JPG',
+        'assets/projects/DJI_0285.JPG',
+        'assets/projects/DJI_0288.JPG',
+        'assets/projects/DJI_0293.JPG',
+        'assets/projects/DJI_0297.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    {
+      id: 16,
+      title: 'Mahindra & Ashok Leyland',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0301.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0301.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    {
+      id: 17,
+      title: 'Project 17',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0312.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0312.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
+      completionDate: 'October 2022',
+      specifications: [
+        'Total area: 150,000 sq ft',
+        'Material: Heavy-duty steel with industrial-grade finishes',
+        'Special features: Zoned ventilation systems, chemical resistance',
+        'Warranty: 30 years'
+      ]
+    },
+    {
+      id: 18,
+      title: 'Skoda showroom (Shreenathaji)',
+      shortDescription: 'Comprehensive roofing system for a large-scale manufacturing facility with specialized needs.',
+      fullDescription: 'This manufacturing complex required a roofing solution that could accommodate various industrial processes with different ventilation, temperature, and structural requirements. Our engineered solution addressed these diverse needs while maintaining a cohesive appearance.',
+      category: 'industrial',
+      imageUrl: 'assets/projects/DJI_0325.JPG',
+      galleryImages: [
+        'assets/projects/DJI_0325.JPG',
+      ],
+      location: 'Rajkot, Gujarat',
       completionDate: 'October 2022',
       specifications: [
         'Total area: 150,000 sq ft',
@@ -246,12 +472,12 @@ export class ProjectsComponent implements OnInit {
 
   filterProjects(category: string): void {
     this.activeCategory = category;
-    this.visibleProjects = 6; // Reset visible projects when changing category
+    this.visibleProjects = 8; // Reset visible projects when changing category
     this.updateHasMoreProjects();
   }
 
   loadMoreProjects(): void {
-    this.visibleProjects += 3;
+    this.visibleProjects += 4;
     this.updateHasMoreProjects();
   }
 

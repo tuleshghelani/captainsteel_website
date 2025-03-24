@@ -40,5 +40,13 @@ export const routes: Routes = [
   {
     path: 'products/insulated-metal-sheets',
     loadComponent: () => import('./pages/all-products/insulated-metal-sheets/insulated-metal-sheets.component').then(m => m.InsulatedMetalSheetsComponent)
+  },
+  {
+    path: 'products/crimping',
+    loadComponent: () => import('./pages/all-products/crimping/crimping.component').then(m => m.CrimpingComponent)
+  },
+  {
+    path: 'products/polycarbonate-sheet',
+    loadComponent: () => import('./pages/all-products/polycarbonate-sheet/polycarbonate-sheet.component').then(m => m.PolycarbonateSheetComponent)
   }
 ];
