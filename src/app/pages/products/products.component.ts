@@ -79,10 +79,10 @@ export class ProductsComponent implements OnInit {
         aosDelay: 7000
       },
       {
-        title: 'Accessories',
+        title: 'Roofing Accessories',
         description: 'A range of accessories to complement our roofing solutions.',
         image: 'assets/products/crimping-and-accessories-2.jpg',
-        link: '/products/accessories',
+        link: '/products/roofing-accessories',
         aosDelay: 8000
       }
     ];

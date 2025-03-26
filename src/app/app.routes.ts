@@ -48,5 +48,9 @@ export const routes: Routes = [
   {
     path: 'products/polycarbonate-sheet',
     loadComponent: () => import('./pages/all-products/polycarbonate-sheet/polycarbonate-sheet.component').then(m => m.PolycarbonateSheetComponent)
+  },
+  {
+    path: 'products/roofing-accessories',
+    loadComponent: () => import('./pages/all-products/roofing-accessories/roofing-accessories.component').then(m => m.RoofingAccessoriesComponent)
   }
 ];
