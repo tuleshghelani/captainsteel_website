@@ -93,6 +93,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a routerLink="/clients" 
+               routerLinkActive="active"
+               class="nav-link">
+              <i class="fas fa-handshake"></i>
+              <span>Clients</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a routerLink="/contact-us" 
                routerLinkActive="active"
                class="nav-link">
@@ -183,6 +191,14 @@
              (click)="closeMobileMenu()">
             <i class="fas fa-building"></i>
             <span style="color: white;">About Us</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/clients" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <i class="fas fa-handshake"></i>
+            <span style="color: white;">Clients</span>
           </a>
         </li>
         <li>

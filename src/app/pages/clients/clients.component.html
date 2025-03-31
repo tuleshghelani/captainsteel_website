@@ -1,0 +1,89 @@
+<main class="clients-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="section-title" data-aos="fade-up">Our Valued Clients</h1>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            <strong>Captain Steel</strong> is proud to partner with industry leaders across India. 
+            Our premium roofing solutions have earned the trust of prestigious clients in various sectors.
+        </p>
+        <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+          <a routerLink="/">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Grid Section -->
+  <section class="clients-grid-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Trusted by Industry Leaders</h2>
+      
+      <div class="clients-counter" data-aos="fade-up" data-aos-delay="100">
+        <div class="counter-value">{{clientsCount}}+</div>
+        <div class="counter-label">Satisfied Clients Nationwide</div>
+      </div>
+      
+      <div class="clients-grid">
+        <div class="client-card" *ngFor="let client of clients" data-aos="fade-up" data-aos-delay="150" [ngClass]="{'black-background': client.isBlack}">
+          <div class="client-logo">
+            <img [src]="client.logoPath" [alt]="client.name + ' Logo'" loading="lazy">
+          </div>
+          <h3 class="client-name" [ngClass]="{'white-text': client.isBlack}">{{client.name}}</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
+      
+      <div class="testimonials-wrapper" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+          <div class="testimonial-content">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p class="testimonial-text">{{testimonial.text}}</p>
+          </div>
+          <div class="testimonial-author">
+            <!-- <strong>{{testimonial.author}}</strong> -->
+            <!-- <span>{{testimonial.position}}, {{testimonial.company}}</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-wrapper" data-aos="fade-up">
+        <h2 class="cta-title">Join Our Growing List of Satisfied Clients</h2>
+        <p class="cta-description">
+          Experience the premium quality and exceptional service that our clients trust. 
+          Contact us today for a personalized roofing solution tailored to your needs.
+        </p>
+        <div class="cta-buttons">
+          <a routerLink="/contact-us" class="btn btn-primary">Contact Us</a>
+          <a routerLink="/products" class="btn btn-outline">Explore Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Structured Data for SEO -->
+  <div itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Captain Steel Roof Solutions" />
+    <meta itemprop="description" content="Premium steel roofing solutions provider trusted by leading businesses across India." />
+    <link itemprop="image" href="https://captainsteelroofsolution.com/assets/logo/logo.png" />
+    <link itemprop="url" href="https://captainsteelroofsolution.com/clients" />
+    <div itemprop="brand" itemscope itemtype="http://schema.org/Brand">
+      <meta itemprop="name" content="Captain Steel" />
+    </div>
+  </div>
+</main>

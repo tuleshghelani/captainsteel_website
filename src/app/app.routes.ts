@@ -52,5 +52,9 @@ export const routes: Routes = [
   {
     path: 'products/roofing-accessories',
     loadComponent: () => import('./pages/all-products/roofing-accessories/roofing-accessories.component').then(m => m.RoofingAccessoriesComponent)
+  },
+  {
+    path: 'clients',
+    loadComponent: () => import('./pages/clients/clients.component').then(m => m.ClientsComponent)
   }
 ];
