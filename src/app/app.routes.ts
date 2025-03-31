@@ -54,6 +54,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/all-products/roofing-accessories/roofing-accessories.component').then(m => m.RoofingAccessoriesComponent)
   },
   {
+    path: 'products/bamboo-profile',
+    loadComponent: () => import('./pages/all-products/bamboo-profile/bamboo-profile.component').then(m => m.BambooProfileComponent)
+  },
+  {
     path: 'clients',
     loadComponent: () => import('./pages/clients/clients.component').then(m => m.ClientsComponent)
   }

@@ -84,6 +84,13 @@ export class ProductsComponent implements OnInit {
         image: 'assets/products/crimping-and-accessories-2.jpg',
         link: '/products/roofing-accessories',
         aosDelay: 8000
+      },
+      {
+        title: 'Bamboo Profile',
+        description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
+        image: 'assets/products/BAMBOO_PROFILE/BAMBOO PROFILE SHEET.jpeg',
+        link: '/products/bamboo-profile',
+        aosDelay: 9000
       }
     ];
   }
