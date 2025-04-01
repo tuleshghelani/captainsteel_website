@@ -74,7 +74,7 @@ export class RoofingAccessoriesComponent implements OnInit {
       applications: 'Sheet attachment, component securing, and seam reinforcement'
     },
     {
-      name: 'Sealants & Tapes',
+      name: 'Adhesive',
       description: 'Weather-resistant sealing solutions for joints and penetrations',
       material: 'Butyl Rubber, Silicone, EPDM, or Specialty Polymers',
       applications: 'Seams, overlaps, penetrations, and flashing details'
@@ -97,22 +97,22 @@ export class RoofingAccessoriesComponent implements OnInit {
     this.titleService.setTitle('Premium Roofing Accessories | Complete Roofing Solutions | Captain Steel');
     
     this.meta.addTags([
-      { name: 'description', content: 'High-quality roofing accessories including flashing, fasteners, ridge caps, sealants, and ventilation components. Complete your roofing system with durable, weather-resistant accessories engineered for superior performance and longevity.' },
-      { name: 'keywords', content: 'roofing accessories, roof flashing, ridge caps, roof fasteners, roof sealants, roof ventilation, roofing components, metal roof accessories, roofing system parts, roofing hardware, roof trims, roof installation accessories' },
+      { name: 'description', content: 'High-quality roofing accessories including flashing, fasteners, ridge caps, adhesive, and ventilation components. Complete your roofing system with durable, weather-resistant accessories engineered for superior performance and longevity.' },
+      { name: 'keywords', content: 'roofing accessories, roof flashing, ridge caps, roof fasteners, roof adhesive, roof ventilation, roofing components, metal roof accessories, roofing system parts, roofing hardware, roof trims, roof installation accessories' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/roofing-accessories' },
       // Open Graph tags for social sharing
       { property: 'og:title', content: 'Premium Roofing Accessories | Complete Roofing Solutions' },
-      { property: 'og:description', content: 'High-quality roofing accessories including flashing, fasteners, ridge caps, sealants, and ventilation components. Complete your roofing system with durable, weather-resistant accessories.' },
+      { property: 'og:description', content: 'High-quality roofing accessories including flashing, fasteners, ridge caps, adhesive, and ventilation components. Complete your roofing system with durable, weather-resistant accessories.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/crimping-and-accessories-2.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/roofing-accessories' },
       { property: 'og:type', content: 'product' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Premium Roofing Accessories | Complete Roofing Solutions' },
-      { name: 'twitter:description', content: 'High-quality roofing accessories including flashing, fasteners, ridge caps, sealants, and ventilation components for all roofing applications.' },
+      { name: 'twitter:description', content: 'High-quality roofing accessories including flashing, fasteners, ridge caps, adhesive, and ventilation components for all roofing applications.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/crimping-and-accessories-2.jpg' }
     ]);
     
