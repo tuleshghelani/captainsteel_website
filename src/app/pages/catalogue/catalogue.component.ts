@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, inject, PLATFORM_ID } from '@angular/core';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import Aos from 'aos';
 
 @Component({
@@ -11,6 +11,7 @@ import Aos from 'aos';
   styleUrl: './catalogue.component.scss'
 })
 export class CatalogueComponent implements OnInit {
+  private platformId = inject(PLATFORM_ID);
   pdfSrc = 'assets/catalogue/catalogue.pdf';
   catalogueItems = [
     {
@@ -33,10 +34,12 @@ export class CatalogueComponent implements OnInit {
   @ViewChild('pdfViewer') pdfViewer!: ElementRef;
 
   ngOnInit() {
-    Aos.init({
-      duration: 1000,
-      once: true
-    });
+    if (isPlatformBrowser(this.platformId)) { 
+      Aos.init({
+        duration: 1000,
+        once: true
+      });
+    }
   }
 
   onPageChange(pageNumber: number) {

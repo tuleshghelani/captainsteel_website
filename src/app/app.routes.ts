@@ -58,6 +58,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/all-products/bamboo-profile/bamboo-profile.component').then(m => m.BambooProfileComponent)
   },
   {
+    path: 'products/gutter',
+    loadComponent: () => import('./pages/all-products/gutter/gutter.component').then(m => m.GutterComponent)
+  },
+  {
     path: 'clients',
     loadComponent: () => import('./pages/clients/clients.component').then(m => m.ClientsComponent)
   }

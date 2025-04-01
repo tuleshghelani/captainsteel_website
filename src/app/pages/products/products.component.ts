@@ -91,6 +91,13 @@ export class ProductsComponent implements OnInit {
         image: 'assets/products/BAMBOO_PROFILE/BAMBOO PROFILE SHEET.jpeg',
         link: '/products/bamboo-profile',
         aosDelay: 9000
+      },
+      {
+        title: 'Roofing Gutter',
+        description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
+        image: 'assets/products/HYBRIDE_GUTTER/GUTEER 1.jpeg',
+        link: '/products/gutter',
+        aosDelay: 10000
       }
     ];
   }
