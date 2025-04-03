@@ -32,12 +32,24 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/Airports_Authority_of_India_logo.png'
     },
     {
+      name: 'Aatomize Machine',
+      logoPath: 'assets/clients/aatomize-machine.png'
+    },
+    {
       name: 'Angel Pipe',
       logoPath: 'assets/clients/angel-pipe.png'
     },
     {
       name: 'Balaji Wafers',
       logoPath: 'assets/clients/balaji.svg'
+    },
+    {
+      name: 'Bhoomi Agro',
+      logoPath: 'assets/clients/bhoomi-agro.png'
+    },
+    {
+      name: 'Chehar Detergent',
+      logoPath: 'assets/clients/chehar-detergent.png'
     },
     {
       name: 'Davat Beverages',
@@ -50,6 +62,10 @@ export class ClientsComponent implements OnInit {
     {
       name: 'Everest Starch',
       logoPath: 'assets/clients/everest-starch.png'
+    },
+    {
+      name: 'Galaxy Technoforge',
+      logoPath: 'assets/clients/galaxy-technoforge.png'
     },
     {
       name: 'Giriraj Milk',
@@ -72,6 +88,10 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/Jyoti-CNC.jpeg'
     },
     {
+      name:'Kaneriya Oil Industries',
+      logoPath: 'assets/clients/kaneriya-oil-industries.png'
+    },
+    {
       name: 'KBZ Foods',
       logoPath: 'assets/clients/KBZ.jpg'
     },
@@ -86,6 +106,10 @@ export class ClientsComponent implements OnInit {
     {
       name: 'Meera Casting',
       logoPath: 'assets/clients/meera-casting.png'
+    },
+    {
+      name: 'Omni Tech',
+      logoPath: 'assets/clients/omni-tech.png'
     },
     {
       name: 'Orbit',
@@ -108,6 +132,14 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/ravi-techno-forge.png'
     },
     {
+      name: 'Rajan Techcast',
+      logoPath: 'assets/clients/rajan-techcast.png'
+    },
+    {
+      name: 'Satani Forge',
+      logoPath: 'assets/clients/SATANI-FORGE.png'
+    },
+    {
       name: 'Sanddy Electronics',
       logoPath: 'assets/clients/sanddy-electonics.png'
     },
@@ -124,9 +156,16 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/shailesh-forging.png'
     },
     {
-      name: 'Shaktiman Agro',
-      logoPath: 'assets/clients/shaktiman-agro.png',
-      isBlack: true
+      name: 'Samay Expeller',
+      logoPath: 'assets/clients/samay-expeller.webp'
+    },
+    {
+      name: 'Tirth Agro',
+      logoPath: 'assets/clients/shaktiman-agro.png'
+    },
+    {
+      name: 'Tilara Polyplast',
+      logoPath: 'assets/clients/tilara.png'
     },
     {
       name: 'Shilpan Cast',
@@ -165,6 +204,10 @@ export class ClientsComponent implements OnInit {
     {
       name: 'Vishwas Seed',
       logoPath: 'assets/clients/vishwas-seed.png'
+    },
+    {
+      name:'Vision Laminates',
+      logoPath: 'assets/clients/vision-laminates.jpeg'
     }
   ];
 
