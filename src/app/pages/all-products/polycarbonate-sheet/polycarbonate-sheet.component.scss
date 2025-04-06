@@ -175,6 +175,11 @@ section {
   padding: 100px 0;
   background-color: white;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   .overview-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -281,6 +286,11 @@ section {
 // Features Section
 .features-section {
     background-color: $neutral-lightest;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .features-grid {
       display: grid;
@@ -359,6 +369,11 @@ section {
 .specs-section {
   background-color: white;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   .specs-content {
     background-color: white;
     border-radius: 10px;
@@ -422,6 +437,11 @@ section {
 // Applications Section
 .applications-section {
   background-color: $neutral-lightest;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .applications-grid {
     display: grid;
@@ -492,6 +512,11 @@ section {
 // Benefits Section
 .benefits-section {
   background-color: white;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .benefits-grid {
     display: grid;
@@ -566,6 +591,11 @@ section {
 // Related Products Section
 .related-products-section {
   background-color: $neutral-lightest;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .section-header {
     text-align: center;

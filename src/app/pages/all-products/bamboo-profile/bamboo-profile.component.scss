@@ -341,6 +341,11 @@ section {
 // Product Overview Section
 .product-overview {
     background-color: white;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .overview-grid {
       display: grid;
@@ -448,6 +453,11 @@ section {
 // Features Section
 .features-section {
     background-color: $neutral-lightest;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .features-grid {
       display: grid;
@@ -525,6 +535,11 @@ section {
 // Applications Section
 .applications-section {
     background-color: $neutral-lightest;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .applications-grid {
       display: grid;
@@ -600,6 +615,11 @@ section {
 // Specifications Section
 .specs-section {
     background-color: white;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .specs-table-container {
       overflow-x: auto;
@@ -643,6 +663,11 @@ section {
 // Technical Specifications
 .specifications-section {
   background-color: #F8F9FA;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .specs-table {
     width: 100%;
@@ -692,6 +717,11 @@ section {
 // Product Gallery
 .gallery-section {
   background-color: white;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .gallery-container {
     margin-top: 40px;
@@ -764,6 +794,11 @@ section {
 // Installation Process
 .installation-section {
   background-color: #F8F9FA;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .installation-steps {
     display: grid;
@@ -847,6 +882,11 @@ section {
 // FAQ Section
 .faq-section {
   background-color: white;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .faq-container {
     max-width: 900px;
@@ -937,6 +977,11 @@ section {
 .related-products-section {
   background-color: #F8F9FA;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   .related-products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1021,6 +1066,11 @@ section {
     background: linear-gradient(to right, $primary, $primary-dark);
     color: white;
     text-align: center;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .cta-content {
       max-width: 800px;
@@ -1096,6 +1146,11 @@ section {
   background-color: #f9f9f9;
   position: relative;
   overflow: hidden;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   &::before {
     content: '';

@@ -34,6 +34,11 @@ section {
   position: relative;
   padding-bottom: 15px;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   &:after {
     content: '';
     position: absolute;
@@ -67,6 +72,11 @@ section {
   color: white;
   text-align: center;
   padding: 120px 20px;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .hero-content {
     max-width: 800px;
@@ -229,6 +239,11 @@ section {
 .product-overview {
   background-color: white;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   .overview-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -342,6 +357,11 @@ section {
 // Features Section
 .features-section {
     background-color: $neutral-lightest;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .features-grid {
       display: grid;
@@ -420,6 +440,11 @@ section {
 .specs-section {
   background-color: white;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   .specs-table-container {
     overflow-x: auto;
     margin-bottom: 20px;
@@ -467,6 +492,11 @@ section {
 // Applications Section
 .applications-section {
     background-color: $neutral-lightest;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .applications-grid {
       display: grid;
@@ -542,6 +572,11 @@ section {
 .benefits-section {
   background-color: white;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   .benefits-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -615,6 +650,11 @@ section {
 // FAQ Section
 .faq-section {
   background-color: $neutral-lightest;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .faq-container {
     max-width: 900px;
@@ -706,6 +746,11 @@ section {
     background: linear-gradient(to right, $primary, $primary-dark);
     color: white;
     text-align: center;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .cta-content {
       max-width: 800px;

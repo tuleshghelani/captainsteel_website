@@ -178,6 +178,11 @@ section {
 // Product Overview Section
 .product-overview {
     background-color: white;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .overview-grid {
       display: grid;
@@ -285,6 +290,11 @@ section {
 // Features Section
 .features-section {
     background-color: white;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .features-grid {
       display: grid;
@@ -362,6 +372,11 @@ section {
 // Specifications Section
 .specs-section {
     background-color: white;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .specs-table-container {
       overflow-x: auto;
@@ -404,6 +419,11 @@ section {
 // Products Section
 .products-section {
   background-color: $background-light;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .products-grid {
     display: grid;
@@ -490,6 +510,11 @@ section {
 .specifications-section {
   background-color: white;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   .specs-table-container {
     overflow-x: auto;
     margin-top: 30px;
@@ -552,6 +577,11 @@ section {
 // Installation Section
 .installation-section {
   background-color: $background-light;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .installation-steps {
     margin-top: 50px;
@@ -616,6 +646,11 @@ section {
 // FAQ Section
 .faq-section {
   background-color: white;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .faq-container {
     max-width: 900px;
@@ -712,6 +747,11 @@ section {
   color: white;
   text-align: center;
   
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
   .cta-content {
     max-width: 800px;
     margin: 0 auto;
@@ -785,6 +825,11 @@ section {
 // Applications Section
 .applications-section {
     background-color: $neutral-lightest;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .applications-grid {
       display: grid;
@@ -860,6 +905,11 @@ section {
 // Benefits Section
 .benefits-section {
     background-color: white;
+  
+    @media (max-width: 576px) {
+      padding: 5px 25px 5px 5px;
+      margin: 0 auto;
+    }
     
     .benefits-wrapper {
       display: grid;
@@ -1007,6 +1057,11 @@ html {
 .components-section {
   background-color: $neutral-lightest;
   padding: 80px 0;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
   
   .section-description {
     max-width: 800px;
