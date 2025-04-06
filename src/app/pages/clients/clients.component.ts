@@ -44,6 +44,10 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/balaji.svg'
     },
     {
+      name: 'Bediya Technocast',
+      logoPath: 'assets/clients/bediya-technocast.jpeg'
+    },
+    {
       name: 'Bhoomi Agro',
       logoPath: 'assets/clients/bhoomi-agro.png'
     },
@@ -62,6 +66,10 @@ export class ClientsComponent implements OnInit {
     {
       name: 'Everest Starch',
       logoPath: 'assets/clients/everest-starch.png'
+    },
+    {
+      name: 'Falcan Pump',
+      logoPath: 'assets/clients/falcan-pump.png'
     },
     {
       name: 'Galaxy Technoforge',
@@ -120,6 +128,10 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/pan-agri.jpg'
     },
     {
+      name: 'Pantex',
+      logoPath: 'assets/clients/pantex.png'
+    },
+    {
       name: 'Patel Brass',
       logoPath: 'assets/clients/patel-brass.png'
     },
@@ -134,6 +146,15 @@ export class ClientsComponent implements OnInit {
     {
       name: 'Rajan Techcast',
       logoPath: 'assets/clients/rajan-techcast.png'
+    },
+    {
+      name: 'Redifil',
+      logoPath: 'assets/clients/redifil.png'
+    },
+    {
+      name: 'Reliance',
+      logoPath: 'assets/clients/reliance.png',
+      isBlack: true
     },
     {
       name: 'Satani Forge',
@@ -158,6 +179,11 @@ export class ClientsComponent implements OnInit {
     {
       name: 'Samay Expeller',
       logoPath: 'assets/clients/samay-expeller.webp'
+    },
+    {
+      name: 'Sumangal Castings',
+      logoPath: 'assets/clients/sumangal-castings.png',
+      isBlack: true
     },
     {
       name: 'Tirth Agro',
@@ -202,12 +228,20 @@ export class ClientsComponent implements OnInit {
       isBlack: true
     },
     {
+      name:'Vanraj Foods',
+      logoPath: 'assets/clients/vanraj-food.jpeg'
+    },
+    {
       name: 'Vishwas Seed',
       logoPath: 'assets/clients/vishwas-seed.png'
     },
     {
       name:'Vision Laminates',
       logoPath: 'assets/clients/vision-laminates.jpeg'
+    },
+    {
+      name: 'VK Drinks',
+      logoPath: 'assets/clients/vk-drinks.png'
     }
   ];
 
