@@ -36,6 +36,10 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/aatomize-machine.png'
     },
     {
+      name: 'Ambuja Cement',
+      logoPath: 'assets/clients/ambuja-cement.jpg'
+    },
+    {
       name: 'Angel Pipe',
       logoPath: 'assets/clients/angel-pipe.png'
     },
@@ -60,6 +64,10 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/davatbeverages.png'
     },
     {
+      name: 'Dhs-Metco',
+      logoPath: 'assets/clients/dhs-metco.png'
+    },
+    {
       name: 'Doctor Pumps',
       logoPath: 'assets/clients/doctor-pumps.png'
     },
@@ -72,6 +80,10 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/falcan-pump.png'
     },
     {
+      name:'Flowtech Pump',
+      logoPath: 'assets/clients/flowtech-pump.png'
+    },
+    {
       name: 'Galaxy Technoforge',
       logoPath: 'assets/clients/galaxy-technoforge.png'
     },
@@ -80,16 +92,24 @@ export class ClientsComponent implements OnInit {
       logoPath: 'assets/clients/giriraj-milk.png'
     },
     {
-      name: 'Gopal Namkeen',
-      logoPath: 'assets/clients/gopal-namkeen.png'
+      name: 'Goldcoin',
+      logoPath: 'assets/clients/goldcoin.webp'
     },
     {
       name: 'Harmony Laminates',
       logoPath: 'assets/clients/harmony-laminates.png'
     },
     {
+      name: 'Hi-Bond Cement',
+      logoPath: 'assets/clients/hi-bond-cement.png'
+    },
+    {
       name: 'Indian Railway',
       logoPath: 'assets/clients/indian-railway.jpg'
+    },
+    {
+      name: 'Jupiter Machine',
+      logoPath: 'assets/clients/jupiter-machine.jpeg'
     },
     {
       name: 'Jyoti CNC',
@@ -226,6 +246,10 @@ export class ClientsComponent implements OnInit {
       name: 'Unique Forge',
       logoPath: 'assets/clients/unique-forge.webp',
       isBlack: true
+    },
+    {
+      name: 'Unity Cement',
+      logoPath: 'assets/clients/unity-cement.jpeg'
     },
     {
       name:'Vanraj Foods',
