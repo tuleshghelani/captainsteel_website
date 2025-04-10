@@ -118,44 +118,49 @@ export class BambooProfileComponent implements OnInit {
 
   galleryImages = [
     {
-      src: 'assets/products/BAMBOO_PROFILE/3 WAY RIDGE.jpeg',
+      src: 'assets/products/BAMBOO_PROFILE/UPVC 3 WAY RIDGE.png',
       alt: '3-Way Ridge for Bamboo Profile Sheets - Premium Natural Roofing Component',
       title: '3-Way Ridge'
     },
     {
-      src: 'assets/products/BAMBOO_PROFILE/4 WAY RIDGE.jpeg',
+      src: 'assets/products/BAMBOO_PROFILE/UPVC 4 WAY RIDGE.png',
       alt: '4-Way Ridge for Bamboo Profile Sheets - Advanced Natural Roofing Installation',
       title: '4-Way Ridge'
     },
     {
-      src: 'assets/products/BAMBOO_PROFILE/MAIN RIDGE CAP.jpeg',
+      src: 'assets/products/BAMBOO_PROFILE/UPVC MAIN RIDGE END CAP.png',
       alt: 'Main Ridge Cap for Bamboo Profile Roofing - Quality Roof Finishing Component',
       title: 'Main Ridge Cap'
     },
     {
-      src: 'assets/products/BAMBOO_PROFILE/PLAIN RIDGE.jpeg',
+      src: 'assets/products/BAMBOO_PROFILE/PLAIN RIDGE.png',
       alt: 'Plain Ridge for Bamboo Profile Sheets - Elegant Natural Roofing Solution',
       title: 'Plain Ridge'
     },
     {
-      src: 'assets/products/BAMBOO_PROFILE/SIDE RIDGE CAP.jpeg',
+      src: 'assets/products/BAMBOO_PROFILE/UPVC SIDE RIDGE.png',
       alt: 'Side Ridge Cap for Bamboo Profile Installation - Premium Roofing Accessory',
       title: 'Side Ridge Cap'
     },
     {
-      src: 'assets/products/BAMBOO_PROFILE/WhatsApp Image 2025-02-21 at 9.07.17 AM (1).jpeg',
+      src: 'assets/products/BAMBOO_PROFILE/BAMBOO-PROFILE.jpeg',
       alt: 'Bamboo Profile Roof Installation - Sustainable Commercial Building Solution',
       title: 'Commercial Installation'
     },
     {
-      src: 'assets/products/BAMBOO_PROFILE/WPC ZALAR.jpeg',
+      src: 'assets/products/BAMBOO_PROFILE/WPC ZALAR.png',
       alt: 'WPC Zalar with Bamboo Profile Roofing - Modern Eco-Friendly Building Material',
       title: 'WPC Zalar'
     },
     {
-      src: 'assets/products/BAMBOO_PROFILE/ZALAR.jpeg',
+      src: 'assets/products/BAMBOO_PROFILE/UPVC ZALAR.png',
       alt: 'Zalar Installation with Bamboo Profile Sheets - Premium Architectural Detail',
       title: 'Zalar Component'
+    },
+    {
+      src: 'assets/products/BAMBOO_PROFILE/UPVC SCREW CAP.png',
+      alt: 'Screw Cap for Bamboo Profile Roofing - Premium Roofing Accessory',
+      title: 'Screw Cap'
     }
   ];
 
@@ -178,14 +183,14 @@ export class BambooProfileComponent implements OnInit {
       // Open Graph tags for social sharing
       { property: 'og:title', content: 'Premium Bamboo Profile Sheets | Eco-Friendly Sustainable Roofing' },
       { property: 'og:description', content: 'Premium bamboo profile sheets offering sustainable, eco-friendly roofing with superior thermal insulation and natural aesthetics for all building types.' },
-      { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/BAMBOO PROFILE SHEET.jpeg' },
+      { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/bamboo-profile' },
       { property: 'og:type', content: 'product' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Premium Bamboo Profile Sheets | Eco-Friendly Sustainable Roofing' },
       { name: 'twitter:description', content: 'Premium bamboo profile sheets offering sustainable, eco-friendly roofing with superior thermal insulation.' },
-      { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/BAMBOO PROFILE SHEET.jpeg' }
+      { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png' }
     ]);
     
     // Only run browser-specific code if we are in a browser environment

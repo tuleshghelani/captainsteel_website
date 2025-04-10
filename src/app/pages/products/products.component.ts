@@ -88,7 +88,7 @@ export class ProductsComponent implements OnInit {
       {
         title: 'Bamboo Profile',
         description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
-        image: 'assets/products/BAMBOO_PROFILE/BAMBOO PROFILE SHEET.jpeg',
+        image: 'assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png',
         link: '/products/bamboo-profile',
         aosDelay: 9000
       },
