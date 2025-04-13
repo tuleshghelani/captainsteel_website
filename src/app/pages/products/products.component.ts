@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router'; 
 import { CommonModule } from '@angular/common';
-import { Router } from 'express';
+import { Title, Meta } from '@angular/platform-browser';
 import Aos from 'aos';
 
 interface Product {
@@ -22,7 +22,8 @@ interface Product {
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
 
-  // constructor(private router: Router) {}
+  constructor(private titleService: Title, private meta: Meta) {}
+
   ngOnInit() {
     // Check if running in the browser
     if (typeof window !== 'undefined') {
@@ -35,7 +36,7 @@ export class ProductsComponent implements OnInit {
       {
         title: 'Corrugated Roofing Sheets',
         description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
-        image: 'assets/products/corrugated-roofing-sheets.jpg',
+        image: 'assets/products/corrugated-roofing-sheets-4.jpg',
         link: '/products/corrugated-roofing-sheets',
         aosDelay: 100
       },
@@ -103,5 +104,16 @@ export class ProductsComponent implements OnInit {
         aosDelay: 10000
       }
     ];
+
+    // Set SEO meta tags
+    this.titleService.setTitle('Our Products | Captain Steel');
+    this.meta.addTags([
+      { name: 'description', content: 'Explore our range of premium steel roofing solutions including corrugated sheets, trapezoidal sheets, air ventilators, and more.' },
+      { name: 'keywords', content: 'steel roofing, corrugated sheets, trapezoidal sheets, air ventilators, eco-friendly roofing, bamboo profile sheets' },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'author', content: 'Captain Steel Roof Solutions' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'canonical', content: 'https://captainsteelroofsolution.com/products' }
+    ]);
   }
 }
