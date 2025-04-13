@@ -24,10 +24,13 @@ export class ProductsComponent implements OnInit {
 
   // constructor(private router: Router) {}
   ngOnInit() {
-    Aos.init({
-      duration: 1000,
-      once: true
-    });
+    // Check if running in the browser
+    if (typeof window !== 'undefined') {
+      Aos.init({
+        duration: 1000,
+        once: true
+      });
+    }
     this.products = [
       {
         title: 'Corrugated Roofing Sheets',
