@@ -106,14 +106,23 @@ export class ProductsComponent implements OnInit {
     ];
 
     // Set SEO meta tags
-    this.titleService.setTitle('Our Products | Captain Steel');
+    this.titleService.setTitle('Premium Steel Roofing Solutions in Rajkot | Captain Steel');
     this.meta.addTags([
-      { name: 'description', content: 'Explore our range of premium steel roofing solutions including corrugated sheets, trapezoidal sheets, air ventilators, and more.' },
-      { name: 'keywords', content: 'steel roofing, corrugated sheets, trapezoidal sheets, air ventilators, eco-friendly roofing, bamboo profile sheets' },
+      { name: 'description', content: 'Premium steel roofing solutions in Rajkot, Gujarat. We offer corrugated sheets, trapezoidal sheets, air ventilators, insulated panels, polycarbonate sheets, and more with expert installation services.' },
+      { name: 'keywords', content: 'steel roofing Rajkot, roofing sheets Rajkot, corrugated sheets Rajkot, trapezoidal sheets Rajkot, air ventilators Rajkot, industrial roofing Rajkot, insulated metal sheets Rajkot, polycarbonate sheets Gujarat, crimping solutions Rajkot, roofing accessories Gujarat, bamboo profile sheets Rajkot, gutter systems Rajkot, steel roof manufacturers Gujarat, Captain Steel Rajkot, best roofing company Rajkot, commercial roofing Gujarat, industrial ventilation Rajkot, factory roofing solutions Gujarat' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'canonical', content: 'https://captainsteelroofsolution.com/products' }
+      { name: 'canonical', content: 'https://captainsteelroofsolution.com/products' },
+      // Open Graph tags for social sharing
+      { property: 'og:title', content: 'Premium Steel Roofing Solutions in Rajkot | Captain Steel' },
+      { property: 'og:description', content: 'Premium steel roofing solutions in Rajkot, Gujarat including corrugated sheets, trapezoidal sheets, air ventilators, insulated panels, and more.' },
+      { property: 'og:url', content: 'https://captainsteelroofsolution.com/products' },
+      { property: 'og:type', content: 'website' },
+      // Twitter Card tags
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Premium Steel Roofing Solutions in Rajkot | Captain Steel' },
+      { name: 'twitter:description', content: 'Premium steel roofing solutions in Rajkot, Gujarat including corrugated sheets, trapezoidal sheets, air ventilators, insulated panels, and more.' }
     ]);
   }
 }

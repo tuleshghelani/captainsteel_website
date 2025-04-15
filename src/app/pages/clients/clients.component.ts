@@ -304,13 +304,13 @@ export class ClientsComponent implements OnInit {
   private setupSEO(): void {
     const description = 'Discover Captain Steel\'s portfolio of satisfied clients. Leading companies across India trust our premium steel roofing solutions for their commercial and industrial facilities.';
 
-    this.title.setTitle('Our Valued Clients | Captain Steel Premium Roofing Solutions');
+    this.title.setTitle('Our Valued Clients | Captain Steel Premium Roofing Solutions, Rajkot');
     
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ name: 'keywords', content: 'steel roofing clients, Captain Steel clients, premium roofing clients, industrial roofing partners, commercial roofing clients' });
     
     // Open Graph tags
-    this.meta.updateTag({ property: 'og:title', content: 'Our Valued Clients | Captain Steel Premium Roofing Solutions' });
+    this.meta.updateTag({ property: 'og:title', content: 'Our Valued Clients | Captain Steel Premium Roofing Solutions, Rajkot' });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:image', content: 'assets/clients/clients-showcase.jpg' });
     this.meta.updateTag({ property: 'og:url', content: 'https://captainsteelroofsolution.com/clients' });
@@ -318,7 +318,7 @@ export class ClientsComponent implements OnInit {
 
     // Twitter Card tags
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: 'Our Valued Clients | Captain Steel Premium Roofing Solutions' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Our Valued Clients | Captain Steel Premium Roofing Solutions, Rajkot' });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: 'assets/clients/clients-showcase.jpg' });
   }

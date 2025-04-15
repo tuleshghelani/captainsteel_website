@@ -181,13 +181,13 @@ export class HomeComponent implements OnInit {
   ];
 
   private setupSEO() {
-    const description = `Captain Steel - Premium Steel Roofing Solutions in Rajkot with ${this.yearsOfExperience}+ years of excellence. Authorized dealer of JSW, Tata BlueScope Steel, AM NS India. Expert steel roof installation, steel roofing sheets, and nationwide delivery from Rajkot, Gujarat.`;
+    const description = `Captain Steel - Premium Steel Roofing Solutions in Rajkot with ${this.yearsOfExperience}+ years of excellence. Authorized dealer of JSW, Tata BlueScope Steel, AM NS India, Tilara polyplast. Expert steel roof installation, steel roofing sheets, Captain steel, Rajkot, Gujarat.`;
 
     this.title.setTitle('Captain Steel - Premium Steel Roofing Sheets in Rajkot | Best Steel Roof Manufacturer');
     
     // Meta tags for SEO
     this.meta.updateTag({ name: 'description', content: description });
-    this.meta.updateTag({ name: 'keywords', content: 'steel roofing Rajkot, roofing sheets Rajkot, steel roof, corrugated sheets, trapezoidal sheets, industrial roofing Rajkot, commercial roofing, JSW steel, Tata BlueScope, steel roof installation' });
+    this.meta.updateTag({ name: 'keywords', content: 'steel roofing Rajkot, roofing sheets Rajkot, steel roof, corrugated sheets, trapezoidal sheets, industrial roofing Rajkot, commercial roofing, JSW steel, Tata BlueScope, steel roof installation, Captain steel, Rajkot' });
     this.meta.updateTag({ name: 'robots', content: 'index, follow' });
     this.meta.updateTag({ name: 'author', content: 'Captain Steel' });
 

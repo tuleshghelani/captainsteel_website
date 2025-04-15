@@ -31,15 +31,66 @@ export class ContactUsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Set SEO metadata
-    this.titleService.setTitle('Contact Captain Steel | Premium Roofing Solutions');
-    this.metaService.updateTag({ name: 'description', content: 'Contact Captain Steel for premium steel roofing solutions, sheets, and accessories. Visit our factory in pipaliya or office in Rajkot, Gujarat. Get a free quote today!' });
-    this.metaService.updateTag({ name: 'keywords', content: 'Captain Steel contact, roofing solutions, steel sheets, steel roofing, Rajkot, Gujarat, industrial roofing' });
-    this.metaService.updateTag({ property: 'og:title', content: 'Contact Captain Steel | Premium Roofing Solutions' });
-    this.metaService.updateTag({ property: 'og:description', content: 'Contact Captain Steel for premium steel roofing solutions, sheets, and accessories. Visit our factory in pipaliya or office in Rajkot, Gujarat.' });
-    this.metaService.updateTag({ property: 'og:url', content: 'https://captainsteelroofsolution.com/contact-us' });
-    this.metaService.updateTag({ property: 'og:type', content: 'website' });
-    this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    // Set enhanced SEO metadata
+    this.titleService.setTitle('Contact Captain Steel | Premium Roofing Solutions in Rajkot, Gujarat');
+    
+    this.metaService.updateTag({ 
+      name: 'description', 
+      content: 'Contact Captain Steel - Rajkot\'s leading steel roofing manufacturer. Visit our factory in Sadak Pipliya or office in Rajkot, Gujarat. Get quotes for corrugated sheets, trapezoidal sheets, air ventilators, and more. Call +91 98791 09091 today!' 
+    });
+    
+    this.metaService.updateTag({ 
+      name: 'keywords', 
+      content: 'Captain Steel contact, steel roofing Rajkot, roofing manufacturer Gujarat, corrugated sheets Rajkot, trapezoidal sheets Gujarat, air ventilators Rajkot, industrial roofing Rajkot, contact roofing company Rajkot, steel roofing quotes Rajkot, best roofing solutions Gujarat' 
+    });
+    
+    // Open Graph tags for better social sharing
+    this.metaService.updateTag({ 
+      property: 'og:title', 
+      content: 'Contact Captain Steel | Premium Roofing Solutions in Rajkot, Gujarat' 
+    });
+    
+    this.metaService.updateTag({ 
+      property: 'og:description', 
+      content: 'Contact Rajkot\'s premier steel roofing manufacturer for industrial and commercial roofing solutions. Visit our factory or get a free quote today!' 
+    });
+    
+    this.metaService.updateTag({ 
+      property: 'og:url', 
+      content: 'https://captainsteelroofsolution.com/contact-us' 
+    });
+    
+    this.metaService.updateTag({ 
+      property: 'og:type', 
+      content: 'website' 
+    });
+    
+    this.metaService.updateTag({ 
+      property: 'og:image', 
+      content: 'https://captainsteelroofsolution.com/assets/logo/logo.png' 
+    });
+    
+    // Twitter Card tags
+    this.metaService.updateTag({ 
+      name: 'twitter:card', 
+      content: 'summary_large_image' 
+    });
+    
+    this.metaService.updateTag({ 
+      name: 'twitter:title', 
+      content: 'Contact Captain Steel | Premium Roofing Solutions in Rajkot' 
+    });
+    
+    this.metaService.updateTag({ 
+      name: 'twitter:description', 
+      content: 'Contact Rajkot\'s premier steel roofing manufacturer. Get quotes for corrugated sheets, trapezoidal sheets, and more!' 
+    });
+    
+    // Geo tags for local SEO
+    this.metaService.updateTag({ name: 'geo.region', content: 'IN-GJ' });
+    this.metaService.updateTag({ name: 'geo.placename', content: 'Rajkot' });
+    this.metaService.updateTag({ name: 'geo.position', content: '22.089419;70.782472' });
+    this.metaService.updateTag({ name: 'ICBM', content: '22.089419, 70.782472' });
 
     // Initialize AOS animation library if needed
     if (typeof Aos !== 'undefined') {

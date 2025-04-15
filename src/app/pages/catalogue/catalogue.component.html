@@ -1,12 +1,12 @@
-<div class="catalogue-wrapper">
+<div class="catalogue-wrapper" itemscope itemtype="http://schema.org/WebPage">
     <!-- Hero Section -->
     <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="hero-content">
-        <h1 class="section-title" data-aos="fade-up">Product Catalogues</h1>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Explore our comprehensive range of high-quality steel products and solutions
+        <h1 class="section-title" data-aos="fade-up"><span itemprop="name">Premium Steel Roofing <strong>Product Catalogues</strong> | <strong>Captain Steel Rajkot</strong></span></h1>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100" itemprop="description">
+            Explore our comprehensive range of <strong>high-quality steel roofing products</strong> and solutions from <strong>Rajkot's leading manufacturer</strong>
         </p>
         <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
             <a href="/">Home</a>
@@ -20,10 +20,11 @@
   <!-- Catalogue Information -->
   <section class="catalogue-info">
     <div class="container">
+      <h2 class="section-title" data-aos="fade-up">What's Inside Our <strong>Steel Roofing Catalogue</strong></h2>
       <div class="info-grid">
-        <div class="info-card" *ngFor="let item of catalogueItems" data-aos="fade-up" [attr.data-aos-delay]="item.aosDelay">
+        <div class="info-card" *ngFor="let item of catalogueItems" data-aos="fade-up" [attr.data-aos-delay]="item.aosDelay" itemprop="mainContentOfPage">
           <div class="card-content">
-            <h3>{{item.title}}</h3>
+            <h3><strong>{{item.title}}</strong></h3>
             <p>{{item.description}}</p>
           </div>
         </div>
@@ -34,9 +35,9 @@
   <!-- PDF Viewer Section -->
   <section class="pdf-section">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">View Our Catalogue</h2>
+      <h2 class="section-title" data-aos="fade-up">View Our <strong>Steel Roofing Catalogue</strong> from <strong>Rajkot</strong></h2>
       <p class="section-description" data-aos="fade-up" data-aos-delay="100">
-        Browse through our detailed product catalogue to find specifications, measurements, and other technical details
+        Browse through our detailed <strong>product catalogue</strong> to find specifications, measurements, and other technical details for all our <strong>premium roofing solutions</strong>
       </p>
       
       <div class="pdf-container" data-aos="fade-up" data-aos-delay="200">
@@ -68,7 +69,8 @@
       </div>
       
       <div class="download-cta" data-aos="fade-up" data-aos-delay="300">
-        <p>Need offline access? Download our catalogue for future reference</p>
+        <h3>Download Our <strong>Steel Roofing Catalogue PDF</strong></h3>
+        <p>Need offline access? Download our complete <strong>roofing products catalogue</strong> for future reference</p>
         <a href="assets/catalogue/catalogue.pdf" download class="download-btn">Download PDF</a>
       </div>
     </div>
@@ -78,10 +80,39 @@
   <section class="cta-section">
     <div class="container">
       <div class="cta-content" data-aos="fade-up">
-        <h2>Need Custom Solutions?</h2>
-        <p>Our team of experts is ready to help you find the perfect steel solution for your project</p>
+        <h2>Need Custom <strong>Steel Roofing Solutions</strong> in <strong>Rajkot</strong>?</h2>
+        <p>Our team of <strong>roofing experts</strong> at Captain Steel is ready to help you find the perfect steel solution for your project</p>
         <a href="/contact" class="cta-btn">Contact Us</a>
       </div>
     </div>
   </section>
+
+  <!-- Hidden SEO content with structured data -->
+  <div style="display:none;" itemscope itemtype="http://schema.org/Product">
+    <meta itemprop="name" content="Captain Steel Roofing Product Catalogue" />
+    <meta itemprop="description" content="Comprehensive product catalogue featuring premium steel roofing sheets, ventilators, accessories and technical specifications from Rajkot's leading manufacturer." />
+    <meta itemprop="image" content="https://captainsteelroofsolution.com/assets/catalogue/catalogue-cover.jpg" />
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+      <meta itemprop="priceCurrency" content="INR" />
+      <meta itemprop="availability" content="http://schema.org/InStock" />
+    </div>
+    <div itemprop="brand" itemscope itemtype="http://schema.org/Brand">
+      <meta itemprop="name" content="Captain Steel" />
+    </div>
+  </div>
+  
+  <div style="display:none;" itemscope itemtype="http://schema.org/LocalBusiness">
+    <meta itemprop="name" content="Captain Steel Roof Solutions" />
+    <meta itemprop="image" content="https://captainsteelroofsolution.com/assets/logo/logo.png" />
+    <meta itemprop="telephone" content="+919879109091" />
+    <meta itemprop="email" content="info@captainsteelroofsolution.com" />
+    <meta itemprop="url" content="https://captainsteelroofsolution.com" />
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <meta itemprop="streetAddress" content="Sadak Pipliya, National Highway, Ta. Gondal" />
+      <meta itemprop="addressLocality" content="Rajkot" />
+      <meta itemprop="addressRegion" content="Gujarat" />
+      <meta itemprop="postalCode" content="360110" />
+      <meta itemprop="addressCountry" content="IN" />
+    </div>
+  </div>
 </div>
