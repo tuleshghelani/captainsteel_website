@@ -35,6 +35,7 @@ interface Feature {
 })
 export class HomeComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
+  allProducts: Product[] = [];
   
   currentSlide = 0;
   slides = [0, 1, 2, 3, 4]; // Array for slide indicators
@@ -44,7 +45,79 @@ export class HomeComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private meta: Meta,
     private title: Title
-  ) {
+  ) {  
+    this.allProducts = [
+      {
+        title: 'Corrugated Roofing Sheets',
+        description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
+        image: 'assets/products/corrugated-roofing-sheets-4.jpg',
+        link: '/products/corrugated-roofing-sheets',
+        aosDelay: 100
+      },
+      {
+        title: 'Trapezoidal Profile Sheets',
+        description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
+        image: 'assets/products/trapezoidal-profile-sheets.jpg',
+        link: '/products/trapezoidal-profile-sheets',
+        aosDelay: 200
+      },
+      {
+        title: 'Air Ventilator',
+        description: 'Efficient air ventilators for improved airflow and ventilation.',
+        image: 'assets/products/air-ventilator.jpeg',
+        link: '/products/air-ventilator',
+        aosDelay: 300
+      },
+      {
+        title: 'Insulated Metal Sheets',
+        description: 'Insulated sheets providing excellent thermal performance.',
+        image: 'assets/products/insulated-metal-roofing-sheets.jpg',
+        link: '/products/insulated-metal-sheets',
+        aosDelay: 400
+      },
+      {
+        title: 'Crimping',
+        description: 'High-quality crimping solutions for various applications.',
+        image: 'assets/products/crimping-and-accessories.jpg',
+        link: '/products/crimping',
+        aosDelay: 5000
+      },
+      {
+        title: 'Polycarbonate Sheet',
+        description: 'Durable polycarbonate sheets for versatile applications.',
+        image: 'assets/products/polycarbonate-sheets-2.jpg',
+        link: '/products/polycarbonate-sheet',
+        aosDelay: 6000
+      },
+      {
+        title: 'Polycarbonate Multiwall',
+        description: 'Multiwall polycarbonate sheets for enhanced insulation.',
+        image: 'assets/products/polycarbonate-sheets.jpg',
+        link: '/products/polycarbonate-sheet',
+        aosDelay: 7000
+      },
+      {
+        title: 'Roofing Accessories',
+        description: 'A range of accessories to complement our roofing solutions.',
+        image: 'assets/products/crimping-and-accessories-2.jpg',
+        link: '/products/roofing-accessories',
+        aosDelay: 8000
+      },
+      {
+        title: 'Bamboo Profile',
+        description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
+        image: 'assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png',
+        link: '/products/bamboo-profile',
+        aosDelay: 9000
+      },
+      {
+        title: 'Roofing Gutter',
+        description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
+        image: 'assets/products/HYBRIDE_GUTTER/GUTEER 1.jpeg',
+        link: '/products/gutter',
+        aosDelay: 10000
+      }
+    ];
     this.setupSEO();
     this.setupStructuredData();
   }
@@ -183,16 +256,16 @@ export class HomeComponent implements OnInit {
   private setupSEO() {
     const description = `Captain Steel - Premium Steel Roofing Solutions in Rajkot with ${this.yearsOfExperience}+ years of excellence. Authorized dealer of JSW, Tata BlueScope Steel, AM NS India, Tilara polyplast. Expert steel roof installation, steel roofing sheets, Captain steel, Rajkot, Gujarat.`;
 
-    this.title.setTitle('Captain Steel - Premium Steel Roofing Sheets in Rajkot | Best Steel Roof Manufacturer');
+    this.title.setTitle('Captain Steel - Steel Roofing Sheets in Rajkot | Best Steel Roof Manufacturer & Supplier');
     
     // Meta tags for SEO
     this.meta.updateTag({ name: 'description', content: description });
-    this.meta.updateTag({ name: 'keywords', content: 'steel roofing Rajkot, roofing sheets Rajkot, steel roof, corrugated sheets, trapezoidal sheets, industrial roofing Rajkot, commercial roofing, JSW steel, Tata BlueScope, steel roof installation, Captain steel, Rajkot' });
+    this.meta.updateTag({ name: 'keywords', content: 'steel roofing in rajkot, roofing sheets in rajkot, steel roof in rajkot, corrugated sheets in rajkot, trapezoidal sheets in rajkot, industrial roofing in rajkot, commercial roofing in rajkot, JSW steel in rajkot, Tata BlueScope in rajkot, steel roof installation in rajkot, Captain steel in rajkot' });
     this.meta.updateTag({ name: 'robots', content: 'index, follow' });
     this.meta.updateTag({ name: 'author', content: 'Captain Steel' });
 
     // Open Graph tags
-    this.meta.updateTag({ property: 'og:title', content: 'Captain Steel - Premium Steel Roofing Sheets in Rajkot' });
+    this.meta.updateTag({ property: 'og:title', content: 'Captain Steel - Steel Roofing Sheets in Rajkot' });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:image', content: 'assets/home/company.jpg' });
     this.meta.updateTag({ property: 'og:url', content: 'https://captainsteelroofsolution.com' });
@@ -200,7 +273,7 @@ export class HomeComponent implements OnInit {
 
     // Twitter Card tags
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Premium Steel Roofing Sheets in Rajkot' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Steel Roofing Sheets in Rajkot' });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: 'assets/home/company.jpg' });
 
@@ -208,13 +281,13 @@ export class HomeComponent implements OnInit {
     this.meta.updateTag({ name: 'geo.region', content: 'IN-GJ' });
     this.meta.updateTag({ name: 'geo.placename', content: 'Rajkot' });
   }
-
+  
   private setupStructuredData() {
     const structuredData = {
       '@context': 'http://schema.org',
       '@type': 'Organization',
       name: 'Captain Steel',
-      description: 'Premium Steel Roofing Solutions Provider',
+      description: 'Steel Roofing Sheets Manufacturer & Supplier, Steel Roofing Sheets in Rajkot, Gujarat',
       url: 'https://captainsteelroofsolution.com',
       logo: 'assets/logo.png',
       foundingDate: '2020',
@@ -234,7 +307,7 @@ export class HomeComponent implements OnInit {
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Steel Roofing Products',
-        itemListElement: this.products.map(product => ({
+        itemListElement: this.allProducts.map(product => ({
           '@type': 'Offer',
           name: product.title,
           description: product.description,

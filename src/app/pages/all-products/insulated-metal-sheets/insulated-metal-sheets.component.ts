@@ -21,6 +21,14 @@ interface Specification {
   colors: string;
 }
 
+interface Product {
+  title: string;
+  description: string;
+  image: string;
+  price?: string;
+  category: string;
+}
+
 @Component({
   selector: 'app-insulated-metal-sheets',
   standalone: true,
@@ -83,25 +91,25 @@ export class InsulatedMetalSheetsComponent implements OnInit {
 
   ngOnInit() {
     // Set SEO meta tags
-    this.titleService.setTitle('Premium Insulated Metal Sheets | Energy Efficient Building Solutions | Captain Steel');
+    this.titleService.setTitle('Insulated Metal Sheets Manufacturers & Suppliers | Captain Steel, Rajkot');
     
     this.meta.addTags([
-      { name: 'description', content: 'Premium insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Perfect for commercial, industrial, and cold storage facilities with excellent R-value and moisture resistance.' },
+      { name: 'description', content: 'Industrial insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Perfect for commercial, industrial, and cold storage facilities with excellent R-value and moisture resistance.' },
       { name: 'keywords', content: 'insulated metal sheets, insulated panels, thermal insulation, energy efficient roofing, climate controlled buildings, insulated steel sheets, cold storage insulation, insulated roof panels, insulated wall panels, metal sandwich panels' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/insulated-sheets' },
       // Open Graph tags for social sharing
-      { property: 'og:title', content: 'Premium Insulated Metal Sheets | Energy Efficient Building Solutions' },
-      { property: 'og:description', content: 'Premium insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Ideal for commercial, industrial, and cold storage facilities.' },
+      { property: 'og:title', content: 'Insulated Metal Sheets Manufacturers & Suppliers | Captain Steel, Rajkot' },
+      { property: 'og:description', content: 'Industrial insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Ideal for commercial, industrial, and cold storage facilities.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/insulated-sheets' },
       { property: 'og:type', content: 'product' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Premium Insulated Metal Sheets | Energy Efficient Building Solutions' },
-      { name: 'twitter:description', content: 'Premium insulated metal sheets offering superior thermal efficiency, energy savings, and climate control for all building applications.' },
+      { name: 'twitter:title', content: 'Insulated Metal Sheets Manufacturers & Suppliers | Captain Steel, Rajkot' },
+      { name: 'twitter:description', content: 'Industrial insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Ideal for commercial, industrial, and cold storage facilities.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' }
     ]);
     
