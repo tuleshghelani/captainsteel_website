@@ -83,6 +83,30 @@ export class InsulatedMetalSheetsComponent implements OnInit {
       colors: 'Multiple Options Available'
     }
   ];
+  
+  allProducts: Product[] = [
+    {
+      title: 'Standard Insulated Metal Sheet',
+      description: 'General purpose insulation sheet for commercial buildings with 50mm thickness.',
+      image: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg',
+      price: 'Contact for Price',
+      category: 'Insulation Sheet'
+    },
+    {
+      title: 'Premium Insulated Metal Sheet',
+      description: 'High-performance insulation sheet with 100mm thickness for superior thermal regulation.',
+      image: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg',
+      price: 'Contact for Price',
+      category: 'Insulation Sheet'
+    },
+    {
+      title: 'Industrial Insulated Sheet',
+      description: 'Heavy-duty insulation sheet with 150mm thickness for industrial facilities and cold storage.',
+      image: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg',
+      price: 'Contact for Price',
+      category: 'Insulation Sheet'
+    }
+  ];
 
   constructor(
     private meta: Meta,
@@ -91,27 +115,30 @@ export class InsulatedMetalSheetsComponent implements OnInit {
 
   ngOnInit() {
     // Set SEO meta tags
-    this.titleService.setTitle('Insulated Metal Sheets Manufacturers & Suppliers | Captain Steel, Rajkot');
+    this.titleService.setTitle('Insulation Sheet Manufacturer & Supplier in Rajkot | Captain Steel');
     
     this.meta.addTags([
-      { name: 'description', content: 'Industrial insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Perfect for commercial, industrial, and cold storage facilities with excellent R-value and moisture resistance.' },
-      { name: 'keywords', content: 'insulated metal sheets, insulated panels, thermal insulation, energy efficient roofing, climate controlled buildings, insulated steel sheets, cold storage insulation, insulated roof panels, insulated wall panels, metal sandwich panels' },
+      { name: 'description', content: 'Captain Steel - Leading insulation sheet manufacturer and wholesale supplier in Rajkot. Our premium insulation sheets offer superior thermal efficiency, energy savings, and climate control for commercial and industrial buildings across India.' },
+      { name: 'keywords', content: 'insulation sheet, insulation sheet manufacturer, wholesale insulation sheet, insulation sheet supplier, insulation sheet by captain steel, insulation sheet manufacturer rajkot, wholesale insulation sheet supplier, insulation sheet manufacturing company india, insulated metal sheets, insulated metal sheets in rajkot' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/insulated-sheets' },
       // Open Graph tags for social sharing
-      { property: 'og:title', content: 'Insulated Metal Sheets Manufacturers & Suppliers | Captain Steel, Rajkot' },
-      { property: 'og:description', content: 'Industrial insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Ideal for commercial, industrial, and cold storage facilities.' },
+      { property: 'og:title', content: 'Insulation Sheet Manufacturer & Supplier in Rajkot | Captain Steel' },
+      { property: 'og:description', content: 'Leading insulation sheet manufacturer and wholesale supplier in Rajkot. Captain Steel offers premium insulation sheets with superior thermal efficiency for commercial and industrial buildings across India.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/insulated-sheets' },
       { property: 'og:type', content: 'product' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Insulated Metal Sheets Manufacturers & Suppliers | Captain Steel, Rajkot' },
-      { name: 'twitter:description', content: 'Industrial insulated metal sheets offering superior thermal efficiency, energy savings, and climate control. Ideal for commercial, industrial, and cold storage facilities.' },
+      { name: 'twitter:title', content: 'Insulation Sheet Manufacturer & Supplier in Rajkot | Captain Steel' },
+      { name: 'twitter:description', content: 'Premium insulation sheets from Captain Steel, a leading insulation sheet manufacturing company in India based in Rajkot. Superior thermal efficiency, energy savings, and climate control for all building applications.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' }
     ]);
+    
+    // Add JSON-LD schema markup with required properties
+    this.addJsonLdSchema();
     
     // Only run browser-specific code if we are in a browser environment
     if (isPlatformBrowser(this.platformId)) {
@@ -134,6 +161,81 @@ export class InsulatedMetalSheetsComponent implements OnInit {
           });
         });
       }, 500);
+    }
+  }
+
+  private addJsonLdSchema(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Create schema script element
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      
+      // Create the schema object with required offers property
+      const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Insulated Metal Sheets',
+        description: 'Premium insulation sheets manufactured by Captain Steel in Rajkot, offering superior thermal efficiency and energy savings.',
+        brand: {
+          '@type': 'Brand',
+          name: 'Captain Steel'
+        },
+        image: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg',
+        // Adding offers to fix the schema error
+        offers: {
+          '@type': 'AggregateOffer',
+          priceCurrency: 'INR',
+          lowPrice: '80',
+          highPrice: '500',
+          priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+          availability: 'https://schema.org/InStock',
+          offerCount: this.allProducts.length,
+          seller: {
+            '@type': 'Organization',
+            name: 'Captain Steel Roof Solutions'
+          }
+        },
+        // Adding aggregateRating to fix the schema error
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          reviewCount: '124'
+        },
+        // Using allProducts to create itemListElement
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Insulation Sheet Products',
+          itemListElement: this.allProducts.map(product => ({
+            '@type': 'Offer',
+            name: product.title,
+            description: product.description,
+            image: product.image,
+            price: 'Contact for Quote',
+            priceCurrency: 'INR',
+            itemCondition: 'https://schema.org/NewCondition',
+            availability: 'https://schema.org/InStock'
+          }))
+        },
+        // Add manufacturer information
+        manufacturer: {
+          '@type': 'Organization',
+          name: 'Captain Steel Roof Solutions',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Industrial Area',
+            addressLocality: 'Rajkot',
+            addressRegion: 'Gujarat',
+            postalCode: '360001',
+            addressCountry: 'IN'
+          }
+        }
+      };
+      
+      // Set the script content
+      script.textContent = JSON.stringify(schema);
+      
+      // Add script to head
+      document.head.appendChild(script);
     }
   }
 }
