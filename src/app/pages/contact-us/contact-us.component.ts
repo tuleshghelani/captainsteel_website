@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
-import Aos from 'aos';
 
 @Component({
   selector: 'app-contact-us',
@@ -93,10 +92,13 @@ export class ContactUsComponent implements OnInit {
     this.metaService.updateTag({ name: 'ICBM', content: '22.089419, 70.782472' });
 
     // Initialize AOS animation library if needed
-    if (typeof Aos !== 'undefined') {
-      Aos.init({
-        duration: 800,
-        once: true
+    if (typeof window !== 'undefined') {
+      // Only initialize AOS in browser environment
+      import('aos').then(AosModule => {
+        AosModule.default.init({
+          duration: 800,
+          once: true
+        });
       });
     }
   }
