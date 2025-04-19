@@ -123,12 +123,12 @@ export class InsulatedMetalSheetsComponent implements OnInit {
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/insulated-sheets' },
+      { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/insulated-metal-sheets' },
       // Open Graph tags for social sharing
       { property: 'og:title', content: 'Insulation Sheet Manufacturer & Supplier in Rajkot | Captain Steel' },
       { property: 'og:description', content: 'Leading insulation sheet manufacturer and wholesale supplier in Rajkot. Captain Steel offers premium insulation sheets with superior thermal efficiency for commercial and industrial buildings across India.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' },
-      { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/insulated-sheets' },
+      { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/insulated-metal-sheets' },
       { property: 'og:type', content: 'product' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
