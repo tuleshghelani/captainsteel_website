@@ -91,6 +91,11 @@ $spec-row-alt: rgba($dark, 0.03);
     @media (max-width: 768px) {
       font-size: 1rem;
     }
+    
+    strong {
+      font-weight: 600;
+      color: $primary;
+    }
   }
 
   .breadcrumb {
@@ -308,6 +313,11 @@ $spec-row-alt: rgba($dark, 0.03);
       font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 25px;
+      
+      strong {
+        color: $text-primary;
+        font-weight: 600;
+      }
     }
     
     .product-highlights {
@@ -334,6 +344,11 @@ $spec-row-alt: rgba($dark, 0.03);
         span {
           color: $text-primary;
           font-weight: 500;
+          
+          strong {
+            color: $text-primary;
+            font-weight: 600;
+          }
         }
       }
     }
@@ -381,6 +396,125 @@ $spec-row-alt: rgba($dark, 0.03);
             box-shadow: 0 5px 15px rgba($dark, 0.1);
           }
         }
+      }
+    }
+  }
+}
+
+// Technical Specifications Section
+.specifications-section {
+  padding: 80px 0;
+  background-color: $background-secondary;
+  
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    .section-title {
+      font-size: 2.5rem;
+      color: $text-primary;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: $primary;
+      }
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: $text-secondary;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .specifications-table {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background-color: $light;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba($dark, 0.05);
+    overflow: hidden;
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      
+      th, td {
+        padding: 15px 20px;
+        text-align: left;
+        border-bottom: 1px solid rgba($dark, 0.05);
+      }
+      
+      th {
+        background-color: #f8f9fa;
+        color: $text-primary;
+        font-weight: 600;
+        width: 40%;
+        border-right: 1px solid rgba($dark, 0.05);
+      }
+      
+      tr:nth-child(even) {
+        background-color: $spec-row-alt;
+      }
+      
+      tr:hover {
+        background-color: rgba($primary, 0.05);
+      }
+    }
+  }
+  
+  .specifications-cta {
+    text-align: center;
+    margin-top: 30px;
+    
+    p {
+      color: $text-secondary;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      background-color: transparent;
+      color: $text-primary;
+      border: 2px solid $text-primary;
+      
+      &:hover {
+        background-color: $text-primary;
+        color: $light;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba($dark, 0.1);
       }
     }
   }
@@ -502,7 +636,6 @@ $spec-row-alt: rgba($dark, 0.03);
 }
 
 // Applications Section
-// Applications Section
 .applications-section {
   padding: 80px 0;
   background-color: $background-primary;
@@ -554,14 +687,10 @@ $spec-row-alt: rgba($dark, 0.03);
 
   .applications-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     
-    @media (max-width: 1200px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    @media (max-width: 576px) {
+    @media (max-width: 991px) {
       grid-template-columns: 1fr;
     }
     
@@ -575,54 +704,6 @@ $spec-row-alt: rgba($dark, 0.03);
       &:hover {
         transform: translateY(-10px);
         box-shadow: 0 10px 30px rgba($dark, 0.1);
-        
-        .image-container {
-          img {
-            transform: scale(1.1);
-          }
-          
-          .overlay {
-            opacity: 1;
-          }
-        }
-      }
-      
-      .image-container {
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-        
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-        
-        .overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba($primary, 0.7);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          
-          .view-details {
-            color: $light;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1rem;
-            padding: 10px 20px;
-            border: 2px solid $light;
-            border-radius: 5px;
-          }
-        }
       }
       
       .application-content {
@@ -663,138 +744,14 @@ $spec-row-alt: rgba($dark, 0.03);
               margin-right: 10px;
               font-size: 0.9rem;
             }
+            
+            strong {
+              color: $text-primary;
+              font-weight: 600;
+            }
           }
         }
       }
-    }
-  }
-}
-
-// Specifications Section
-.specifications-section {
-  padding: 80px 0;
-  background-color: $background-secondary;
-  
-  @media (max-width: 768px) {
-    padding: 50px 0;
-  }
-
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 50px;
-    
-    .section-title {
-      font-size: 2.5rem;
-      color: $text-primary;
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-      
-      @media (max-width: 768px) {
-        font-size: 2rem;
-      }
-      
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: $primary;
-      }
-    }
-    
-    .section-subtitle {
-      font-size: 1.1rem;
-      color: $text-secondary;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-  }
-
-  .specs-table-container {
-    overflow-x: auto;
-    margin-bottom: 40px;
-    background-color: $light;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba($dark, 0.05);
-    padding: 15px;
-    
-    @media (max-width: 768px) {
-      padding: 10px;
-    }
-  }
-  
-  .specs-table {
-    width: 100%;
-    border-collapse: collapse;
-    
-    th, td {
-      padding: 15px;
-      text-align: left;
-      border-bottom: 1px solid rgba($dark, 0.05);
-    }
-    
-    th {
-      background-color: $primary;
-      color: white;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-    
-    tr:nth-child(even) {
-      background-color: rgba($dark, 0.02);
-    }
-    
-    tr:hover {
-      background-color: rgba($primary, 0.05);
-    }
-  }
-  
-  .specs-note {
-    font-style: italic;
-    color: $text-secondary;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    padding-left: 15px;
-  }
-
-  .profile-diagram {
-    background-color: $light;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba($dark, 0.05);
-    
-    h3 {
-      font-size: 1.5rem;
-      color: $text-primary;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    
-    .diagram-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-    
-    .diagram-caption {
-      text-align: center;
-      color: $text-secondary;
-      font-size: 0.95rem;
     }
   }
 }

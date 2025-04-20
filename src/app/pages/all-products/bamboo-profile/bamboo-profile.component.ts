@@ -1,8 +1,13 @@
 import { Component, OnInit, inject, PLATFORM_ID, Inject } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
 import * as Aos from 'aos';
+
+// Define TransferState keys
+const PRODUCT_SCHEMA_KEY = makeStateKey<string>('BAMBOO_PROFILE_PRODUCT_SCHEMA');
+const BUSINESS_SCHEMA_KEY = makeStateKey<string>('BAMBOO_PROFILE_BUSINESS_SCHEMA');
 
 interface Feature {
   icon: string;
@@ -30,6 +35,7 @@ interface FAQ {
 })
 export class BambooProfileComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
+  private baseUrl = 'https://captainsteelroofsolution.com';
 
   features: Feature[] = [
     {
@@ -164,239 +170,11 @@ export class BambooProfileComponent implements OnInit {
     }
   ];
 
-  // Product Schema for rich results in search engines
-  productSchema = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "Premium Bamboo Profile Sheets",
-    "alternateName": ["Bamboo Sheets", "Eco-Friendly Bamboo Roofing", "Sustainable Bamboo Sheets"],
-    "image": [
-      "https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png",
-      "https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/BAMBOO-PROFILE.jpeg",
-      "https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/PLAIN RIDGE.png"
-    ],
-    "description": "Premium bamboo profile sheets available in Rajkot, Gujarat. Our bamboo sheets offer eco-friendly roofing with superior thermal insulation, weather resistance and natural aesthetics. Ideal for residential, commercial and hospitality structures with local delivery and installation services throughout Rajkot and Gujarat.",
-    "sku": "BAMBOO-PROFILE-01",
-    "mpn": "CSRS-BP-2023",
-    "brand": {
-      "@type": "Brand",
-      "name": "Captain Steel"
-    },
-    "manufacturer": {
-      "@type": "Organization",
-      "name": "Captain Steel Roof Solutions",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Rajkot",
-        "addressRegion": "Gujarat",
-        "postalCode": "360311",
-        "addressCountry": "IN"
-      }
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "lowPrice": "400",
-      "highPrice": "1200",
-      "offerCount": "15",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "Captain Steel Roof Solutions",
-        "url": "https://captainsteelroofsolution.com"
-      },
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "22.089547",
-          "longitude": "70.783704"
-        },
-        "geoRadius": "150"
-      },
-      "deliveryLeadTime": {
-        "@type": "QuantitativeValue",
-        "minValue": "2",
-        "maxValue": "5",
-        "unitCode": "DAY"
-      }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "142",
-      "reviewCount": "93"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Eco Resort Developers"
-        },
-        "reviewBody": "We've installed Captain Steel's bamboo profile sheets across our entire eco-resort development in Rajkot. The natural aesthetics and thermal performance are outstanding. Our guests frequently comment on both the visual appeal and comfortable interior temperatures. The environmental credentials have also helped us achieve our sustainability certification goals."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Rajkot Green Builders"
-        },
-        "reviewBody": "As a construction company in Rajkot focusing on sustainable homes, we've been using Captain Steel's bamboo sheets for over two years. The quality is consistently excellent, and their local delivery service is reliable. Our clients love the natural feel and environmental benefits."
-      }
-    ],
-    "isAccessoryOrSparePartFor": {
-      "@type": "Product",
-      "name": "Eco-Friendly Building Materials"
-    },
-    "material": ["Bamboo Fiber", "Eco-Friendly Binding Agents", "UV-Resistant Coating"],
-    "width": {
-      "@type": "QuantitativeValue",
-      "value": "3-4",
-      "unitCode": "FOT"
-    },
-    "height": {
-      "@type": "QuantitativeValue",
-      "value": "3-6",
-      "unitCode": "MMT"
-    },
-    "weight": {
-      "@type": "QuantitativeValue",
-      "value": "3.5-4.8",
-      "unitCode": "KGM"
-    },
-    "additionalProperty": [
-      {
-        "@type": "PropertyValue",
-        "name": "Water Absorption",
-        "value": "<2.0%"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "Fire Resistance",
-        "value": "Class B fire rating"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "Sound Reduction",
-        "value": "25-30 dB"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "Local Availability",
-        "value": "Available in Rajkot with same-day delivery"
-      }
-    ]
-  };
-
-  // Local Business Schema to enhance local SEO
-  businessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Captain Steel Roof Solutions",
-    "image": "https://captainsteelroofsolution.com/assets/logo/logo.png",
-    "url": "https://captainsteelroofsolution.com",
-    "telephone": "+91 9879109091",
-    "priceRange": "₹₹",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Sadak Pipliya, National Highway, Ta. Gondal",
-      "addressLocality": "Rajkot",
-      "addressRegion": "Gujarat",
-      "postalCode": "360311",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "22.089547",
-      "longitude": "70.783704"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "14:00"
-      }
-    ],
-    "department": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Bamboo Profile Sheets Department",
-        "description": "Specializing in premium bamboo profile sheets for sustainable roofing in Rajkot and across Gujarat",
-        "telephone": "+91 9879109091"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Bamboo Sheet Products",
-      "itemListElement": [
-        {
-          "@type": "OfferCatalog",
-          "name": "Bamboo Profile Sheets",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Premium Bamboo Profile Sheets",
-                "description": "Eco-friendly bamboo sheets for roofing available in Rajkot",
-                "sku": "BAMBOO-PROFILE-01"
-              },
-              "availability": "https://schema.org/InStock",
-              "deliveryLeadTime": {
-                "@type": "QuantitativeValue",
-                "minValue": "2",
-                "maxValue": "5",
-                "unitCode": "DAY"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Rajkot"
-      },
-      {
-        "@type": "State",
-        "name": "Gujarat"
-      }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/captainroof/",
-      "https://www.linkedin.com/company/captain-steel/",
-      "https://twitter.com/captainsteel"
-    ]
-  };
-
   constructor(
     private meta: Meta,
-    private titleService: Title,    
+    private titleService: Title,
+    @Inject(DOCUMENT) private document: Document,
+    private transferState: TransferState
   ) {}
 
   ngOnInit() {
@@ -433,8 +211,9 @@ export class BambooProfileComponent implements OnInit {
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png' }
     ]);
     
-    // Add JSON-LD structured data for rich results and enhanced search visibility
-    this.addStructuredData();
+    // Add structured data
+    this.setProductStructuredData();
+    this.setBusinessStructuredData();
     
     // Only run browser-specific code if we are in a browser environment
     if (isPlatformBrowser(this.platformId)) {
@@ -483,20 +262,224 @@ export class BambooProfileComponent implements OnInit {
     }
   }
 
-  // Method to dynamically add structured data to the page
-  private addStructuredData(): void {
+  private setProductStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Premium Bamboo Profile Sheets",
+      "alternateName": ["Bamboo Sheets", "Eco-Friendly Bamboo Roofing", "Sustainable Bamboo Sheets"],
+      "image": [
+        `${this.baseUrl}/assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png`,
+        `${this.baseUrl}/assets/products/BAMBOO_PROFILE/BAMBOO-PROFILE.jpeg`,
+        `${this.baseUrl}/assets/products/BAMBOO_PROFILE/PLAIN RIDGE.png`
+      ],
+      "description": "Premium bamboo profile sheets available in Rajkot, Gujarat. Our bamboo sheets offer eco-friendly roofing with superior thermal insulation, weather resistance and natural aesthetics. Ideal for residential, commercial and hospitality structures with local delivery and installation services throughout Rajkot and Gujarat.",
+      "sku": "BAMBOO-PROFILE-01",
+      "mpn": "CSRS-BP-2023",
+      "brand": {
+        "@type": "Brand",
+        "name": "Captain Steel"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Captain Steel Roof Solutions",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rajkot",
+          "addressRegion": "Gujarat",
+          "postalCode": "360311",
+          "addressCountry": "IN"
+        }
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "lowPrice": "400",
+        "highPrice": "1200",
+        "offerCount": "15",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Captain Steel Roof Solutions",
+          "url": `${this.baseUrl}`
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "22.089547",
+            "longitude": "70.783704"
+          },
+          "geoRadius": "150"
+        },
+        "deliveryLeadTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "2",
+          "maxValue": "5",
+          "unitCode": "DAY"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "142",
+        "reviewCount": "93"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Eco Resort Developers"
+          },
+          "reviewBody": "We've installed Captain Steel's bamboo profile sheets across our entire eco-resort development in Rajkot. The natural aesthetics and thermal performance are outstanding. Our guests frequently comment on both the visual appeal and comfortable interior temperatures. The environmental credentials have also helped us achieve our sustainability certification goals."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Rajkot Green Builders"
+          },
+          "reviewBody": "As a construction company in Rajkot focusing on sustainable homes, we've been using Captain Steel's bamboo sheets for over two years. The quality is consistently excellent, and their local delivery service is reliable. Our clients love the natural feel and environmental benefits."
+        }
+      ],
+      "isAccessoryOrSparePartFor": {
+        "@type": "Product",
+        "name": "Eco-Friendly Building Materials"
+      },
+      "material": ["Bamboo Fiber", "Eco-Friendly Binding Agents", "UV-Resistant Coating"],
+      "width": {
+        "@type": "QuantitativeValue",
+        "value": "3-4",
+        "unitCode": "FOT"
+      },
+      "height": {
+        "@type": "QuantitativeValue",
+        "value": "3-6",
+        "unitCode": "MMT"
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": "3.5-4.8",
+        "unitCode": "KGM"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Water Absorption",
+          "value": "<2.0%"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fire Resistance",
+          "value": "Class B fire rating"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Sound Reduction",
+          "value": "25-30 dB"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Local Availability",
+          "value": "Available in Rajkot with same-day delivery"
+        }
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(PRODUCT_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
     if (isPlatformBrowser(this.platformId)) {
-      // Create product schema script
-      let productScript = document.createElement('script');
-      productScript.type = 'application/ld+json';
-      productScript.text = JSON.stringify(this.productSchema);
-      document.head.appendChild(productScript);
-      
-      // Create business schema script
-      let businessScript = document.createElement('script');
-      businessScript.type = 'application/ld+json';
-      businessScript.text = JSON.stringify(this.businessSchema);
-      document.head.appendChild(businessScript);
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
+  }
+  
+  private setBusinessStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Captain Steel Roof Solutions",
+      "image": `${this.baseUrl}/assets/logo/logo.png`,
+      "url": this.baseUrl,
+      "telephone": "+91 9879109091",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sadak Pipliya, National Highway, Ta. Gondal",
+        "addressLocality": "Rajkot",
+        "addressRegion": "Gujarat",
+        "postalCode": "360311",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.089547",
+        "longitude": "70.783704"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "department": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Bamboo Profile Sheets Department",
+          "description": "Specializing in premium bamboo profile sheets for sustainable roofing in Rajkot and across Gujarat",
+          "telephone": "+91 9879109091"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Rajkot"
+        },
+        {
+          "@type": "State",
+          "name": "Gujarat"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/captainroof/",
+        "https://www.linkedin.com/company/captain-steel/",
+        "https://twitter.com/captainsteel"
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(BUSINESS_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
     }
   }
 }

@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
-import Aos from 'aos';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
+import * as Aos from 'aos';
+
+// Define TransferState keys
+const PRODUCT_SCHEMA_KEY = makeStateKey<string>('CORRUGATED_SHEETS_PRODUCT_SCHEMA');
+const BUSINESS_SCHEMA_KEY = makeStateKey<string>('CORRUGATED_SHEETS_BUSINESS_SCHEMA');
 
 interface Feature {
   icon: string;
@@ -28,6 +33,8 @@ interface FAQ {
   styleUrl: './corrugated-roofing-sheets.component.scss'
 })
 export class CorrugatedRoofingSheetsComponent implements OnInit {
+  private platformId = inject(PLATFORM_ID);
+  private baseUrl = 'https://captainsteelroofsolution.com';
   
   features: Feature[] = [
     {
@@ -100,56 +107,342 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
     {
       question: 'Are your corrugated sheets environmentally friendly?',
       answer: 'Yes, our steel corrugated sheets are 100% recyclable. We also use eco-friendly manufacturing processes that minimize waste and energy consumption, contributing to sustainable building practices.'
+    },
+    {
+      question: 'What makes Captain Steel\'s corrugated roofing sheets in Rajkot superior?',
+      answer: 'Captain Steel\'s corrugated roofing sheets in Rajkot are manufactured with premium-grade high-tensile steel and feature advanced coating technology that exceeds industry standards. Our local manufacturing facility allows us to maintain strict quality control while offering customized solutions, competitive pricing, and prompt delivery throughout Gujarat. We also provide professional installation services by certified experts, ensuring optimal performance and longevity of your roofing system.'
+    },
+  ];
+
+  galleryImages = [
+    {
+      src: 'assets/products/corrugated-roofing-sheets-4.jpg',
+      alt: 'Premium Corrugated Roofing Sheets in Rajkot - High Quality Steel Roofing',
+      title: 'Corrugated Steel Sheets'
+    },
+    {
+      src: 'assets/products/corrugated-roofing-sheets-2.jpg',
+      alt: 'Color Coated Corrugated Sheets in Rajkot - Durable Commercial Roofing',
+      title: 'Color Coated Sheets'
+    },
+    {
+      src: 'assets/products/corrugated-roofing-sheets-3.jpg',
+      alt: 'Galvanized Corrugated Roofing Installation in Rajkot - Professional Roofing',
+      title: 'Professional Installation'
+    },
+    {
+      src: 'assets/products/corrugated-sheets-accessories.jpg',
+      alt: 'Corrugated Roofing Accessories in Rajkot - Complete Roofing Solutions',
+      title: 'Roofing Accessories'
     }
   ];
 
   constructor(
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    @Inject(DOCUMENT) private document: Document,
+    private transferState: TransferState
   ) {}
 
   ngOnInit() {
-    // Set SEO meta tags
-    this.titleService.setTitle('Premium Corrugated Roofing Sheets | Durable Steel Roofing | Captain Steel');
+    // Set SEO meta tags - Title tags influence search rankings and are the first impression for users
+    this.titleService.setTitle('Premium Corrugated Roofing Sheets in Rajkot | Captain Steel');
     
+    // Meta descriptions impact click-through rates by providing concise page summaries under 155 characters
     this.meta.addTags([
-      { name: 'description', content: 'Premium corrugated roofing sheets with superior durability and weather resistance. Perfect for industrial, commercial & residential roofing with customizable lengths, colors, and finishes.' },
-      { name: 'keywords', content: 'corrugated roofing sheets, metal roofing, steel roofing, industrial roofing, commercial roofing, galvanized roofing, color coated roofing, roof sheets' },
+      { name: 'description', content: 'Buy premium corrugated roofing sheets in Rajkot at Captain Steel. High-tensile galvanized steel with superior durability and weather resistance. Best prices in Rajkot with same-day delivery across Gujarat.' },
+      { name: 'keywords', content: 'corrugated roofing sheets, corrugated roofing sheets in Rajkot, steel roofing Rajkot, metal roofing Rajkot, industrial roofing Gujarat, commercial roofing Rajkot, galvanized roofing sheets, color coated roofing, roof sheets price in Rajkot' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/corrugated-sheets' },
-      // Open Graph tags for social sharing
-      { property: 'og:title', content: 'Premium Corrugated Roofing Sheets | Durable Steel Roofing' },
-      { property: 'og:description', content: 'Premium corrugated roofing sheets with superior durability and weather resistance. Perfect for industrial, commercial & residential roofing.' },
-      { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/Corrugated-roofing-sheets.jpeg' },
+      // Location-specific meta tags
+      { name: 'geo.region', content: 'IN-GJ' },
+      { name: 'geo.placename', content: 'Rajkot, Gujarat' },
+      { name: 'geo.position', content: '22.089547;70.783704' },
+      { name: 'ICBM', content: '22.089547, 70.783704' },
+      // Open Graph tags for social sharing - Extends SEO impact to social platforms
+      { property: 'og:title', content: 'Premium Corrugated Roofing Sheets in Rajkot | Captain Steel' },
+      { property: 'og:description', content: 'Buy premium corrugated roofing sheets in Rajkot. High-tensile galvanized steel with superior durability and lowest prices guaranteed. Free delivery across Rajkot.' },
+      { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/corrugated-roofing-sheets-4.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/corrugated-sheets' },
       { property: 'og:type', content: 'product' },
-      // Twitter Card tags
+      { property: 'og:locality', content: 'Rajkot' },
+      { property: 'og:region', content: 'Gujarat' },
+      { property: 'og:postal-code', content: '360311' },
+      { property: 'og:country-name', content: 'India' },
+      // Twitter Card tags - Enhances visibility on Twitter platform
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Premium Corrugated Roofing Sheets | Durable Steel Roofing' },
-      { name: 'twitter:description', content: 'Premium corrugated roofing sheets with superior durability and weather resistance. Ideal for all roofing applications.' },
-      { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/Corrugated-roofing-sheets.jpeg' }
+      { name: 'twitter:title', content: 'Premium Corrugated Roofing Sheets in Rajkot | Captain Steel' },
+      { name: 'twitter:description', content: 'Buy premium corrugated sheets in Rajkot. Durable, weather-resistant steel roofing with best prices and free delivery across Gujarat.' },
+      { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/corrugated-roofing-sheets-4.jpg' }
     ]);
     
-    // Initialize AOS animations
-    Aos.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
+    // Add structured data
+    this.setProductStructuredData();
+    this.setBusinessStructuredData();
     
-    // Add click event listeners to FAQ items after view is initialized
-    setTimeout(() => {
-      const faqItems = document.querySelectorAll('.faq-question');
-      faqItems.forEach(item => {
-        item.addEventListener('click', () => {
-          const parent = item.parentElement;
-          if (parent) {
-            parent.classList.toggle('active');
-          }
-        });
+    // Only run browser-specific code if we are in a browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      // Initialize AOS animations
+      Aos.init({
+        duration: 1000,
+        once: true,
+        offset: 100
       });
-    }, 500);
+      
+      // Add click event listeners to FAQ items after view is initialized
+      setTimeout(() => {
+        const faqItems = document.querySelectorAll('.faq-question');
+        faqItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            if (parent) {
+              parent.classList.toggle('active');
+            }
+          });
+        });
+
+        // Add click event listeners to gallery thumbnails
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img') as HTMLImageElement;
+        
+        if (thumbnails.length > 0 && mainImage) {
+          thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+              // Remove active class from all thumbnails
+              thumbnails.forEach(t => t.classList.remove('active'));
+              
+              // Add active class to clicked thumbnail
+              thumb.classList.add('active');
+              
+              // Update main image
+              const thumbImg = thumb.querySelector('img') as HTMLImageElement;
+              if (thumbImg) {
+                mainImage.src = thumbImg.src;
+                mainImage.alt = thumbImg.alt;
+              }
+            });
+          });
+        }
+      }, 500);
+    }
+  }
+
+  private setProductStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Premium Corrugated Roofing Sheets",
+      "alternateName": ["Corrugated Sheets", "Steel Roofing Sheets", "Galvanized Corrugated Sheets"],
+      "image": [
+        `${this.baseUrl}/assets/products/corrugated-roofing-sheets-4.jpg`,
+        `${this.baseUrl}/assets/products/corrugated-roofing-sheets-2.jpg`,
+        `${this.baseUrl}/assets/products/corrugated-roofing-sheets-3.jpg`
+      ],
+      "description": "Premium corrugated roofing sheets available in Rajkot, Gujarat. Our high-tensile galvanized steel sheets offer superior durability, weather resistance, and aesthetic appeal. Ideal for industrial, commercial, and residential buildings with local delivery and installation services throughout Rajkot and Gujarat.",
+      "sku": "CORR-SHEET-01",
+      "mpn": "CSRS-CG-2023",
+      "brand": {
+        "@type": "Brand",
+        "name": "Captain Steel"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Captain Steel Roof Solutions",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rajkot",
+          "addressRegion": "Gujarat",
+          "postalCode": "360311",
+          "addressCountry": "IN"
+        }
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "lowPrice": "350",
+        "highPrice": "950",
+        "offerCount": "25",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Captain Steel Roof Solutions",
+          "url": `${this.baseUrl}`
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "22.089547",
+            "longitude": "70.783704"
+          },
+          "geoRadius": "150"
+        },
+        "deliveryLeadTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "3",
+          "unitCode": "DAY"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "186",
+        "reviewCount": "112"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Rajkot Industrial Solutions"
+          },
+          "reviewBody": "We've used Captain Steel's corrugated roofing sheets for multiple industrial projects across Rajkot. Their quality is consistently excellent, with outstanding corrosion resistance even in our coastal climate. Their local manufacturing facility means quick delivery times and competitive pricing. Highly recommended for any industrial or commercial roofing needs in Gujarat."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Gujarat Construction Company"
+          },
+          "reviewBody": "As builders in Rajkot, we rely on Captain Steel for all our corrugated roofing requirements. Their sheets are precisely manufactured, making installation straightforward and efficient. The range of colors and finishes available lets us offer clients plenty of choices. Their local support team is always responsive and delivery is consistently on time."
+        }
+      ],
+      "material": ["High-tensile Steel", "Galvanized Coating", "Aluzinc Coating", "Color Coating"],
+      "width": {
+        "@type": "QuantitativeValue",
+        "value": "1050",
+        "unitCode": "MMT"
+      },
+      "height": {
+        "@type": "QuantitativeValue",
+        "value": "17-32",
+        "unitCode": "MMT"
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": "4.5-9.2",
+        "unitCode": "KGM"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Wind Resistance",
+          "value": "Up to 180 km/h"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Warranty",
+          "value": "Up to 20 years"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Local Availability",
+          "value": "Available in Rajkot with same-day delivery"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Installation Service",
+          "value": "Professional installation available across Gujarat"
+        }
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(PRODUCT_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
+  }
+  
+  private setBusinessStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Captain Steel Roof Solutions",
+      "image": `${this.baseUrl}/assets/logo/logo.png`,
+      "url": this.baseUrl,
+      "telephone": "+91 9879109091",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sadak Pipliya, National Highway, Ta. Gondal",
+        "addressLocality": "Rajkot",
+        "addressRegion": "Gujarat",
+        "postalCode": "360311",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.089547",
+        "longitude": "70.783704"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "department": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Corrugated Roofing Sheets Department",
+          "description": "Specializing in premium corrugated roofing sheets for industrial, commercial and residential buildings in Rajkot and across Gujarat",
+          "telephone": "+91 9879109091"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Rajkot"
+        },
+        {
+          "@type": "State",
+          "name": "Gujarat"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/captainroof/",
+        "https://www.linkedin.com/company/captain-steel/",
+        "https://twitter.com/captainsteel"
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(BUSINESS_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
   }
 }
