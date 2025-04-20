@@ -276,6 +276,7 @@ export class HomeComponent implements OnInit {
     this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Steel Roofing Sheets in Rajkot' });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: 'assets/home/company.jpg' });
+    this.meta.updateTag({ name: 'viewport', content: 'width=device-width, initial-scale=1' });
 
     // Location tags
     this.meta.updateTag({ name: 'geo.region', content: 'IN-GJ' });
