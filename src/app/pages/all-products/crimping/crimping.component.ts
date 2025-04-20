@@ -250,7 +250,7 @@ export class CrimpingComponent implements OnInit {
     const structuredData = {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "Premium Crimping Metal Sheets in Rajkot",
+      "name": "Premium Crimping Metal Sheets",
       "alternateName": ["Crimping Sheets", "Metal Crimping Solutions", "Industrial Crimping Bands"],
       "image": [
         `${this.baseUrl}/assets/products/crimping-and-accessories.jpg`,
@@ -275,68 +275,12 @@ export class CrimpingComponent implements OnInit {
           "addressCountry": "IN"
         }
       },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "INR",
-        "lowPrice": "85",
-        "highPrice": "350",
-        "offerCount": "25",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Captain Steel Roof Solutions",
-          "url": `${this.baseUrl}`
-        },
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": "22.089547",
-            "longitude": "70.783704"
-          },
-          "geoRadius": "150"
-        },
-        "deliveryLeadTime": {
-          "@type": "QuantitativeValue",
-          "minValue": "1",
-          "maxValue": "3",
-          "unitCode": "DAY"
-        }
-      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "ratingCount": "157",
         "reviewCount": "82"
       },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Rajkot Industrial Solutions"
-          },
-          "reviewBody": "We've been using Captain Steel's crimping metal sheets for all our industrial fastening needs in Rajkot. The quality is consistently excellent, with outstanding corrosion resistance even in our factory's harsh environment. Their local manufacturing facility means quick delivery times and competitive pricing. Highly recommended for any industrial or construction fastening requirements in Gujarat."
-        },
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Gujarat Construction Company"
-          },
-          "reviewBody": "As builders in Rajkot, we rely on Captain Steel for all our crimping metal sheet requirements. Their products are precisely manufactured, making installation straightforward and secure. The range of sizes and materials available lets us handle any fastening challenge. Their local support team is always responsive with same-day delivery across Rajkot."
-        }
-      ],
       "material": ["Galvanized Steel", "Stainless Steel", "Aluminized Steel"],
       "width": {
         "@type": "QuantitativeValue",

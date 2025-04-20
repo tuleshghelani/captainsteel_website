@@ -291,68 +291,12 @@ export class BambooProfileComponent implements OnInit {
           "addressCountry": "IN"
         }
       },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "INR",
-        "lowPrice": "400",
-        "highPrice": "1200",
-        "offerCount": "15",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Captain Steel Roof Solutions",
-          "url": `${this.baseUrl}`
-        },
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": "22.089547",
-            "longitude": "70.783704"
-          },
-          "geoRadius": "150"
-        },
-        "deliveryLeadTime": {
-          "@type": "QuantitativeValue",
-          "minValue": "2",
-          "maxValue": "5",
-          "unitCode": "DAY"
-        }
-      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
         "ratingCount": "142",
         "reviewCount": "93"
       },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Eco Resort Developers"
-          },
-          "reviewBody": "We've installed Captain Steel's bamboo profile sheets across our entire eco-resort development in Rajkot. The natural aesthetics and thermal performance are outstanding. Our guests frequently comment on both the visual appeal and comfortable interior temperatures. The environmental credentials have also helped us achieve our sustainability certification goals."
-        },
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Rajkot Green Builders"
-          },
-          "reviewBody": "As a construction company in Rajkot focusing on sustainable homes, we've been using Captain Steel's bamboo sheets for over two years. The quality is consistently excellent, and their local delivery service is reliable. Our clients love the natural feel and environmental benefits."
-        }
-      ],
       "isAccessoryOrSparePartFor": {
         "@type": "Product",
         "name": "Eco-Friendly Building Materials"

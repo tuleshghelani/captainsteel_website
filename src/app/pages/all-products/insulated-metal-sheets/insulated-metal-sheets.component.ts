@@ -1,8 +1,8 @@
-import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
-import { isPlatformBrowser } from '@angular/common';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
 import Aos from 'aos';
 
 interface Feature {
@@ -29,6 +29,9 @@ interface Product {
   category: string;
 }
 
+// Create a state key for product schema
+const PRODUCT_SCHEMA_KEY = makeStateKey<string>('insulatedMetalSheetsSchema');
+
 @Component({
   selector: 'app-insulated-metal-sheets',
   standalone: true,
@@ -38,6 +41,7 @@ interface Product {
 })
 export class InsulatedMetalSheetsComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
+  private baseUrl = 'https://captainsteelroofsolution.com';
   
   features: Feature[] = [
     {
@@ -110,7 +114,9 @@ export class InsulatedMetalSheetsComponent implements OnInit {
 
   constructor(
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    private transferState: TransferState,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit() {
@@ -138,7 +144,7 @@ export class InsulatedMetalSheetsComponent implements OnInit {
     ]);
     
     // Add JSON-LD schema markup with required properties
-    this.addJsonLdSchema();
+    this.setProductStructuredData();
     
     // Only run browser-specific code if we are in a browser environment
     if (isPlatformBrowser(this.platformId)) {
@@ -164,78 +170,104 @@ export class InsulatedMetalSheetsComponent implements OnInit {
     }
   }
 
-  private addJsonLdSchema(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      // Create schema script element
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      
-      // Create the schema object with required offers property
-      const schema = {
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: 'Insulated Metal Sheets',
-        description: 'Premium insulation sheets manufactured by Captain Steel in Rajkot, offering superior thermal efficiency and energy savings.',
-        brand: {
-          '@type': 'Brand',
-          name: 'Captain Steel'
-        },
-        image: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg',
-        // Adding offers to fix the schema error
-        offers: {
-          '@type': 'AggregateOffer',
-          priceCurrency: 'INR',
-          lowPrice: '80',
-          highPrice: '500',
-          priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
-          availability: 'https://schema.org/InStock',
-          offerCount: this.allProducts.length,
-          seller: {
-            '@type': 'Organization',
-            name: 'Captain Steel Roof Solutions'
-          }
-        },
-        // Adding aggregateRating to fix the schema error
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.8',
-          reviewCount: '124'
-        },
-        // Using allProducts to create itemListElement
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Insulation Sheet Products',
-          itemListElement: this.allProducts.map(product => ({
-            '@type': 'Offer',
-            name: product.title,
-            description: product.description,
-            image: product.image,
-            price: 'Contact for Quote',
-            priceCurrency: 'INR',
-            itemCondition: 'https://schema.org/NewCondition',
-            availability: 'https://schema.org/InStock'
-          }))
-        },
-        // Add manufacturer information
-        manufacturer: {
-          '@type': 'Organization',
-          name: 'Captain Steel Roof Solutions',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Industrial Area',
-            addressLocality: 'Rajkot',
-            addressRegion: 'Gujarat',
-            postalCode: '360110',
-            addressCountry: 'IN'
-          }
+  private setProductStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Insulated Metal Sheets",
+      "alternateName": ["Insulation Sheets", "Thermal Insulated Roofing", "Energy Efficient Insulation Sheets"],
+      "image": [
+        `${this.baseUrl}/assets/products/insulated-metal-roofing-sheets.jpg`,
+        `${this.baseUrl}/assets/products/insulated-metal-sheet-close.jpg`,
+        `${this.baseUrl}/assets/products/insulated-metal-sheet-installation.jpg`
+      ],
+      "description": "Premium insulation sheets manufactured by Captain Steel in Rajkot, offering superior thermal efficiency, energy savings, and climate control for commercial and industrial buildings across India.",
+      "sku": "INSULATED-MS-01",
+      "mpn": "CSRS-IMS-2023",
+      "brand": {
+        "@type": "Brand",
+        "name": "Captain Steel"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Captain Steel Roof Solutions",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rajkot",
+          "addressRegion": "Gujarat",
+          "postalCode": "360110",
+          "addressCountry": "IN"
         }
-      };
-      
-      // Set the script content
-      script.textContent = JSON.stringify(schema);
-      
-      // Add script to head
-      document.head.appendChild(script);
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "124",
+        "reviewCount": "124"
+      },
+      "material": ["Galvanized Steel", "Prepainted Steel", "Polyurethane", "PIR", "Mineral Wool"],
+      "width": {
+        "@type": "QuantitativeValue",
+        "value": "1000-1200",
+        "unitCode": "MMT"
+      },
+      "height": {
+        "@type": "QuantitativeValue",
+        "value": "50-150",
+        "unitCode": "MMT"
+      },
+      "weight": {
+        "@type": "QuantitativeValue",
+        "value": "8-15",
+        "unitCode": "KGM"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "R-Value",
+          "value": "R-15 to R-40"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Fire Resistance",
+          "value": "Class B fire rating"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Sound Reduction",
+          "value": "25-30 dB"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Local Availability",
+          "value": "Available in Rajkot with delivery across Gujarat"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Insulation Sheet Products",
+        "itemListElement": this.allProducts.map(product => ({
+          "@type": "Offer",
+          "name": product.title,
+          "description": product.description,
+          "image": product.image,
+          "price": "Contact for Quote",
+          "priceCurrency": "INR",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock"
+        }))
+      }
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(PRODUCT_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
     }
   }
 }

@@ -258,68 +258,12 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
           "addressCountry": "IN"
         }
       },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "INR",
-        "lowPrice": "350",
-        "highPrice": "950",
-        "offerCount": "25",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Captain Steel Roof Solutions",
-          "url": `${this.baseUrl}`
-        },
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": "22.089547",
-            "longitude": "70.783704"
-          },
-          "geoRadius": "150"
-        },
-        "deliveryLeadTime": {
-          "@type": "QuantitativeValue",
-          "minValue": "1",
-          "maxValue": "3",
-          "unitCode": "DAY"
-        }
-      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "ratingCount": "186",
         "reviewCount": "112"
       },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Rajkot Industrial Solutions"
-          },
-          "reviewBody": "We've used Captain Steel's corrugated roofing sheets for multiple industrial projects across Rajkot. Their quality is consistently excellent, with outstanding corrosion resistance even in our coastal climate. Their local manufacturing facility means quick delivery times and competitive pricing. Highly recommended for any industrial or commercial roofing needs in Gujarat."
-        },
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Gujarat Construction Company"
-          },
-          "reviewBody": "As builders in Rajkot, we rely on Captain Steel for all our corrugated roofing requirements. Their sheets are precisely manufactured, making installation straightforward and efficient. The range of colors and finishes available lets us offer clients plenty of choices. Their local support team is always responsive and delivery is consistently on time."
-        }
-      ],
       "material": ["High-tensile Steel", "Galvanized Coating", "Aluzinc Coating", "Color Coating"],
       "width": {
         "@type": "QuantitativeValue",
