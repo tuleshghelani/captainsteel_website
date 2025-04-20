@@ -100,7 +100,7 @@ export class AirVentilatorComponent implements OnInit {
           "@type": "PostalAddress",
           "addressLocality": "Rajkot",
           "addressRegion": "Gujarat",
-          "postalCode": "360001",
+          "postalCode": "360110",
           "addressCountry": "IN"
         }
       },

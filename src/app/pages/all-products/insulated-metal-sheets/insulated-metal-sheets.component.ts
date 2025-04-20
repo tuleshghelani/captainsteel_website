@@ -225,7 +225,7 @@ export class InsulatedMetalSheetsComponent implements OnInit {
             streetAddress: 'Industrial Area',
             addressLocality: 'Rajkot',
             addressRegion: 'Gujarat',
-            postalCode: '360001',
+            postalCode: '360110',
             addressCountry: 'IN'
           }
         }
