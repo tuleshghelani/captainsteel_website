@@ -94,6 +94,11 @@ section {
     @media (max-width: 768px) {
       font-size: 1.1rem;
     }
+    
+    strong {
+      color: $primary;
+      font-weight: 700;
+    }
   }
   
   .breadcrumb {
@@ -224,12 +229,22 @@ section {
       color: $neutral-dark;
       margin-bottom: 20px;
       line-height: 1.6;
+      
+      strong {
+        color: $accent;
+        font-weight: 700;
+      }
     }
     
     p {
       margin-bottom: 15px;
       line-height: 1.7;
       color: $neutral-dark;
+      
+      strong {
+        color: $accent;
+        font-weight: 600;
+      }
     }
     
     .badges {
@@ -649,6 +664,316 @@ section {
   }
 }
 
+// Testimonials Section
+.testimonials-section {
+  background-color: $neutral-lightest;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
+  .testimonials-slider {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .testimonial-content {
+      padding: 35px 30px;
+      
+      .quote-icon {
+        margin-bottom: 20px;
+        
+        i {
+          font-size: 2rem;
+          color: rgba($primary, 0.2);
+        }
+      }
+      
+      .testimonial-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: $neutral-dark;
+        font-style: italic;
+        margin-bottom: 25px;
+      }
+      
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        .author-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid rgba($primary, 0.1);
+        }
+        
+        .author-info {
+          h4 {
+            font-size: 1.1rem;
+            color: $accent;
+            margin-bottom: 5px;
+          }
+          
+          p {
+            font-size: 0.9rem;
+            color: $neutral-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+// FAQ Section
+.faq-section {
+  padding: 80px 0;
+  background-color: $background-secondary;
+  
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    .section-title {
+      font-size: 2.5rem;
+      color: $text-primary;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: $primary;
+      }
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: $text-secondary;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    
+    .faq-item {
+      background-color: $background-primary;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba($dark, 0.05);
+      overflow: hidden;
+      
+      &.active {
+        .faq-question {
+          background-color: rgba($primary, 0.05);
+          
+          .toggle-icon {
+            .plus-icon {
+              display: none;
+            }
+            
+            .minus-icon {
+              display: block;
+            }
+          }
+        }
+        
+        .faq-answer {
+          max-height: 1000px;
+          padding: 20px;
+        }
+      }
+      
+      .faq-question {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+          background-color: rgba($primary, 0.05);
+        }
+        
+        h3 {
+          font-size: 1.1rem;
+          color: $text-primary;
+          margin-bottom: 0;
+          flex-grow: 1;
+          padding-right: 15px;
+        }
+        
+        .toggle-icon {
+          flex-shrink: 0;
+          width: 24px;
+          height: 24px;
+          position: relative;
+          
+          i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $primary;
+            font-size: 1rem;
+          }
+          
+          .plus-icon {
+            display: block;
+          }
+          
+          .minus-icon {
+            display: none;
+          }
+        }
+      }
+      
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        padding: 0 20px;
+        
+        p {
+          color: $text-secondary;
+          line-height: 1.6;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  background: linear-gradient(rgba($primary, 0.9), rgba($secondary, 0.9)), url('/assets/products/crimping-and-accessories.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+      }
+    }
+    
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      
+      @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        
+        &.btn-primary {
+          background-color: white;
+          color: $accent;
+          border: 2px solid white;
+          
+          &:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          }
+        }
+        
+        &.btn-outline {
+          background-color: transparent;
+          color: white;
+          border: 2px solid white;
+          
+          &:hover {
+            background-color: white;
+            color: $accent;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
 // Related Products Section
 .related-products-section {
   background-color: $neutral-lightest;
@@ -764,6 +1089,14 @@ section {
   
   .feature-card, .application-card {
     padding: 25px 20px;
+  }
+  
+  .cta-section {
+    padding: 60px 20px;
+  }
+  
+  .gallery-section .gallery-item {
+    height: 250px;
   }
 }
 
