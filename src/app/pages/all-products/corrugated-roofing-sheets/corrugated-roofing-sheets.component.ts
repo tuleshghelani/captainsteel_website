@@ -155,7 +155,7 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/corrugated-sheets' },
+      { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/corrugated-roofing-sheets' },
       // Location-specific meta tags
       { name: 'geo.region', content: 'IN-GJ' },
       { name: 'geo.placename', content: 'Rajkot, Gujarat' },
@@ -165,7 +165,7 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
       { property: 'og:title', content: 'Premium Corrugated Roofing Sheets in Rajkot | Captain Steel' },
       { property: 'og:description', content: 'Buy premium corrugated roofing sheets in Rajkot. High-tensile galvanized steel with superior durability and lowest prices guaranteed. Free delivery across Rajkot.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/corrugated-roofing-sheets-4.jpg' },
-      { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/corrugated-sheets' },
+      { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/corrugated-roofing-sheets' },
       { property: 'og:type', content: 'product' },
       { property: 'og:locality', content: 'Rajkot' },
       { property: 'og:region', content: 'Gujarat' },
