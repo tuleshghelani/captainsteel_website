@@ -11,6 +11,10 @@ interface Product {
   image: string;
   link: string;
   aosDelay: number;
+  aggregateRating?: {
+    ratingValue: string;
+    reviewCount: string;
+  };
 }
 
 interface Dealership {
@@ -128,6 +132,10 @@ export class HomeComponent implements OnInit {
       description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
       image: 'assets/products/corrugated-roofing-sheets-4.jpg',
       link: '/products/corrugated-roofing-sheets',
+      aggregateRating: {
+        ratingValue: '4.8',
+        reviewCount: '75'
+      },
       aosDelay: 200
     },
     {
@@ -135,6 +143,10 @@ export class HomeComponent implements OnInit {
       description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
       image: 'assets/products/trapezoidal-profile-sheets.jpg',
       link: '/products/trapezoidal-profile-sheets',
+      aggregateRating: {
+        ratingValue: '4.9',
+        reviewCount: '156'
+      },
       aosDelay: 200
     },
     {
@@ -142,6 +154,10 @@ export class HomeComponent implements OnInit {
       description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
       image: 'assets/products/air-ventilator.jpeg',
       link: '/products/air-ventilator',
+      aggregateRating: {
+        ratingValue: '4.9',
+        reviewCount: '187'
+      },
       aosDelay: 200
     },
     {
@@ -149,6 +165,10 @@ export class HomeComponent implements OnInit {
       description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
       image: 'assets/products/polycarbonate-sheets-2.jpg',
       link: '/products/polycarbonate-sheet',
+      aggregateRating: {
+        ratingValue: '4.9',
+        reviewCount: '176'
+      },
       aosDelay: 200
     },
   ];

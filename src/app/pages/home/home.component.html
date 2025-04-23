@@ -243,6 +243,10 @@
             <h3 itemprop="name">{{product.title}}</h3>
             <p itemprop="description">{{product.description}}</p>
             <a [routerLink]="product.link" class="product-link">Learn More About Our Steel Roof Sheets</a>
+            <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="hidden">
+              <meta itemprop="ratingValue" [content]="product.aggregateRating?.ratingValue">
+              <meta itemprop="reviewCount" [content]="product.aggregateRating?.reviewCount">
+            </div>
           </div>
         </div>
       </div>
