@@ -92,8 +92,8 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
     this.titleService.setTitle('Premium Trapezoidal Profile Sheets | Modern Steel Roofing | Captain Steel');
     
     this.meta.addTags([
-      { name: 'description', content: 'Premium trapezoidal profile sheets with superior strength, durability, and modern aesthetics. Ideal for industrial, commercial & architectural roofing with excellent water drainage and customizable finishes.' },
-      { name: 'keywords', content: 'trapezoidal profile sheets, trapezoidal sheets, trapezoidal roofing, trapezoidal sheets in rajkot, metal roofing, steel roofing, industrial roofing, commercial roofing, architectural roofing, roof cladding, wall cladding, color coated roofing, modern roofing' },
+      { name: 'description', content: 'Premium trapezoidal profile sheets with superior strength, durability, and modern aesthetics. Ideal for industrial, commercial & architectural roofing with excellent water drainage and customizable finishes. Captain Steel is a leading manufacturer of trapezoidal profile sheets in Rajkot, Gujarat.' },
+      { name: 'keywords', content: 'trapezoidal profile sheets, trapezoidal profile sheets in rajkot, trapezoidal sheets, trapezoidal roofing, trapezoidal sheets in rajkot, metal roofing, steel roofing, industrial roofing, commercial roofing, architectural roofing, roof cladding, wall cladding, color coated roofing, modern roofing, galvanized roofing, galvalume roofing, color coated roofing, polyester coating, pvdf coating, smp coating' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
