@@ -1,9 +1,10 @@
-import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import Aos from 'aos';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
 
 interface Product {
   title: string;
@@ -30,6 +31,10 @@ interface Feature {
   aosDelay: number;
 }
 
+// Define TransferState keys
+const ORGANIZATION_SCHEMA_KEY = makeStateKey<string>('HOME_ORGANIZATION_SCHEMA');
+const BUSINESS_SCHEMA_KEY = makeStateKey<string>('HOME_BUSINESS_SCHEMA');
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -39,17 +44,20 @@ interface Feature {
 })
 export class HomeComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
+  private baseUrl = 'https://captainsteelroofsolution.com';
   allProducts: Product[] = [];
-  
+
   currentSlide = 0;
   slides = [0, 1, 2, 3, 4]; // Array for slide indicators
   showDesignContent = false;
-  
+
   constructor(
     private sanitizer: DomSanitizer,
     private meta: Meta,
-    private title: Title
-  ) {  
+    private title: Title,
+    @Inject(DOCUMENT) private document: Document,
+    private transferState: TransferState
+  ) {
     this.allProducts = [
       {
         title: 'Corrugated Roofing Sheets',
@@ -123,7 +131,7 @@ export class HomeComponent implements OnInit {
       }
     ];
     this.setupSEO();
-    this.setupStructuredData();
+    // this.setupStructuredData();
   }
 
   products: Product[] = [
@@ -276,16 +284,16 @@ export class HomeComponent implements OnInit {
   private setupSEO() {
     const description = `Captain Steel - Premium Steel Roofing Solutions in Rajkot with ${this.yearsOfExperience}+ years of excellence. Authorized dealer of JSW, Tata BlueScope Steel, AM NS India, Tilara polyplast. Expert steel roof installation, steel roofing sheets, Captain steel, Rajkot, Gujarat.`;
 
-    this.title.setTitle('Captain Steel - Steel Roofing Sheets in Rajkot | Best Steel Roof Manufacturer & Supplier');
-    
+    this.title.setTitle('Captain Steel - Premium Steel Roofing Sheets in Rajkot | Best Steel Roof Manufacturer & Supplier');
+
     // Meta tags for SEO
     this.meta.updateTag({ name: 'description', content: description });
-    this.meta.updateTag({ name: 'keywords', content: 'steel roofing in rajkot, roofing sheets in rajkot, steel roof in rajkot, corrugated sheets in rajkot, trapezoidal sheets in rajkot, industrial roofing in rajkot, commercial roofing in rajkot, JSW steel in rajkot, Tata BlueScope in rajkot, steel roof installation in rajkot, Captain steel in rajkot' });
+    this.meta.updateTag({ name: 'keywords', content: 'steel roofing rajkot, roofing sheets rajkot, steel roof rajkot, corrugated sheets rajkot, trapezoidal sheets rajkot, industrial roofing in rajkot, commercial roofing in rajkot, JSW steel, Tata BlueScope, steel roof installation rajkot, Captain steel, rajkot' });
     this.meta.updateTag({ name: 'robots', content: 'index, follow' });
     this.meta.updateTag({ name: 'author', content: 'Captain Steel' });
 
     // Open Graph tags
-    this.meta.updateTag({ property: 'og:title', content: 'Captain Steel - Steel Roofing Sheets in Rajkot' });
+    this.meta.updateTag({ property: 'og:title', content: 'Captain Steel - Premium Steel Roofing Sheets in Rajkot' });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:image', content: 'assets/home/company.jpg' });
     this.meta.updateTag({ property: 'og:url', content: 'https://captainsteelroofsolution.com' });
@@ -293,7 +301,7 @@ export class HomeComponent implements OnInit {
 
     // Twitter Card tags
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Steel Roofing Sheets in Rajkot' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Premium Steel Roofing Sheets in Rajkot' });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: 'assets/home/company.jpg' });
     this.meta.updateTag({ name: 'viewport', content: 'width=device-width, initial-scale=1' });
@@ -302,15 +310,20 @@ export class HomeComponent implements OnInit {
     this.meta.updateTag({ name: 'geo.region', content: 'IN-GJ' });
     this.meta.updateTag({ name: 'geo.placename', content: 'Rajkot' });
   }
-  
+
   private setupStructuredData() {
+    this.setOrganizationStructuredData();
+    this.setBusinessStructuredData();
+  }
+
+  private setOrganizationStructuredData(): void {
     const structuredData = {
       '@context': 'http://schema.org',
       '@type': 'Organization',
       name: 'Captain Steel',
-      description: 'Steel Roofing Sheets Manufacturer & Supplier, Steel Roofing Sheets in Rajkot, Gujarat',
-      url: 'https://captainsteelroofsolution.com',
-      logo: 'assets/logo.png',
+      description: 'Premium Steel Roofing Sheets Manufacturer & Supplier, Steel Roofing Sheets in Rajkot, Gujarat',
+      url: this.baseUrl,
+      logo: `${this.baseUrl}/assets/logo/logo.png`,
       foundingDate: '2020',
       address: {
         '@type': 'PostalAddress',
@@ -324,29 +337,106 @@ export class HomeComponent implements OnInit {
         contactType: 'sales',
         availableLanguage: ['English', 'Hindi', 'Gujarati']
       },
-      // Add dynamic product data
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Steel Roofing Products',
-        itemListElement: this.allProducts.map(product => ({
-          '@type': 'Offer',
-          name: product.title,
-          description: product.description,
-          image: product.image
-        }))
-      }
+      // hasOfferCatalog: {
+      //   '@type': 'OfferCatalog',
+      //   name: 'Steel Roofing Products',
+      //   itemListElement: this.allProducts.map(product => ({
+      //     '@type': 'Offer',
+      //     name: product.title,
+      //     description: product.description,
+      //     image: product.image
+      //   }))
+      // }
     };
-
-    // Create script element for structured data
+    
+    // Store the structured data in transfer state
+    this.transferState.set(ORGANIZATION_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
     if (isPlatformBrowser(this.platformId)) {
-      const script = document.createElement('script');
+      const script = this.document.createElement('script');
       script.type = 'application/ld+json';
       script.text = JSON.stringify(structuredData);
-      document.head.appendChild(script);
+      this.document.head.appendChild(script);
+    }
+  }
+
+  private setBusinessStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Captain Steel Roof Solutions",
+      "image": `${this.baseUrl}/assets/logo/logo.png`,
+      "url": this.baseUrl,
+      "telephone": "+91 9879109091",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sadak Pipliya, National Highway, Ta. Gondal",
+        "addressLocality": "Rajkot",
+        "addressRegion": "Gujarat",
+        "postalCode": "360311",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.089547",
+        "longitude": "70.783704"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "department": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Steel Roofing Department",
+          "description": "Specializing in premium steel roofing solutions for industrial, commercial and residential buildings in Rajkot and across Gujarat",
+          "telephone": "+91 9879109091"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Rajkot"
+        },
+        {
+          "@type": "State",
+          "name": "Gujarat"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/captainroof/",
+        "https://www.linkedin.com/company/captain-steel/",
+        "https://twitter.com/captainsteel"
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(BUSINESS_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
     }
   }
 
   ngOnInit() {
+    this.setupStructuredData();
     if (isPlatformBrowser(this.platformId)) {
       Aos.init({
         duration: 1000,
@@ -371,9 +461,9 @@ export class HomeComponent implements OnInit {
   private startSlideShow() {
     setInterval(() => {
       this.nextSlide();
-    }, 5000); 
+    }, 5000);
   }
-  
+
   getSafeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
