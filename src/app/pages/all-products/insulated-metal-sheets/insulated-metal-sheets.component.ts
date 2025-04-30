@@ -125,7 +125,7 @@ export class InsulatedMetalSheetsComponent implements OnInit {
     
     this.meta.addTags([
       { name: 'description', content: 'Captain Steel - Leading insulation sheet manufacturer and wholesale supplier in Rajkot. Our premium insulation sheets offer superior thermal efficiency, energy savings, and climate control for commercial and industrial buildings across India.' },
-      { name: 'keywords', content: 'insulation sheet, insulation sheet manufacturer, wholesale insulation sheet, insulation sheet supplier, insulation sheet by captain steel, insulation sheet manufacturer rajkot, wholesale insulation sheet supplier, insulation sheet manufacturing company india, insulated metal sheets, insulated metal sheets in rajkot' },
+      { name: 'keywords', content: 'insulation sheet, insulation sheet rajkot, insulation sheet manufacturer, wholesale insulation sheet, insulation sheet supplier, insulation sheet by captain steel, insulation sheet manufacturer rajkot, wholesale insulation sheet supplier, insulation sheet manufacturing company india, insulated metal sheets, insulated metal sheets, rajkot, gujarat' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

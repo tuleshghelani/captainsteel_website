@@ -218,7 +218,7 @@ export class PolycarbonateSheetComponent implements OnInit {
     
     this.meta.addTags([
       { name: 'description', content: 'Premium polycarbonate sheets with exceptional transparency, impact resistance & UV protection. Ideal for skylights, canopies, greenhouses & architectural applications. 200x stronger than glass at half the weight.' },
-      { name: 'keywords', content: 'polycarbonate sheets, transparent roofing, polycarbonate roofing, impact resistant glazing, UV protected sheets, skylight material, greenhouse glazing, polycarbonate panels, clear roofing sheets, lightweight glazing solution' },
+      { name: 'keywords', content: 'polycarbonate sheets, polycarbonate sheets rajkot, transparent roofing, polycarbonate roofing, impact resistant glazing, UV protected sheets, skylight material, greenhouse glazing, polycarbonate panels, clear roofing sheets, lightweight glazing solution, rajkot, gujarat' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

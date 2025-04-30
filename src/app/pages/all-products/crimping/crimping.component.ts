@@ -175,7 +175,7 @@ export class CrimpingComponent implements OnInit {
     
     this.meta.addTags([
       { name: 'description', content: 'Buy premium crimping metal sheets in Rajkot at best price. Superior strength galvanized steel crimping with excellent corrosion resistance. Ideal for construction, industrial & automotive applications with free delivery across Gujarat.' },
-      { name: 'keywords', content: 'crimping sheet, crimping metal sheet, crimping sheet in Rajkot, metal crimping Rajkot, roofing crimping Gujarat, industrial crimping sheets, steel crimping Rajkot, crimped sheets Gujarat, crimping solutions Rajkot, roofing accessories' },
+      { name: 'keywords', content: 'crimping sheet, crimping metal sheet, crimping sheet in Rajkot, metal crimping, roofing crimping Gujarat, industrial crimping sheets, steel crimping Rajkot, crimped sheets Gujarat, crimping solutions Rajkot, roofing accessories, Rajkot, Gujarat' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
