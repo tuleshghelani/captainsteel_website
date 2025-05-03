@@ -1,9 +1,13 @@
-import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
-import { isPlatformBrowser } from '@angular/common';
-import Aos from 'aos';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
+import * as Aos from 'aos';
+
+// Define TransferState keys
+const PRODUCT_SCHEMA_KEY = makeStateKey<string>('POLYCARBONATE_SHEET_PRODUCT_SCHEMA');
+const BUSINESS_SCHEMA_KEY = makeStateKey<string>('POLYCARBONATE_SHEET_BUSINESS_SCHEMA');
 
 interface Feature {
   icon: string;
@@ -50,6 +54,7 @@ interface Benefit {
 })
 export class PolycarbonateSheetComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
+  private baseUrl = 'https://captainsteelroofsolution.com';
   
   features: Feature[] = [
     {
@@ -201,18 +206,12 @@ export class PolycarbonateSheetComponent implements OnInit {
 
   constructor(
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    @Inject(DOCUMENT) private document: Document,
+    private transferState: TransferState
   ) {}
 
   ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      Aos.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-      });
-    }
-
     // Set SEO meta tags
     this.titleService.setTitle('Premium Polycarbonate Sheets | Transparent Roofing Solutions | Captain Steel');
     
@@ -235,5 +234,196 @@ export class PolycarbonateSheetComponent implements OnInit {
       { name: 'twitter:description', content: 'Premium polycarbonate sheets with exceptional transparency, impact resistance & UV protection for all architectural applications.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/polycarbonate-sheets-2.jpg' }
     ]);
+    
+    // Add structured data
+    this.setProductStructuredData();
+    this.setBusinessStructuredData();
+    
+    // Only run browser-specific code if we are in a browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      // Initialize AOS animations
+      Aos.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+    }
+  }
+
+  private setProductStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Premium Polycarbonate Sheets",
+      "alternateName": ["Transparent Roofing Sheets", "UV Protected Polycarbonate", "Impact Resistant Glazing"],
+      "image": [
+        `${this.baseUrl}/assets/products/polycarbonate-sheets-2.jpg`
+      ],
+      "description": "Premium polycarbonate sheets offering exceptional transparency, impact resistance, and UV protection. Ideal for skylights, canopies, greenhouses, and architectural applications with 200x the strength of glass at half the weight.",
+      "sku": "POLYCARB-SHEET-01",
+      "mpn": "CSRS-PS-2023",
+      "brand": {
+        "@type": "Brand",
+        "name": "Captain Steel"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Captain Steel Roof Solutions",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rajkot",
+          "addressRegion": "Gujarat",
+          "postalCode": "360311",
+          "addressCountry": "IN"
+        }
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "lowPrice": "350",
+        "highPrice": "1500",
+        "offerCount": "12",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "ratingCount": "158",
+        "reviewCount": "105"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Architectural Innovations Ltd."
+        },
+        "reviewBody": "We've used Captain Steel's polycarbonate sheets for multiple architectural projects and have been consistently impressed with their clarity, strength, and durability. The sheets allow excellent natural light while providing UV protection and impact resistance. Installation is straightforward, and the finished appearance is excellent."
+      },
+      "material": ["Polycarbonate Resin", "UV-Resistant Coating"],
+      "width": {
+        "@type": "QuantitativeValue",
+        "value": "1220",
+        "unitCode": "MMT"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "thickness",
+          "value": "2-12",
+          "unitCode": "MMT"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Light Transmission",
+          "value": "80-90% (Clear Sheets)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Impact Resistance",
+          "value": "200x stronger than glass"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Temperature Range",
+          "value": "-40°C to +120°C"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Local Availability",
+          "value": "Available in Rajkot with same-day delivery"
+        }
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(PRODUCT_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
+  }
+  
+  private setBusinessStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Captain Steel Roof Solutions",
+      "image": `${this.baseUrl}/assets/logo/logo.png`,
+      "url": this.baseUrl,
+      "telephone": "+91 9879109091",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sadak Pipliya, National Highway, Ta. Gondal",
+        "addressLocality": "Rajkot",
+        "addressRegion": "Gujarat",
+        "postalCode": "360311",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.089547",
+        "longitude": "70.783704"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "department": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Polycarbonate Sheets Department",
+          "description": "Specializing in premium polycarbonate sheets for transparent roofing in Rajkot and across Gujarat",
+          "telephone": "+91 9879109091"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Rajkot"
+        },
+        {
+          "@type": "State",
+          "name": "Gujarat"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/captainroof/",
+        "https://www.linkedin.com/company/captain-steel/",
+        "https://twitter.com/captainsteel"
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(BUSINESS_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
   }
 }
