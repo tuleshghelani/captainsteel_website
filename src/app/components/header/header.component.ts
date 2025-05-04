@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   private document = inject(DOCUMENT);
   private viewportScroller = inject(ViewportScroller);
   private lastScrollPosition = 0;
+  private baseUrl = 'https://captainsteelroofsolution.com';
   
   isMobileMenuOpen = false;
   isSticky = false;
@@ -38,6 +39,11 @@ export class HeaderComponent implements OnInit {
         this.closeMobileMenu();
       }
     });
+    
+    // Add structured data for business
+    if (isPlatformBrowser(this.platformId)) {
+      this.setBusinessStructuredData();
+    }
   }
 
   @HostListener('window:scroll')
@@ -75,5 +81,59 @@ export class HeaderComponent implements OnInit {
         !target.closest('.menu-toggle')) {
       this.closeMobileMenu();
     }
+  }
+  
+  private setBusinessStructuredData(): void { 
+    const structuredData = { 
+      "@context": "https://schema.org", 
+      "@type": "LocalBusiness", 
+      "name": "Captain Steel Roof Solutions", 
+      "image": `${this.baseUrl}/assets/logo/logo.png`, 
+      "url": this.baseUrl, 
+      "telephone": "+91 9879109091", 
+      "priceRange": "₹₹", 
+      "address": { 
+        "@type": "PostalAddress", 
+        "streetAddress": "Sadak Pipliya, National Highway, Ta. Gondal", 
+        "addressLocality": "Rajkot", 
+        "addressRegion": "Gujarat", 
+        "postalCode": "360311", 
+        "addressCountry": "IN" 
+      }, 
+      "geo": { 
+        "@type": "GeoCoordinates", 
+        "latitude": "22.089547", 
+        "longitude": "70.783704" 
+      }, 
+      "department": [ 
+        { 
+          "@type": "LocalBusiness", 
+          "name": "Bamboo Profile Sheets Department", 
+          "description": "Specializing in premium bamboo profile sheets for sustainable roofing in Rajkot and across Gujarat", 
+          "telephone": "+91 9879109091" 
+        } 
+      ], 
+      "areaServed": [ 
+        { 
+          "@type": "City", 
+          "name": "Rajkot" 
+        }, 
+        { 
+          "@type": "State", 
+          "name": "Gujarat" 
+        } 
+      ], 
+      "sameAs": [ 
+        "https://www.facebook.com/captainroof/", 
+        "https://www.linkedin.com/company/captain-steel/", 
+        "https://twitter.com/captainsteel" 
+      ] 
+    };
+    
+    // Add JSON-LD script to head
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
   }
 }
