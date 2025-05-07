@@ -1,5 +1,5 @@
-import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import Aos from 'aos';
@@ -14,9 +14,26 @@ import Aos from 'aos';
 export class AirVentilatorComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
 
+  // Add FAQ data
+  faqs = [
+    {
+      question: 'How do air ventilators work without electricity?',
+      answer: 'Our air ventilators utilize the natural force of wind and thermal convection to create rotation. Even a slight breeze causes the ventilator to spin, creating a low-pressure area that draws hot air upward and out of the building. This continuous air extraction requires no electricity and operates 24/7 as long as there is even minimal air movement.'
+    },
+    {
+      question: 'What is the lifespan of your air ventilators?',
+      answer: 'Our air ventilators are built to last with high-quality materials and precision engineering. Depending on the model and environmental conditions, they typically have a lifespan of 15-20 years with minimal maintenance requirements. All our products come with a comprehensive warranty and after-sales support.'
+    },
+    {
+      question: 'How many ventilators do I need for my facility?',
+      answer: 'The number of ventilators required depends on several factors including your building size, ceiling height, heat sources, and desired air changes per hour. Our technical team conducts a thorough assessment and provides customized recommendations based on your specific requirements to ensure optimal ventilation performance.'
+    }
+  ];
+
   constructor(
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit() {
@@ -71,7 +88,43 @@ export class AirVentilatorComponent implements OnInit {
       
       // Update Product Schema for better local SEO
       this.updateProductSchema();
+      // Add FAQ structured data
+      this.setFaqStructuredData();
     }
+  }
+  
+  private setFaqStructuredData(): void {
+    const faqStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": this.faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+    
+    // Create schema script element
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    
+    // Set the script content
+    script.textContent = JSON.stringify(faqStructuredData);
+    
+    // Remove any existing FAQ schema first
+    const existingSchemas = document.querySelectorAll('script[type="application/ld+json"]');
+    existingSchemas.forEach(existingSchema => {
+      const content = existingSchema.textContent;
+      if (content && content.includes('"@type":"FAQPage"')) {
+        existingSchema.remove();
+      }
+    });
+    
+    // Add script to head
+    document.head.appendChild(script);
   }
   
   private updateProductSchema(): void {
