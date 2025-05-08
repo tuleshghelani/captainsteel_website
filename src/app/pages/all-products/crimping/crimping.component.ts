@@ -205,6 +205,7 @@ export class CrimpingComponent implements OnInit {
     // Add structured data
     this.setProductStructuredData();
     this.setBusinessStructuredData();
+    this.setFaqStructuredData();
     
     // Only run browser-specific code if we are in a browser environment
     if (isPlatformBrowser(this.platformId)) {
@@ -403,6 +404,29 @@ export class CrimpingComponent implements OnInit {
       const script = this.document.createElement('script');
       script.type = 'application/ld+json';
       script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
+  }
+
+  private setFaqStructuredData(): void {
+    const faqStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": this.faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(faqStructuredData);
       this.document.head.appendChild(script);
     }
   }

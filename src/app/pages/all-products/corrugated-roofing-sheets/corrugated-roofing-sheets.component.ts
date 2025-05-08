@@ -8,6 +8,7 @@ import * as Aos from 'aos';
 // Define TransferState keys
 const PRODUCT_SCHEMA_KEY = makeStateKey<string>('CORRUGATED_SHEETS_PRODUCT_SCHEMA');
 const BUSINESS_SCHEMA_KEY = makeStateKey<string>('CORRUGATED_SHEETS_BUSINESS_SCHEMA');
+const FAQ_SCHEMA_KEY = makeStateKey<string>('CORRUGATED_SHEETS_FAQ_SCHEMA');
 
 interface Feature {
   icon: string;
@@ -181,6 +182,7 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
     // Add structured data
     this.setProductStructuredData();
     this.setBusinessStructuredData();
+    this.setFaqStructuredData();
     
     // Only run browser-specific code if we are in a browser environment
     if (isPlatformBrowser(this.platformId)) {
@@ -386,6 +388,32 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
       const script = this.document.createElement('script');
       script.type = 'application/ld+json';
       script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
+  }
+
+  private setFaqStructuredData(): void {
+    const faqStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": this.faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(FAQ_SCHEMA_KEY, JSON.stringify(faqStructuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(faqStructuredData);
       this.document.head.appendChild(script);
     }
   }
