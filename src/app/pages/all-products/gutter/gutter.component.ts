@@ -31,6 +31,50 @@ interface Specification {
 export class GutterComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
   
+  // Product Schema for SEO
+  productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Premium Hybrid Roofing Gutter Systems",
+    "image": [
+      "https://captainsteelroofsolution.com/assets/products/HYBRIDE_GUTTER/GUTEER 1.jpeg"
+    ],
+    "description": "Premium hybrid roofing gutter systems offering superior water management, durability, and aesthetic appeal in Rajkot. Our comprehensive gutter solutions include gutters, downspouts, elbows, end caps, and all necessary accessories for complete rainwater management.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Captain Steel"
+    },
+    "manufacturer": "Captain Steel Roof Solutions",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "250",
+      "highPrice": "1200",
+      "offerCount": "15",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "178"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Building Solutions Ltd."
+      },
+      "reviewBody": "We've installed Captain Steel's hybrid roofing gutter systems on multiple commercial projects in Rajkot and have been consistently impressed with their quality, durability, and water management efficiency. The installation is straightforward, and the finished appearance enhances the overall look of the building."
+    }
+  };
+  
   features: Feature[] = [
     {
       icon: 'fas fa-tint-slash',
@@ -141,26 +185,33 @@ export class GutterComponent implements OnInit {
   
   ngOnInit(): void {
     // Set page title and meta tags for SEO
-    this.title.setTitle('Premium Hybrid Gutter Systems | Complete Water Management Solutions');
+    this.title.setTitle('Premium Hybrid Roofing Gutters in Rajkot | Captain Steel Roof Solutions');
     this.meta.addTags([
-      { name: 'description', content: 'Premium hybrid gutter systems offering superior water management, durability, and aesthetic appeal. Complete solution with gutters, downspouts, and all necessary accessories for residential and commercial buildings.' },
-      { name: 'keywords', content: 'hybrid gutters, roofing gutters, water management system, rain gutters, gutter accessories, downspouts, gutter installation, commercial gutters, residential gutters, premium gutters, seamless gutters, gutter protection' },
+      { name: 'description', content: 'Premium hybrid roofing gutter systems in Rajkot offering superior water management, durability, and aesthetic appeal. Complete solution with gutters, downspouts, and all necessary accessories for residential and commercial buildings. Captain Steel, Rajkot, Gujarat, India' },
+      { name: 'keywords', content: 'hybrid gutters, roofing gutters, hybrid roofing gutters Rajkot, water management system, rain gutters, gutter accessories, downspouts, gutter installation, commercial gutters, residential gutters, premium gutters, seamless gutters, gutter protection, roofing solutions Rajkot' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/gutter' },
+      { name: 'geo.region', content: 'IN-GJ' },
+      { name: 'geo.placename', content: 'Rajkot' },
       // Open Graph tags for social sharing
-      { property: 'og:title', content: 'Premium Hybrid Gutter Systems | Complete Water Management Solutions' },
-      { property: 'og:description', content: 'Premium hybrid gutter systems offering superior water management, durability, and aesthetic appeal for residential and commercial buildings.' },
+      { property: 'og:title', content: 'Premium Hybrid Roofing Gutters in Rajkot | Captain Steel Roof Solutions' },
+      { property: 'og:description', content: 'Premium hybrid roofing gutter systems offering superior water management, durability, and aesthetic appeal for residential and commercial buildings in Rajkot.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/HYBRIDE_GUTTER/GUTEER 1.jpeg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/gutter' },
       { property: 'og:type', content: 'product' },
+      { property: 'og:site_name', content: 'Captain Steel Roof Solutions' },
+      { property: 'og:locale', content: 'en_IN' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Premium Hybrid Gutter Systems | Complete Water Management Solutions' },
-      { name: 'twitter:description', content: 'Premium hybrid gutter systems offering superior water management, durability, and aesthetic appeal for all building applications.' },
+      { name: 'twitter:title', content: 'Premium Hybrid Roofing Gutters in Rajkot | Captain Steel Roof Solutions' },
+      { name: 'twitter:description', content: 'Premium hybrid roofing gutter systems offering superior water management, durability, and aesthetic appeal for all building applications in Rajkot.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/HYBRIDE_GUTTER/GUTEER 1.jpeg' }
     ]);
+    
+    // Add structured data schema to the document
+    this.addStructuredData();
     
     // Only run browser-specific code if we are in a browser environment
     if (isPlatformBrowser(this.platformId)) {
@@ -184,5 +235,100 @@ export class GutterComponent implements OnInit {
         });
       }, 500);
     }
+  }
+  
+  // Method to add structured data schema to the document
+  private addStructuredData(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Create script element for product schema
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(this.productSchema);
+      document.head.appendChild(script);
+      
+      // Create additional schemas
+      this.addFAQSchema();
+      this.addBreadcrumbSchema();
+    }
+  }
+  
+  // Method to add FAQ schema
+  private addFAQSchema(): void {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes hybrid roofing gutters superior to traditional gutter systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hybrid roofing gutter systems combine the best features of traditional materials with advanced engineering for superior performance. They offer enhanced water capacity, improved structural strength, and better resistance to environmental factors. The hybrid design features reinforced edges and optimized profiles that prevent sagging and deformation even under heavy water loads. Additionally, our hybrid gutters incorporate specialized mounting systems that accommodate thermal expansion and contraction, reducing the risk of leaks and separation at joints. This comprehensive approach results in a longer-lasting, more efficient water management solution compared to conventional gutter systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I determine the right roofing gutter size and number of downspouts for my building?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Determining the appropriate roofing gutter size and downspout configuration depends on several factors: roof area, roof pitch, local rainfall intensity, and building design. As a general guideline, each downspout can effectively drain approximately 600-800 square feet of roof area. For buildings in areas with heavy rainfall, this capacity should be reduced by 20-30%. Our standard hybrid gutters are designed to handle most residential and commercial applications, but larger industrial buildings may require custom solutions. For precise calculations, we recommend consulting with our technical team who can analyze your specific requirements and provide a customized recommendation based on hydrological calculations and building specifications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What maintenance is required for hybrid roofing gutter systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While our hybrid roofing gutter systems are designed for minimal maintenance, some regular care will ensure optimal performance and longevity. We recommend inspecting and cleaning gutters at least twice a year, typically in spring and fall, to remove accumulated debris. Check for proper water flow, secure attachments, and signs of damage after severe weather events. The smooth interior surfaces of our hybrid gutters minimize debris accumulation, but periodic flushing with water can help maintain clear channels. With this basic maintenance routine, our hybrid gutter systems typically provide 20+ years of reliable service without major repairs or replacements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can hybrid roofing gutters be installed on existing buildings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our hybrid roofing gutter systems are designed for both new construction and retrofit applications. The versatile mounting system accommodates various fascia board configurations and roof edge designs, making installation on existing buildings straightforward. When replacing old gutters, our specialized GI clamps can often utilize existing mounting points, minimizing structural modifications. For buildings without previous gutters, our technical team can assess the structure and recommend the most appropriate installation method. The modular nature of our system allows for customization around existing architectural features and obstacles. We provide comprehensive installation guidelines for contractors, or our certified installation partners can handle the entire process for a seamless upgrade to your building's water management system."
+          }
+        }
+      ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+  }
+  
+  // Method to add BreadcrumbList schema
+  private addBreadcrumbSchema(): void {
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://captainsteelroofsolution.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://captainsteelroofsolution.com/products"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hybrid Roofing Gutters",
+          "item": "https://captainsteelroofsolution.com/products/gutter"
+        }
+      ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script);
   }
 }
