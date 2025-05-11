@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       // Add structured data for organization
-      this.addOrganizationSchema();
+      // this.addOrganizationSchema();
     }
   }
   
@@ -40,12 +40,6 @@ export class FooterComponent implements OnInit {
         'addressRegion': 'Gujarat',
         'postalCode': '360110',
         'addressCountry': 'IN'
-      },
-      'openingHoursSpecification': {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        'opens': '09:00',
-        'closes': '19:00'
       }
     };
     
