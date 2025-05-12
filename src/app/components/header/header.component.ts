@@ -41,9 +41,9 @@ export class HeaderComponent implements OnInit {
     });
     
     // Add structured data for business
-    if (isPlatformBrowser(this.platformId)) {
-      this.setBusinessStructuredData();
-    }
+    // if (isPlatformBrowser(this.platformId)) {
+    //   this.setBusinessStructuredData();
+    // }
   }
 
   @HostListener('window:scroll')

@@ -204,7 +204,7 @@ export class CrimpingComponent implements OnInit {
 
     // Add structured data
     this.setProductStructuredData();
-    this.setBusinessStructuredData();
+    this.setBusinessStructuredData(); 
     this.setFaqStructuredData();
     
     // Only run browser-specific code if we are in a browser environment
