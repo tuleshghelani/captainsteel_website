@@ -31,6 +31,7 @@ interface Product {
 
 // Create a state key for product schema
 const PRODUCT_SCHEMA_KEY = makeStateKey<string>('insulatedMetalSheetsSchema');
+const FAQ_SCHEMA_KEY = makeStateKey<string>('insulatedMetalSheetsFaqSchema');
 
 @Component({
   selector: 'app-insulated-metal-sheets',
@@ -145,7 +146,9 @@ export class InsulatedMetalSheetsComponent implements OnInit {
     
     // Add JSON-LD schema markup with required properties
     this.setProductStructuredData();
-    
+    this.setFaqStructuredData();
+    this.setBusinessStructuredData();
+
     // Only run browser-specific code if we are in a browser environment
     if (isPlatformBrowser(this.platformId)) {
       // Initialize AOS animations
@@ -168,6 +171,55 @@ export class InsulatedMetalSheetsComponent implements OnInit {
         });
       }, 500);
     }
+  }
+
+  
+  private setBusinessStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Captain Steel Roof Solutions",
+      "image": `${this.baseUrl}/assets/logo/logo.png`,
+      "url": this.baseUrl,
+      "telephone": "+91 9879109091",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sadak Pipliya, National Highway, Ta. Gondal",
+        "addressLocality": "Rajkot",
+        "addressRegion": "Gujarat",
+        "postalCode": "360311",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.089547",
+        "longitude": "70.783704"
+      },
+      "department": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Insulated Metal Sheets Department",
+          "description": "Leading manufacturer and wholesale supplier of premium insulation sheets in Rajkot, Gujarat serving clients across India with high-quality insulation sheet products for all construction needs.",
+          "telephone": "+91 9879109091"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Rajkot"
+        },
+        {
+          "@type": "State",
+          "name": "Gujarat"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/captainroof/",
+        "https://www.linkedin.com/company/captain-steel/",
+        "https://twitter.com/captainsteel"
+      ]
+    };
   }
 
   private setProductStructuredData(): void {
@@ -267,6 +319,58 @@ export class InsulatedMetalSheetsComponent implements OnInit {
       const script = this.document.createElement('script');
       script.type = 'application/ld+json';
       script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
+  }
+
+  private setFaqStructuredData(): void {
+    const faqStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes insulated metal sheets more energy efficient than traditional building materials?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Insulated metal sheets achieve superior energy efficiency through their continuous insulation core that eliminates thermal bridging common in traditional construction. The high R-value insulation combined with reflective metal facings creates an effective thermal barrier that minimizes heat transfer in both directions. This integrated system can reduce energy consumption by 20-30% compared to conventional building materials, providing significant cost savings over the building's lifecycle while maintaining more consistent interior temperatures with less HVAC demand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of insulation cores are available, and how do they differ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer three primary insulation core options: polyurethane (PUR), polyisocyanurate (PIR), and mineral wool. Polyurethane provides excellent thermal efficiency with an R-value of approximately 6.5 per inch and good moisture resistance. PIR offers similar thermal performance but with enhanced fire resistance properties, making it ideal for applications where fire ratings are critical. Mineral wool cores deliver superior fire resistance and acoustic performance, though with a slightly lower R-value of around 4.3 per inch. Our technical team can help you select the optimal core material based on your specific requirements for thermal performance, fire safety, budget, and environmental considerations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do insulated metal sheets contribute to sustainable building design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Insulated metal sheets contribute significantly to sustainable building design through multiple pathways. Their outstanding thermal performance reduces energy consumption and associated carbon emissions throughout the building's operational life. The panels contain recycled content (typically 25-35% in the steel facings) and are fully recyclable at the end of their service life. Their lightweight nature reduces transportation emissions and foundation requirements. Additionally, the precise manufacturing process minimizes construction waste, while the durable design extends building lifespan, reducing materials consumption over time. These properties make insulated metal sheets valuable for projects seeking LEED, BREEAM, or other green building certifications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the typical installation process for insulated metal sheets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The installation process for insulated metal sheets is significantly faster and more straightforward than traditional construction methods. First, the building's structural framework is erected according to specifications. Next, panels are lifted into place using appropriate handling equipment, with each panel featuring precision-engineered tongue and groove joints that interlock to create weather-tight seals. Fasteners are then installed according to engineering requirements, typically through the panel faces into the supporting structure. Finally, trim and flashing components are added at transitions, openings, and terminations to complete the weatherproof envelope. This streamlined process can reduce construction schedules by 30-50% compared to multi-component systems, with fewer trades required on site."
+          }
+        }
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(FAQ_SCHEMA_KEY, JSON.stringify(faqStructuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(faqStructuredData);
       this.document.head.appendChild(script);
     }
   }
