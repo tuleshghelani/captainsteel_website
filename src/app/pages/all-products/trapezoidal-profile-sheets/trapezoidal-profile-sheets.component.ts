@@ -267,7 +267,7 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
           },
           "author": {
             "@type": "Person",
-            "name": "Amit Shah"
+            "name": "Amit"
           },
           "datePublished": "2023-08-22",
           "reviewBody": "Great trapezoidal roofing product with superior finish and color quality. Installation was quick and the after-sales service was excellent."
