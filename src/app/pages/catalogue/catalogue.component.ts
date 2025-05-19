@@ -64,8 +64,44 @@ export class CatalogueComponent implements OnInit {
       { name: 'geo.placename', content: 'Rajkot' },
       { name: 'geo.position', content: '22.089419;70.782472' }
     ]);
+    
+    // Add structured data for review aggregate rating
+    this.addStructuredData();
   }
 
   onPageChange(pageNumber: number) {
+  }
+  
+  private addStructuredData(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Create the structured data script element
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      
+      // Create the structured data object with AggregateRating
+      const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        'name': 'Captain Steel Roofing Product Catalogue',
+        'description': 'Comprehensive product catalogue featuring premium steel roofing sheets, ventilators, accessories and technical specifications from Rajkot\'s leading manufacturer.',
+        'image': 'https://captainsteelroofsolution.com/assets/catalogue/catalogue-cover.jpg',
+        'brand': {
+          '@type': 'Brand',
+          'name': 'Captain Steel'
+        },
+        'aggregateRating': {
+          '@type': 'AggregateRating',
+          'ratingValue': 4.8,
+          'reviewCount': 127,
+          'bestRating': 5,
+        }
+      };
+      
+      // Add the JSON-LD to the script element
+      script.textContent = JSON.stringify(structuredData);
+      
+      // Append to the document head
+      document.head.appendChild(script);
+    }
   }
 }
