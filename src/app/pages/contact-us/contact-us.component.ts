@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
+
+// Define TransferState keys
+const PRODUCT_SCHEMA_KEY = makeStateKey<string>('CONTACT_US_PRODUCT_SCHEMA');
+const BUSINESS_SCHEMA_KEY = makeStateKey<string>('CONTACT_US_BUSINESS_SCHEMA');
 
 @Component({
   selector: 'app-contact-us',
@@ -14,11 +19,15 @@ export class ContactUsComponent implements OnInit {
   contactForm: FormGroup;
   submitted = false;
   formSubmitted = false;
+  private baseUrl = 'https://captainsteelroofsolution.com';
 
   constructor(
     private formBuilder: FormBuilder,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private transferState: TransferState
   ) {
     this.contactForm = this.formBuilder.group({
       name: ['', [Validators.required]],
@@ -91,8 +100,12 @@ export class ContactUsComponent implements OnInit {
     this.metaService.updateTag({ name: 'geo.position', content: '22.089419;70.782472' });
     this.metaService.updateTag({ name: 'ICBM', content: '22.089419, 70.782472' });
 
+    // Add structured data
+    // this.setProductStructuredData();
+    this.setBusinessStructuredData();
+
     // Initialize AOS animation library if needed
-    if (typeof window !== 'undefined') {
+    if (isPlatformBrowser(this.platformId)) {
       // Only initialize AOS in browser environment
       import('aos').then(AosModule => {
         AosModule.default.init({
@@ -125,5 +138,85 @@ export class ContactUsComponent implements OnInit {
       this.contactForm.reset();
       this.submitted = false;
     }, 1500);
+  }
+
+  private setProductStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Captain Steel Roofing Solutions in Rajkot",
+      "description": "Premium steel roofing sheets and accessories for industrial and commercial applications in Rajkot, Gujarat. Leading manufacturer of corrugated sheets, trapezoidal sheets, and air ventilators.",
+      "image": `${this.baseUrl}/assets/logo/logo.png`,
+      "brand": {
+        "@type": "Brand",
+        "name": "Captain Steel"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127",
+        "reviewCount": "98",
+        "bestRating": "5"
+      }
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(PRODUCT_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
+  }
+  
+  private setBusinessStructuredData(): void {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Captain Steel Roof Solutions",
+      "image": `${this.baseUrl}/assets/logo/logo.png`,
+      "telephone": "+919879109091",
+      "email": "captainsteel39@gmail.com",
+      "url": this.baseUrl,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Survey No.39/2, Plot No.4, Nr.Markwell Spinning Mill, Sadak Pipliya, National Highway",
+        "addressLocality": "Rajkot",
+        "addressRegion": "Gujarat",
+        "postalCode": "360110",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.089419",
+        "longitude": "70.782472"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/captainroof/",
+        "https://www.linkedin.com/company/captain-steel/"
+      ]
+    };
+    
+    // Store the structured data in transfer state
+    this.transferState.set(BUSINESS_SCHEMA_KEY, JSON.stringify(structuredData));
+    
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
   }
 }
