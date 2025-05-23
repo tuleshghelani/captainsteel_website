@@ -101,7 +101,7 @@ export class ContactUsComponent implements OnInit {
     this.metaService.updateTag({ name: 'ICBM', content: '22.089419, 70.782472' });
 
     // Add structured data
-    // this.setProductStructuredData();
+    this.setProductStructuredData();
     this.setBusinessStructuredData();
 
     // Initialize AOS animation library if needed
