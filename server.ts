@@ -17,8 +17,25 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
+  // Add middleware to normalize URLs - remove trailing slashes
+  server.use((req, res, next) => {
+    if (req.path.length > 1 && req.path.endsWith('/')) {
+      const query = req.url.slice(req.path.length);
+      const safePath = req.path.slice(0, -1).replace(/\/+/g, '/');
+      res.redirect(301, safePath + query);
+      return;
+    }
+    next();
+  });
+
+  // Force HTTPS if accessed via HTTP (uncomment if needed)
+  // server.use((req, res, next) => {
+  //   if (req.headers['x-forwarded-proto'] === 'http') {
+  //     return res.redirect(301, `https://${req.headers.host}${req.url}`);
+  //   }
+  //   next();
+  // });
+
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
@@ -43,6 +60,7 @@ export function app(): express.Express {
   return server;
 }
 
+// Rest of the file remains unchanged
 function run(): void {
   const port = process.env['PORT'] || 4000;
 
