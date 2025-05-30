@@ -179,11 +179,11 @@ export class BambooProfileComponent implements OnInit {
 
   ngOnInit() {
     // Set SEO meta tags - Title tags influence search rankings and are the first impression for users
-    this.titleService.setTitle('Premium Bamboo Profile Sheets in Rajkot | Captain Steel');
+    this.titleService.setTitle('Premium Bamboo Profile Sheets | Captain Steel');
     
     // Meta descriptions impact click-through rates by providing concise page summaries under 155 characters
     this.meta.addTags([
-      { name: 'description', content: 'Buy premium bamboo profile sheets in Rajkot, Gujarat. Our sustainable bamboo sheets offer superior thermal insulation, weather resistance, and natural aesthetics. Available for residential and commercial buildings with free delivery across Rajkot, Gujarat.' },
+      { name: 'description', content: 'Buy premium bamboo profile sheets, Gujarat. Our sustainable bamboo sheets offer superior thermal insulation, weather resistance, and natural aesthetics. Available for residential and commercial buildings with free delivery across Rajkot, Gujarat.' },
       { name: 'keywords', content: 'bamboo profile sheets, bamboo profile sheets in Rajkot, bamboo sheets, bamboo sheets Rajkot, bamboo roofing Rajkot, sustainable roofing, eco-friendly roofing, natural roofing material, bamboo roofing Gujarat, green building material, thermal insulation roofing, acoustic roofing' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
@@ -195,7 +195,7 @@ export class BambooProfileComponent implements OnInit {
       { name: 'geo.position', content: '22.089547;70.783704' },
       { name: 'ICBM', content: '22.089547, 70.783704' },
       // Open Graph tags for social sharing - Extends SEO impact to social platforms
-      { property: 'og:title', content: 'Premium Bamboo Profile Sheets in Rajkot | Sustainable Bamboo Sheets' },
+      { property: 'og:title', content: 'Premium Bamboo Profile Sheets | Sustainable Bamboo Sheets' },
       { property: 'og:description', content: 'Buy premium bamboo profile sheets in Rajkot. Our sustainable bamboo sheets offer superior thermal insulation and natural aesthetics with delivery across Gujarat.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/bamboo-profile' },
@@ -206,8 +206,8 @@ export class BambooProfileComponent implements OnInit {
       { property: 'og:country-name', content: 'India' },
       // Twitter Card tags - Enhances visibility on Twitter platform
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Premium Bamboo Profile Sheets in Rajkot | Sustainable Bamboo Sheets' },
-      { name: 'twitter:description', content: 'Buy premium bamboo sheets in Rajkot. Sustainable, eco-friendly roofing with superior thermal insulation. Local delivery across Gujarat.' },
+      { name: 'twitter:title', content: 'Premium Bamboo Profile Sheets | Sustainable Bamboo Sheets' },
+      { name: 'twitter:description', content: 'Buy premium bamboo sheets. Sustainable, eco-friendly roofing with superior thermal insulation. Local delivery across Gujarat.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png' }
     ]);
     
