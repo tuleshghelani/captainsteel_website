@@ -128,26 +128,33 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Set SEO meta tags
-    this.titleService.setTitle('Trapezoidal Profile Sheets | Roof Sheets Manufacturer | Captain Steel');
+    // Set SEO meta tags with optimized title and description for better ranking
+    this.titleService.setTitle('Trapezoidal Profile Sheets & Trapezoidal Roofing Sheet Manufacturer | Captain Steel');
     
     this.meta.addTags([
-      { name: 'description', content: 'Premium trapezoidal profile sheets & trapezoidal roofing solutions with superior strength, durability & modern aesthetics. Leading roof sheet manufacturer in Rajkot offering best quality trapezoidal sheets for industrial, commercial & residential buildings.' },
-      { name: 'keywords', content: 'trapezoidal profile sheets, trapezoidal sheets, roof sheet, trapezoidal roofing, metal roofing, steel roofing, trapezoidal sheets in rajkot, industrial roofing, commercial roofing, residential roofing, roof cladding, wall cladding, color coated roofing, modern roofing, galvanized roofing, galvalume roofing, roof sheet manufacturer, roof sheet supplier, captain steel, rajkot, gujarat' },
-      { name: 'robots', content: 'index, follow' },
+      { name: 'description', content: 'Buy premium quality Trapezoidal Profile Sheets & Trapezoidal Roofing Sheets with superior strength, durability & modern aesthetics. #1 Trapezoidal Sheet manufacturer in Rajkot offering best quality sheets for industrial, commercial & residential buildings with nationwide delivery.' },
+      { name: 'keywords', content: 'trapezoidal profile sheets, trapezoidal sheets, trapezoidal roofing sheet, roof sheet, trapezoidal roofing, metal roofing, steel roofing, trapezoidal sheet price, trapezoidal sheet manufacturer, trapezoidal sheets in rajkot, industrial roofing, commercial roofing, residential roofing, roof cladding, wall cladding, color coated roofing, modern roofing, galvanized roofing, galvalume roofing, roof sheet manufacturer, roof sheet supplier, captain steel, rajkot, gujarat' },
+      { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/trapezoidal-profile-sheets' },
+      // Geo tags for local SEO
+      { name: 'geo.region', content: 'IN-GJ' },
+      { name: 'geo.placename', content: 'Rajkot' },
+      { name: 'geo.position', content: '22.089547;70.783704' },
+      { name: 'ICBM', content: '22.089547, 70.783704' },
       // Open Graph tags for social sharing
-      { property: 'og:title', content: 'Trapezoidal Profile Sheets | Roof Sheets Manufacturer | Captain Steel' },
-      { property: 'og:description', content: 'Premium trapezoidal sheets & trapezoidal roofing with superior strength. Leading roof sheet manufacturer in Rajkot offering best quality trapezoidal profile sheets.' },
+      { property: 'og:title', content: 'Trapezoidal Profile Sheets & Trapezoidal Roofing Sheet Manufacturer | Captain Steel' },
+      { property: 'og:description', content: 'Premium quality Trapezoidal Profile Sheets & Trapezoidal Roofing Sheets with superior strength. Leading manufacturer in Rajkot offering best quality sheets for all applications with nationwide delivery.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/trapezoidal-profile-sheets.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/trapezoidal-profile-sheets' },
       { property: 'og:type', content: 'product' },
+      { property: 'og:site_name', content: 'Captain Steel Roof Solutions' },
+      { property: 'og:locale', content: 'en_IN' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Trapezoidal Profile Sheets | Roof Sheets Manufacturer | Captain Steel' },
-      { name: 'twitter:description', content: 'Premium trapezoidal profile sheets & roof sheets with superior strength. Leader in trapezoidal roofing solutions for all applications.' },
+      { name: 'twitter:title', content: 'Trapezoidal Profile Sheets & Trapezoidal Roofing Sheet Manufacturer | Captain Steel' },
+      { name: 'twitter:description', content: 'Premium quality Trapezoidal Profile Sheets & Trapezoidal Roofing Sheets with superior strength. Leading manufacturer in Rajkot offering best quality sheets for all applications.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/trapezoidal-profile-sheets.jpg' }
     ]);
 
@@ -186,7 +193,7 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": "Trapezoidal Profile Sheets",
-      "alternateName": ["Trapezoidal Sheets", "Roof Sheets", "Trapezoidal Roofing", "Steel Roof Sheets"],
+      "alternateName": ["Trapezoidal Sheets", "Trapezoidal Roofing Sheet", "Roof Sheets", "Trapezoidal Roofing", "Steel Roof Sheets"],
       "image": [
         `${this.baseUrl}/assets/products/trapezoidal-profile-sheets.jpg`,
         `${this.baseUrl}/assets/products/trapezoidal-sheets-application.jpg`,
@@ -388,31 +395,31 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What are trapezoidal profile sheets?",
+          "name": "What are trapezoidal profile sheets and trapezoidal roofing sheets?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trapezoidal profile sheets are metal roofing and cladding panels characterized by their distinctive trapezoidal-shaped ribs or corrugations. These profiles provide superior structural strength, excellent water drainage, and modern aesthetic appeal. Captain Steel's trapezoidal sheets are manufactured using high-quality galvanized or color-coated steel with precision engineering to ensure optimal performance for industrial, commercial, and residential applications."
+            "text": "Trapezoidal profile sheets are metal roofing and cladding panels characterized by their distinctive trapezoidal-shaped ribs or corrugations. These profiles provide superior structural strength, excellent water drainage, and modern aesthetic appeal. Captain Steel's trapezoidal sheets are manufactured using high-quality galvanized or color-coated steel with precision engineering to ensure optimal performance for industrial, commercial, and residential applications. Trapezoidal roofing sheets are specifically designed for roof installations with enhanced water drainage capability and load-bearing capacity."
           }
         },
         {
           "@type": "Question",
-          "name": "What are the advantages of trapezoidal roofing over other roofing types?",
+          "name": "What are the advantages of trapezoidal profile sheets over other roofing materials?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trapezoidal roofing offers several advantages: 1) Superior water drainage due to its optimized profile design, preventing leakage and water pooling; 2) Excellent load-bearing capacity, ideal for industrial and commercial buildings; 3) Quick and easy installation with fewer fasteners required; 4) Versatile application for both roofing and wall cladding; 5) Long lifespan with minimal maintenance; 6) Cost-effective solution for large roof areas; 7) Modern, clean aesthetic appearance; 8) Available in various colors and finishes to match architectural requirements; 9) Weather and corrosion resistance with specialized coatings; 10) Environmentally friendly and recyclable material."
+            "text": "Trapezoidal profile sheets offer several advantages: 1) Superior water drainage due to their optimized profile design, preventing leakage and water pooling; 2) Excellent load-bearing capacity, ideal for industrial and commercial buildings; 3) Quick and easy installation with fewer fasteners required; 4) Versatile application for both roofing and wall cladding; 5) Long lifespan with minimal maintenance; 6) Cost-effective solution for large roof areas; 7) Modern, clean aesthetic appearance; 8) Available in various colors and finishes to match architectural requirements; 9) Weather and corrosion resistance with specialized coatings; 10) Environmentally friendly and recyclable material."
           }
         },
         {
           "@type": "Question",
-          "name": "What thicknesses and coatings are available for your trapezoidal roof sheets?",
+          "name": "What specifications are available for trapezoidal profile sheets and trapezoidal roofing sheets?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Captain Steel offers trapezoidal profile sheets in thicknesses ranging from 0.35mm to 1.0mm to suit different load requirements and applications. Our coating options include: 1) Galvanized coating (Z275/Z120) providing excellent corrosion resistance; 2) Galvalume coating (AZ150/AZ100) offering superior corrosion protection and heat reflection; 3) Color-coated finishes with polyester (25 microns), SMP (Silicon Modified Polyester, 30 microns), or PVDF (Polyvinylidene Fluoride, 35 microns) for enhanced aesthetics and durability. We can customize both thickness and coating specifications according to your specific project requirements and environment conditions."
+            "text": "Captain Steel offers trapezoidal profile sheets in thicknesses ranging from 0.35mm to 1.0mm to suit different load requirements and applications. Our standard width ranges from 900mm to 1100mm effective cover width, with custom lengths up to 12 meters. Our coating options include: 1) Galvanized coating (Z275/Z120) providing excellent corrosion resistance; 2) Galvalume coating (AZ150/AZ100) offering superior corrosion protection and heat reflection; 3) Color-coated finishes with polyester (25 microns), SMP (Silicon Modified Polyester, 30 microns), or PVDF (Polyvinylidene Fluoride, 35 microns) for enhanced aesthetics and durability. We can customize both thickness and coating specifications according to your specific project requirements and environment conditions."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I maintain trapezoidal profile sheets for maximum lifespan?",
+          "name": "How do I maintain trapezoidal sheets for maximum lifespan?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "To maintain your trapezoidal sheets and ensure maximum lifespan: 1) Conduct regular inspections at least twice a year and after major storms; 2) Keep the roof free from debris, leaves, and dirt by gentle washing with mild detergent and water; 3) Check and clean gutters and drainage systems to prevent water backup; 4) Inspect and tighten any loose fasteners or fixings; 5) Touch up any minor scratches with matching paint to prevent corrosion; 6) Avoid walking on the sheets unnecessarily, and when required, step only on the purlin-supported areas; 7) Trim overhanging tree branches to prevent abrasion and debris accumulation; 8) Immediately address any signs of corrosion, leaks, or damage; 9) Apply appropriate roof coatings or treatments as recommended by the manufacturer for your specific environment; 10) Ensure proper ventilation in the building to prevent condensation buildup under the roof."
@@ -420,18 +427,26 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
         },
         {
           "@type": "Question",
-          "name": "Can trapezoidal profile sheets be used for residential buildings?",
+          "name": "What is the price range of trapezoidal profile sheets and trapezoidal roofing sheets?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, trapezoidal profile sheets are increasingly popular for residential buildings due to their modern aesthetic appeal, durability, and practical benefits. In residential applications, these roof sheets offer excellent weather protection, superior energy efficiency, and long-term cost savings. Captain Steel provides residential-grade trapezoidal sheets with premium color coatings and finishes that enhance curb appeal while maintaining functional performance. For residential projects, we typically recommend slightly thinner profiles (0.35-0.47mm) with high-quality color coatings to achieve the perfect balance of performance and visual appeal. Our trapezoidal sheets can be perfectly integrated with skylights, solar panels, and other residential roofing requirements."
+            "text": "The price of trapezoidal profile sheets varies depending on several factors including material thickness, coating type, color options, and quantity ordered. Our standard trapezoidal sheets start from approximately ₹450 per square meter for basic galvanized options, while premium color-coated trapezoidal roofing sheets with advanced coatings may range up to ₹950 per square meter. We offer competitive pricing with volume discounts for larger projects. For the most accurate and current pricing tailored to your specific requirements, we recommend contacting our sales team for a customized quote. We ensure transparent pricing with no hidden costs, providing excellent value for the superior quality of our trapezoidal profile sheets."
           }
         },
         {
           "@type": "Question",
-          "name": "What makes Captain Steel's trapezoidal roofing superior to competitors?",
+          "name": "Can trapezoidal profile sheets be used for both industrial and residential buildings?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Captain Steel's trapezoidal roofing stands out through our commitment to superior quality and precision manufacturing. We use only prime-grade steel with optimal coating thickness, ensuring longer life and better performance. Our advanced manufacturing facility in Rajkot utilizes state-of-the-art roll-forming technology that maintains precise profile dimensions for consistent quality. We offer customization options including custom lengths, special coatings, and tailored solutions not widely available. Our comprehensive technical support includes design assistance, installation guidance, and after-sales service. Additionally, our stringent quality control process with multiple inspection points and material certifications ensures every sheet meets international standards. We're also competitive on price while maintaining higher quality benchmarks than most market alternatives."
+            "text": "Yes, trapezoidal profile sheets are versatile solutions suitable for both industrial and residential applications. For industrial buildings, we typically recommend thicker profiles (0.5-1.0mm) with galvanized or galvalume coatings for maximum durability and load-bearing capacity. These industrial-grade trapezoidal sheets can span longer distances between supports, making them ideal for warehouses, factories, and commercial structures. For residential buildings, our trapezoidal roofing sheets are increasingly popular due to their modern aesthetic appeal, durability, and practical benefits. In residential applications, we typically recommend slightly thinner profiles (0.35-0.47mm) with high-quality color coatings to achieve the perfect balance of performance, visual appeal, and cost-effectiveness. Our residential trapezoidal sheets can be perfectly integrated with skylights, solar panels, and other home roofing requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Captain Steel's trapezoidal profile sheets superior to competitors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Captain Steel's trapezoidal profile sheets stand out through our commitment to superior quality and precision manufacturing. We use only prime-grade steel with optimal coating thickness, ensuring longer life and better performance. Our advanced manufacturing facility in Rajkot utilizes state-of-the-art roll-forming technology that maintains precise profile dimensions for consistent quality. We offer customization options including custom lengths, special coatings, and tailored solutions not widely available. Our comprehensive technical support includes design assistance, installation guidance, and after-sales service. Additionally, our stringent quality control process with multiple inspection points and material certifications ensures every trapezoidal sheet meets international standards. We're also competitive on price while maintaining higher quality benchmarks than most market alternatives."
           }
         }
       ]
@@ -453,8 +468,8 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
     const articleStructuredData = {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Ultimate Guide to Trapezoidal Profile Sheets and Roof Sheets",
-      "description": "Comprehensive information about trapezoidal profile sheets, trapezoidal roofing, and roof sheets including benefits, applications, installation, and maintenance best practices.",
+      "headline": "Ultimate Guide to Trapezoidal Profile Sheets and Trapezoidal Roofing Sheets",
+      "description": "Comprehensive guide about trapezoidal profile sheets, trapezoidal sheets, and trapezoidal roofing sheets including benefits, applications, specifications, installation, and maintenance best practices for industrial and residential projects.",
       "image": `${this.baseUrl}/assets/products/trapezoidal-profile-sheets.jpg`,
       "datePublished": "2023-08-15T08:00:00+05:30",
       "dateModified": new Date().toISOString(),
@@ -474,7 +489,7 @@ export class TrapezoidalProfileSheetsComponent implements OnInit {
         "@type": "WebPage",
         "@id": "https://captainsteelroofsolution.com/products/trapezoidal-profile-sheets"
       },
-      "keywords": "trapezoidal profile sheets, trapezoidal sheets, roof sheet, trapezoidal roofing, metal roofing, steel roofing"
+      "keywords": "trapezoidal profile sheets, trapezoidal sheets, trapezoidal roofing sheet, roof sheet, trapezoidal roofing, metal roofing, steel roofing, trapezoidal sheet manufacturer"
     };
     
     // Store the structured data in transfer state
