@@ -15,6 +15,7 @@ interface Product {
   aggregateRating?: {
     ratingValue: string;
     reviewCount: string;
+    ratingCount?: string;
   };
 }
 
@@ -50,6 +51,9 @@ export class HomeComponent implements OnInit {
   currentSlide = 0;
   slides = [0, 1, 2, 3, 4]; // Array for slide indicators
   showDesignContent = false;
+
+  // Add this property after your products array
+  displayedProducts: Product[] = [];
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -137,48 +141,111 @@ export class HomeComponent implements OnInit {
   products: Product[] = [
     {
       title: 'Corrugated Roofing Sheets',
-      description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
+      description: 'High-quality corrugated sheets for durable and weather-resistant steel roof solutions. Perfect for residential, commercial and industrial roofing.',
       image: 'assets/products/corrugated-roofing-sheets-4.jpg',
       link: '/products/corrugated-roofing-sheets',
       aggregateRating: {
         ratingValue: '4.8',
-        reviewCount: '75'
+        reviewCount: '112',
+        ratingCount: '186'
       },
       aosDelay: 200
     },
     {
       title: 'Trapezoidal Profile Sheets',
-      description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
+      description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics. Ideal for commercial and industrial roof applications.',
       image: 'assets/products/trapezoidal-profile-sheets.jpg',
       link: '/products/trapezoidal-profile-sheets',
       aggregateRating: {
         ratingValue: '4.9',
-        reviewCount: '156'
+        reviewCount: '182',
+        ratingCount: '182'
       },
       aosDelay: 200
     },
     {
       title: 'Air Ventilator',
-      description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
+      description: 'Efficient air ventilators for improved airflow and ventilation in steel roof structures. Reduces heat and humidity in buildings.',
       image: 'assets/products/air-ventilator.jpeg',
       link: '/products/air-ventilator',
       aggregateRating: {
         ratingValue: '4.9',
-        reviewCount: '187'
+        reviewCount: '187',
+        ratingCount: '186'
+      },
+      aosDelay: 200
+    },
+    {
+      title: 'Insulated Metal Sheets',
+      description: 'Insulated sheets providing excellent thermal performance.',
+      image: 'assets/products/insulated-metal-roofing-sheets.jpg',
+      link: '/products/insulated-metal-sheets',
+      aggregateRating: {
+        ratingValue: '4.9',
+        reviewCount: '156',
+        ratingCount: '156'
       },
       aosDelay: 200
     },
     {
       title: 'Polycarbonate Sheets',
-      description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
+      description: 'Durable polycarbonate sheets for versatile roofing applications. Allows natural light while providing protection from UV rays.',
       image: 'assets/products/polycarbonate-sheets-2.jpg',
       link: '/products/polycarbonate-sheet',
       aggregateRating: {
         ratingValue: '4.9',
-        reviewCount: '176'
+        reviewCount: '105',
+        ratingCount: '158'
       },
       aosDelay: 200
     },
+    {
+      title: 'Bamboo Profile Sheets', 
+      description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
+      image: 'assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png',
+      link: '/products/bamboo-profile',
+      aggregateRating: {
+        ratingValue: '4.8',
+        reviewCount: '93',
+        ratingCount: '142'
+      },
+      aosDelay: 200
+    },
+    {
+      title: 'Roofing Accessories',
+      description: 'A range of accessories to complement our roofing solutions.', 
+      image: 'assets/products/crimping-and-accessories-2.jpg',
+      link: '/products/roofing-accessories',
+      aggregateRating: {
+        ratingValue: '4.9',
+        reviewCount: '222'
+      },  
+      aosDelay: 200
+    },
+    {
+      title: 'Roofing Gutter',
+      description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
+      image: 'assets/products/HYBRIDE_GUTTER/GUTEER 1.jpeg',  
+      link: '/products/gutter',
+      aggregateRating: {
+        ratingValue: '4.9',
+        reviewCount: '234',
+        ratingCount: '183'
+      },
+      aosDelay: 200
+    },
+    {
+      title: 'Crimping',
+      description: 'High-quality crimping solutions for various applications.',
+      image: 'assets/products/crimping-and-accessories.jpg',
+      link: '/products/crimping',
+      aggregateRating: {
+        ratingValue: '4.9',
+        reviewCount: '82',
+        ratingCount: '157'
+      },
+      aosDelay: 200
+    }
   ];
   yearsOfExperience: number = new Date().getFullYear() - 2020;
   experienceText: string = this.yearsOfExperience + '+';
@@ -282,18 +349,18 @@ export class HomeComponent implements OnInit {
   ];
 
   private setupSEO() {
-    const description = `Captain Steel - Premium Steel Roofing Solutions with ${this.yearsOfExperience}+ years of excellence. Authorized dealer of JSW, Tata BlueScope Steel, AM NS India, Tilara polyplast. Expert steel roof installation, steel roofing sheets, Captain steel, Rajkot, Gujarat.`;
+    const description = `Captain Steel - Premium Steel Roofing Solutions with ${this.yearsOfExperience}+ years of excellence. Offering high-quality corrugated sheets, trapezoidal sheets, air ventilators, polycarbonate sheets, insulated metal sheets, bamboo profile sheets, roofing gutters and accessories in Rajkot, Gujarat.`;
 
-    this.title.setTitle('Captain Steel - Premium Steel Roofing Sheets in Rajkot | Best Steel Roof Manufacturer & Supplier');
+    this.title.setTitle('Captain Steel - Premium Roofing Sheets & Steel Roof Solutions | Best Steel Roof Sheet Manufacturer in Rajkot');
 
     // Meta tags for SEO
     this.meta.updateTag({ name: 'description', content: description });
-    this.meta.updateTag({ name: 'keywords', content: 'steel roofing, steel roofing sheets, steel roof, corrugated sheets, trapezoidal sheets, industrial roofing, commercial roofing, JSW steel, Tata BlueScope, steel roof installation, Captain steel, Rajkot, Gujarat' });
+    this.meta.updateTag({ name: 'keywords', content: 'roofing sheet, roof sheet, steel roof, sheets for roof, roof accessories, still patra, corrugated sheet, trapezoidal sheet, air ventilator, insulated metal sheet, crimping, polycarbonate sheet, roofing accessories, bamboo profile sheet, roofing gutter, steel roofing sheets, steel roof installation, Captain steel, Rajkot, Gujarat' });
     this.meta.updateTag({ name: 'robots', content: 'index, follow' });
     this.meta.updateTag({ name: 'author', content: 'Captain Steel' });
 
     // Open Graph tags
-    this.meta.updateTag({ property: 'og:title', content: 'Captain Steel - Premium Steel Roofing Sheets in Rajkot' });
+    this.meta.updateTag({ property: 'og:title', content: 'Captain Steel - Premium Roofing Sheets & Steel Roof Solutions in Rajkot' });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:image', content: 'assets/home/company.jpg' });
     this.meta.updateTag({ property: 'og:url', content: 'https://captainsteelroofsolution.com' });
@@ -301,7 +368,7 @@ export class HomeComponent implements OnInit {
 
     // Twitter Card tags
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Premium Steel Roofing Sheets in Rajkot' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Premium Roofing Sheets & Steel Roof Solutions in Rajkot' });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: 'assets/home/company.jpg' });
     this.meta.updateTag({ name: 'viewport', content: 'width=device-width, initial-scale=1' });
@@ -314,6 +381,7 @@ export class HomeComponent implements OnInit {
   private setupStructuredData() {
     this.setOrganizationStructuredData();
     this.setBusinessStructuredData();
+    this.setProductStructuredData();
   }
 
   private setOrganizationStructuredData(): void {
@@ -435,8 +503,41 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  private setProductStructuredData(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const productData = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        'itemListElement': this.products.map((product, index) => ({
+          '@type': 'ListItem',
+          'position': index + 1,
+          'item': {
+            '@type': 'Product',
+            'name': product.title,
+            'description': product.description,
+            'image': `${this.baseUrl}/${product.image}`,
+            'url': `${this.baseUrl}${product.link}`,
+            'aggregateRating': {
+              '@type': 'AggregateRating',
+              'ratingValue': product.aggregateRating?.ratingValue,
+              'reviewCount': product.aggregateRating?.reviewCount
+            }
+          }
+        }))
+      };
+
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(productData);
+      this.document.head.appendChild(script);
+    }
+  }
+
   ngOnInit() {
     this.setupStructuredData();
+    // Take only first 4 products for display
+    this.displayedProducts = this.products.slice(0, 4);
+    
     if (isPlatformBrowser(this.platformId)) {
       Aos.init({
         duration: 1000,
