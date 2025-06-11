@@ -122,25 +122,25 @@ export class InsulatedMetalSheetsComponent implements OnInit {
 
   ngOnInit() {
     // Set SEO meta tags
-    this.titleService.setTitle('Best Insulated Metal Sheets & Roofing Sheets | Captain Steel');
+    this.titleService.setTitle('Best Insulated Metal Sheets & Roofing Sheets in Rajkot | Captain Steel');
     
     this.meta.addTags([
-      { name: 'description', content: 'Buy the best insulated metal sheets, insulated roofing sheets & insulation sheets from Captain Steel - #1 manufacturer & supplier in India. Premium quality, energy-efficient insulated sheets with superior thermal performance & durability.' },
-      { name: 'keywords', content: 'insulated sheet, insulated roofing sheet, insulated metal sheet, best roofing sheet, insulation sheet, insulation sheets, insulated metal sheets, insulation sheet manufacturer, thermal insulation sheets, energy efficient roofing sheets, best insulation sheets rajkot, premium insulated sheets, insulated roof panels, metal insulation' },
+      { name: 'description', content: 'Buy the best insulated metal sheets, insulated roofing sheets & insulation sheets from Captain Steel - #1 manufacturer & supplier in Rajkot, Gujarat. Premium quality, energy-efficient insulated sheets with superior thermal performance & durability for all building applications.' },
+      { name: 'keywords', content: 'insulated sheet in rajkot, insulated roofing sheet rajkot, insulated metal sheet in rajkot, best roofing sheet rajkot, insulation sheet manufacturer rajkot, insulation sheets rajkot, insulated metal sheets rajkot, thermal insulation sheets rajkot, energy efficient roofing sheets rajkot, best insulation sheets rajkot, premium insulated sheets rajkot, insulated roof panels rajkot, metal insulation rajkot, wholesale insulation sheets rajkot' },
       { name: 'robots', content: 'index, follow' },
-      { name: 'author', content: 'Captain Steel Roof Solutions' },
+      { name: 'author', content: 'Captain Steel Roof Solutions Rajkot' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'canonical', content: 'https://captainsteelroofsolution.com/products/insulated-metal-sheets' },
       // Open Graph tags for social sharing
-      { property: 'og:title', content: 'Best Insulated Metal Sheets & Roofing Sheets in India | Captain Steel' },
-      { property: 'og:description', content: 'Buy the best insulated metal sheets & insulated roofing sheets from Captain Steel. Premium quality, energy-efficient insulated sheets with superior thermal performance for all building applications.' },
+      { property: 'og:title', content: 'Best Insulated Metal Sheets & Roofing Sheets in Rajkot | Captain Steel' },
+      { property: 'og:description', content: 'Buy the best insulated metal sheets & insulated roofing sheets from Captain Steel Rajkot. Premium quality, energy-efficient insulated sheets with superior thermal performance for all building applications in Rajkot and across India.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/insulated-metal-sheets' },
       { property: 'og:type', content: 'product' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Best Insulated Metal Sheets & Roofing Sheets in India | Captain Steel' },
-      { name: 'twitter:description', content: 'Premium insulated sheets from India\'s leading manufacturer. Superior thermal efficiency, energy savings, and climate control for all building applications.' },
+      { name: 'twitter:title', content: 'Best Insulated Metal Sheets & Roofing Sheets in Rajkot | Captain Steel' },
+      { name: 'twitter:description', content: 'Premium insulated sheets from Rajkot\'s leading manufacturer. Superior thermal efficiency, energy savings, and climate control for all building applications.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/insulated-metal-roofing-sheets.jpg' }
     ]);
     
@@ -226,14 +226,14 @@ export class InsulatedMetalSheetsComponent implements OnInit {
     const structuredData = {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "Best Insulated Metal Sheets",
-      "alternateName": ["Insulation Sheets", "Insulated Roofing Sheets", "Best Roofing Sheets", "Energy Efficient Insulated Sheets"],
+      "name": "Best Insulated Metal Sheets in Rajkot",
+      "alternateName": ["Insulation Sheets in Rajkot", "Insulated Roofing Sheets Rajkot", "Best Roofing Sheets Rajkot", "Energy Efficient Insulated Sheets Rajkot", "Wholesale Insulation Sheets Rajkot"],
       "image": [
         `${this.baseUrl}/assets/products/insulated-metal-roofing-sheets.jpg`,
         `${this.baseUrl}/assets/products/insulated-metal-sheet-close.jpg`,
         `${this.baseUrl}/assets/products/insulated-metal-sheet-installation.jpg`
       ],
-      "description": "Premium insulated sheets manufactured by Captain Steel, offering superior thermal efficiency, energy savings, and exceptional climate control for commercial and industrial buildings across India.",
+      "description": "Premium insulated sheets manufactured by Captain Steel in Rajkot, offering superior thermal efficiency, energy savings, and exceptional climate control for commercial and industrial buildings across India. Best insulated metal sheet manufacturer in Rajkot, Gujarat.",
       "sku": "INSULATED-MS-01",
       "mpn": "CSRS-IMS-2023",
       "brand": {
@@ -340,18 +340,26 @@ export class InsulatedMetalSheetsComponent implements OnInit {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What makes insulated metal sheets more energy efficient than traditional building materials?",
+          "name": "What makes insulated metal sheets from Captain Steel Rajkot more energy efficient than traditional building materials?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Insulated metal sheets achieve superior energy efficiency through their continuous insulation core that eliminates thermal bridging common in traditional construction. The high R-value insulation combined with reflective metal facings creates an effective thermal barrier that minimizes heat transfer in both directions. This integrated system can reduce energy consumption by 20-30% compared to conventional building materials, providing significant cost savings over the building's lifecycle while maintaining more consistent interior temperatures with less HVAC demand."
+            "text": "Insulated metal sheets from Rajkot achieve superior energy efficiency through their continuous insulation core that eliminates thermal bridging common in traditional construction. The high R-value insulation combined with reflective metal facings creates an effective thermal barrier that minimizes heat transfer in both directions. This integrated system can reduce energy consumption by 20-30% compared to conventional building materials, providing significant cost savings over the building's lifecycle while maintaining more consistent interior temperatures with less HVAC demand."
           }
         },
         {
           "@type": "Question",
-          "name": "What types of insulation cores are available, and how do they differ?",
+          "name": "What types of insulation cores are available in Captain Steel's insulation sheets in Rajkot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer three primary insulation core options: polyurethane (PUR), polyisocyanurate (PIR), and mineral wool. Polyurethane provides excellent thermal efficiency with an R-value of approximately 6.5 per inch and good moisture resistance. PIR offers similar thermal performance but with enhanced fire resistance properties, making it ideal for applications where fire ratings are critical. Mineral wool cores deliver superior fire resistance and acoustic performance, though with a slightly lower R-value of around 4.3 per inch. Our technical team can help you select the optimal core material based on your specific requirements for thermal performance, fire safety, budget, and environmental considerations."
+            "text": "As a leading insulation sheet manufacturer in Rajkot, we offer three primary insulation core options: polyurethane (PUR), polyisocyanurate (PIR), and mineral wool. Polyurethane provides excellent thermal efficiency with an R-value of approximately 6.5 per inch and good moisture resistance. PIR offers similar thermal performance but with enhanced fire resistance properties, making it ideal for applications where fire ratings are critical. Mineral wool cores deliver superior fire resistance and acoustic performance, though with a slightly lower R-value of around 4.3 per inch. Our technical team can help you select the optimal core material based on your specific requirements for thermal performance, fire safety, budget, and environmental considerations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I purchase wholesale insulation sheets in Rajkot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Captain Steel is a premier wholesale insulation sheet supplier in Rajkot, Gujarat. Our manufacturing facility is located at Sadak Pipliya, National Highway, Ta. Gondal, Rajkot, Gujarat 360311. We offer competitive wholesale pricing for bulk orders and serve clients throughout India. Contact our sales team at +91 9879109091 or visit our facility to discuss your wholesale insulated sheet requirements, get samples, and quotations for your projects."
           }
         },
         {
