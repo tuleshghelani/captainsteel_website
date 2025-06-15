@@ -48,7 +48,7 @@ export class ProductsComponent implements OnInit {
         aosDelay: 200
       },
       {
-        title: 'Air Ventilator',
+        title: 'Air Ventilators',
         description: 'Efficient air ventilators for improved airflow and ventilation.',
         image: 'assets/products/air-ventilator.jpeg',
         link: '/products/air-ventilator',
@@ -62,7 +62,7 @@ export class ProductsComponent implements OnInit {
         aosDelay: 400
       },
       {
-        title: 'Crimping',
+        title: 'Crimping Metal Sheet',
         description: 'High-quality crimping solutions for various applications.',
         image: 'assets/products/crimping-and-accessories.jpg',
         link: '/products/crimping',
