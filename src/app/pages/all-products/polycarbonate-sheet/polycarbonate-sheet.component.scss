@@ -1,5 +1,6 @@
 @import '../../../../styles.scss';
 
+
 // Product page container
 .product-page-container {
   margin-top: 5rem;
@@ -511,30 +512,26 @@ section {
 
 // Benefits Section
 .benefits-section {
-  background-color: white;
-  
-  @media (max-width: 576px) {
-    padding: 5px 25px 5px 5px;
-    margin: 0 auto;
-  }
-  
+  padding: 80px 0;
+  background-color: #f8f9fa;
+
   .benefits-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 40px;
     align-items: center;
-    
-    @media (max-width: 991px) {
+
+    @media (max-width: 768px) {
       grid-template-columns: 1fr;
     }
   }
-  
+
   .benefits-content {
     .benefits-list {
       list-style: none;
       padding: 0;
       margin: 0;
-      
+
       li {
         display: flex;
         margin-bottom: 30px;
@@ -542,51 +539,343 @@ section {
         &:last-child {
           margin-bottom: 0;
         }
-        
+
         .benefit-icon {
-          flex-shrink: 0;
-          width: 50px;
-          height: 50px;
-          background: linear-gradient(135deg, $primary, $secondary);
-          border-radius: 10px;
+          flex: 0 0 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: var(--primary-color);
+          color: white;
           display: flex;
           align-items: center;
           justify-content: center;
+          font-size: 24px;
           margin-right: 20px;
-          
-          i {
-            color: white;
-            font-size: 1.2rem;
-          }
         }
-        
+
         .benefit-details {
+          flex: 1;
+
           h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: $neutral-dark;
+            margin-top: 0;
             margin-bottom: 10px;
+            font-size: 20px;
+            color: var(--primary-color);
           }
-          
+
           p {
-            color: $neutral-medium;
-            line-height: 1.6;
+            margin: 0;
+            color: #555;
           }
         }
       }
     }
   }
-  
+
   .benefits-image {
-    position: relative;
-    
     img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
   }
 }
+
+// Why Choose Section
+.why-choose-section {
+  padding: 80px 0;
+  background-color: #fff;
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+  }
+
+  .why-choose-content {
+    max-width: 900px;
+    margin: 0 auto;
+
+    > p {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+  }
+
+  .why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .why-choose-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    i {
+      font-size: 36px;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+  }
+}
+
+// FAQ Section
+.faq-section {
+  padding: 80px 0;
+  background-color: $background-secondary;
+  
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    .section-title {
+      font-size: 2.5rem;
+      color: $text-primary;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: $primary;
+      }
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: $text-secondary;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    
+    .faq-item {
+      background-color: $background-primary;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba($dark, 0.05);
+      overflow: hidden;
+      
+      &.active {
+        .faq-question {
+          background-color: rgba($primary, 0.05);
+          
+          .toggle-icon {
+            .plus-icon {
+              display: none;
+            }
+            
+            .minus-icon {
+              display: block;
+            }
+          }
+        }
+        
+        .faq-answer {
+          max-height: 1000px;
+          padding: 20px;
+        }
+      }
+      
+      .faq-question {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+          background-color: rgba($primary, 0.05);
+        }
+        
+        h3 {
+          font-size: 1.1rem;
+          color: $text-primary;
+          margin-bottom: 0;
+          flex-grow: 1;
+          padding-right: 15px;
+        }
+        
+        .toggle-icon {
+          flex-shrink: 0;
+          width: 24px;
+          height: 24px;
+          position: relative;
+          
+          i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $primary;
+            font-size: 1rem;
+          }
+          
+          .plus-icon {
+            display: block;
+          }
+          
+          .minus-icon {
+            display: none;
+          }
+        }
+      }
+      
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        padding: 0 20px;
+        
+        p {
+          color: $text-secondary;
+          line-height: 1.6;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  background: linear-gradient(to right, $primary, $primary-dark);
+  color: white;
+  text-align: center;
+  
+  @media (max-width: 576px) {
+    padding: 5px 25px 5px 5px;
+    margin: 0 auto;
+  }
+  
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+    
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: $secondary;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: $secondary-light;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+    
+    .secondary-button {
+      display: inline-block;
+      background-color: transparent;
+      color: white;
+      padding: 13px 29px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid white;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: white;
+        color: $primary;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
 
 // Related Products Section
 .related-products-section {
