@@ -514,57 +514,6 @@ export class PolycarbonateSheetComponent implements OnInit {
           "name": "Gujarat"
         }
       ],
-      "makesOffer": {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Polycarbonate Roofing Sheets",
-          "description": "Premium transparent roofing sheets with exceptional durability, UV protection, and impact resistance. 200x stronger than glass at half the weight.",
-          "url": `${this.baseUrl}/products/polycarbonate-sheet`
-        }
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Polycarbonate Sheet Products",
-        "itemListElement": [
-          {
-            "@type": "OfferCatalog",
-            "name": "Solid Polycarbonate Sheets",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Product",
-                  "name": "Clear Polycarbonate Sheets",
-                  "description": "Transparent polycarbonate sheets with 90% light transmission"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Product",
-                  "name": "Tinted Polycarbonate Sheets",
-                  "description": "Colored polycarbonate sheets in Bronze, Blue, Green, and Grey options"
-                }
-              }
-            ]
-          },
-          {
-            "@type": "OfferCatalog",
-            "name": "Multiwall Polycarbonate Sheets",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Product",
-                  "name": "Twin-Wall Polycarbonate Sheets",
-                  "description": "Double-layered polycarbonate sheets with excellent thermal insulation"
-                }
-              }
-            ]
-          }
-        ]
-      },
       "sameAs": [
         "https://www.facebook.com/captainroof/",
         "https://www.linkedin.com/company/captain-steel/",
