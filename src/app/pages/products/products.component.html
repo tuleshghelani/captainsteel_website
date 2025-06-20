@@ -1,38 +1,77 @@
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="section-title" data-aos="fade-up">Our Products</h1>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Explore our premium steel roofing solutions
-        </p>
-        <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
-          <a href="/">Home</a>
-          <i class="fas fa-chevron-right"></i>
-          <span>Products</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="products-section" itemprop="makesOffer" itemscope itemtype="http://schema.org/Offer">
+<!-- Hero Section -->
+<section class="hero-section" itemscope itemtype="http://schema.org/LocalBusiness">
+  <meta itemprop="name" content="Captain Steel Roof Solutions">
+  <meta itemprop="address" content="Rajkot, Gujarat, India">
+  <meta itemprop="telephone" content="+91-XXXXXXXXXX">
+  <meta itemprop="url" content="https://captainsteelroofsolution.com/products">
+  <div class="hero-overlay"></div>
   <div class="container">
-    <h2 class="section-title" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">Our Premium Products</h2>
-    <div class="products-grid">
-      <div class="product-card" *ngFor="let product of products" 
-           [attr.data-aos]="'fade-up'"
-           [attr.data-aos-delay]="product.aosDelay">
-        <div class="product-image">
-          <img [src]="product.image" [alt]="product.title" loading="lazy">
-        </div>
-        <div class="product-content">
-          <h3>{{product.title}}</h3>
-          <p>{{product.description}}</p>
-          <a [href]="product.link" class="product-link">Learn More</a>
-        </div>
+    <div class="hero-content">
+      <h1 class="section-title" data-aos="fade-up">
+        <strong>Roofing Sheet in Rajkot</strong>
+      </h1>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        <strong>Premium Roofing Sheet</strong> Solutions in Rajkot, Gujarat – Durable, Attractive, and Long-Lasting <strong>Colour Coated Roofing Sheets</strong> for Industrial, Commercial, and Residential Projects.
+      </p>
+      <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+        <a href="/">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Products</span>
       </div>
     </div>
   </div>
+</section>
+
+<section class="products-section" itemprop="makesOffer" itemscope itemtype="http://schema.org/OfferCatalog">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
+      <strong>Our Premium Colour Coated Roofing Sheets & Products</strong>
+    </h2>
+    <p style="text-align:center; margin-bottom:2rem;" data-aos="fade-up" data-aos-delay="1100">
+      <strong>Captain Steel</strong> is a leading manufacturer and supplier of <strong>roofing sheets</strong> and <strong>colour coated roofing sheets in Rajkot</strong>, Gujarat. Explore our wide range of high-quality, weather-resistant, and aesthetically pleasing roofing solutions for every need.
+    </p>
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of products"
+           [attr.data-aos]="'fade-up'"
+           [attr.data-aos-delay]="product.aosDelay"
+           itemscope itemtype="http://schema.org/Product">
+        <div class="product-image">
+          <img [src]="product.image" [alt]="product.title + ' - Colour Coated Roofing Sheet in Rajkot'" loading="lazy" itemprop="image">
+        </div>
+        <div class="product-content">
+          <h3 itemprop="name"><strong>{{product.title}}</strong></h3>
+          <p itemprop="description">
+            <strong>{{product.title}}</strong> - {{product.description}} <span style="display:none;">Colour coated roofing sheet, roofing sheet in Rajkot, best roofing sheet manufacturer in Rajkot.</span>
+          </p>
+          <a [href]="product.link" class="product-link" itemprop="url">Learn More</a>
+        </div>
+        <meta itemprop="brand" content="Captain Steel Roof Solutions">
+        <meta itemprop="offers" content="Available in Rajkot, Gujarat">
+      </div>
+    </div>
+    <div class="why-captain-steel" data-aos="fade-up" data-aos-delay="1200" aria-labelledby="why-captain-steel-title">
+      <h2 id="why-captain-steel-title" class="section-title">
+        <strong>Why Choose Captain Steel for Roofing Sheets?</strong>
+      </h2>
+      <ul class="why-list">
+        <li>
+          <span class="icon" aria-hidden="true">🏆</span>
+          <strong>Premium Quality:</strong> Industry-leading colour coated roofing sheets engineered for longevity and performance.
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true">🛠️</span>
+          <strong>Expertise & Support:</strong> Professional installation by certified experts and dedicated after-sales service.
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true">🌦️</span>
+          <strong>Weatherproof & Stylish:</strong> Advanced weather-resistant technology with modern, attractive designs.
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true">🤝</span>
+          <strong>Trusted by Leaders:</strong> Preferred partner for top businesses and discerning homeowners across Rajkot & Gujarat.
+        </li>
+      </ul>
+    </div>
+  </div>
+  
 </section>
