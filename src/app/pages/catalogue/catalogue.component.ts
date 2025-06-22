@@ -16,19 +16,24 @@ export class CatalogueComponent implements OnInit {
   pdfSrc = 'assets/catalogue/catalogue.pdf';
   catalogueItems = [
     {
-      title: 'Company Overview',
-      description: 'Learn about our history, mission, and vision for the future.',
+      title: 'Premium Roofing Sheets',
+      description: 'Explore our extensive range of high-quality roofing sheets in Rajkot, designed for durability and performance.',
       aosDelay: 100
     },
     {
-      title: 'Product Range',
-      description: 'Explore our extensive range of steel products and solutions.',
+      title: 'Colour Coated Sheets',
+      description: 'Discover our premium colour coated roofing sheets available in various profiles and finishes for all applications.',
       aosDelay: 200
     },
     {
       title: 'Technical Specifications',
-      description: 'Detailed technical specifications for all our products.',
+      description: 'Detailed technical specifications for all our roofing sheet products manufactured in Rajkot.',
       aosDelay: 300
+    },
+    {
+      title: 'Installation Guidelines',
+      description: 'Expert installation instructions for our roofing sheets to ensure optimal performance and longevity.',
+      aosDelay: 400
     }
   ];
 
@@ -44,22 +49,22 @@ export class CatalogueComponent implements OnInit {
       });
     }
 
-    this.titleService.setTitle('Steel Roofing Product Catalogue | Captain Steel Rajkot');
+    this.titleService.setTitle('Premium Colour Coated Roofing Sheets Catalogue | Captain Steel Rajkot');
     this.meta.addTags([
-      { name: 'description', content: 'Download our comprehensive steel roofing product catalogue featuring premium roofing sheets, ventilators, accessories and technical specifications from Rajkot\'s leading manufacturer.' },
-      { name: 'keywords', content: 'steel roofing catalogue, roofing product specifications Rajkot, steel roof technical details, corrugated sheets catalogue, trapezoidal sheets specifications, roofing accessories Gujarat, Captain Steel products Rajkot, steel roofing PDF, roofing material guide Rajkot, industrial roofing specifications' },
+      { name: 'description', content: 'Download our comprehensive roofing sheet catalogue featuring premium colour coated roofing sheets, corrugated sheets, and accessories with technical specifications from Rajkot\'s leading manufacturer.' },
+      { name: 'keywords', content: 'roofing sheet in Rajkot, colour coated roofing sheet, roofing sheet manufacturer Rajkot, colour coated roofing sheet in Rajkot, corrugated roofing sheets Rajkot, trapezoidal roofing sheets Gujarat, steel roofing catalogue, roofing product specifications Rajkot, steel roof technical details, roofing accessories Gujarat, Captain Steel products Rajkot, roofing material guide Rajkot, industrial roofing specifications' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'canonical', content: 'https://captainsteelroofsolution.com/catalogue' },
-      { property: 'og:title', content: 'Steel Roofing Product Catalogue | Captain Steel Rajkot' },
-      { property: 'og:description', content: 'Download our comprehensive steel roofing product catalogue with premium roofing sheets, ventilators, accessories and technical specifications.' },
+      { property: 'og:title', content: 'Premium Colour Coated Roofing Sheets Catalogue | Captain Steel Rajkot' },
+      { property: 'og:description', content: 'Download our comprehensive roofing sheet catalogue with premium colour coated roofing sheets, corrugated sheets, and accessories with detailed specifications.' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/catalogue' },
       { property: 'og:type', content: 'website' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/catalogue/catalogue-cover.jpg' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Steel Roofing Product Catalogue | Captain Steel Rajkot' },
-      { name: 'twitter:description', content: 'Download our comprehensive steel roofing product catalogue with specifications and technical details.' },
+      { name: 'twitter:title', content: 'Premium Colour Coated Roofing Sheets Catalogue | Captain Steel Rajkot' },
+      { name: 'twitter:description', content: 'Download our comprehensive roofing sheet catalogue with specifications and technical details for all roofing solutions in Rajkot.' },
       { name: 'geo.region', content: 'IN-GJ' },
       { name: 'geo.placename', content: 'Rajkot' },
       { name: 'geo.position', content: '22.089419;70.782472' }
@@ -82,12 +87,20 @@ export class CatalogueComponent implements OnInit {
       const structuredData = {
         '@context': 'https://schema.org',
         '@type': 'Product',
-        'name': 'Captain Steel Roofing Product Catalogue',
-        'description': 'Comprehensive product catalogue featuring premium steel roofing sheets, ventilators, accessories and technical specifications from Rajkot\'s leading manufacturer.',
+        'name': 'Captain Steel Colour Coated Roofing Sheets Catalogue',
+        'description': 'Comprehensive product catalogue featuring premium colour coated roofing sheets in Rajkot, corrugated sheets, trapezoidal sheets, accessories and technical specifications from Rajkot\'s leading manufacturer.',
         'image': 'https://captainsteelroofsolution.com/assets/catalogue/catalogue-cover.jpg',
         'brand': {
           '@type': 'Brand',
           'name': 'Captain Steel'
+        },
+        'offers': {
+          '@type': 'AggregateOffer',
+          'priceCurrency': 'INR',
+          'availability': 'https://schema.org/InStock',
+          'highPrice': '1200',
+          'lowPrice': '300',
+          'offerCount': '10'
         },
         'aggregateRating': {
           '@type': 'AggregateRating',

@@ -264,6 +264,44 @@ $pdf-neutral-lightest: #f5f5f6;
 .pdf-section {
   padding: 80px 0;
   
+  .catalogue-highlights {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 4px solid $primary;
+    
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .highlights-list {
+      list-style-type: none;
+      padding-left: 0;
+      
+      li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+        
+        &:before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: $primary;
+          font-weight: bold;
+        }
+        
+        strong {
+          color: $primary-dark;
+        }
+      }
+    }
+  }
+  
   .section-title {
     text-align: center;
     font-size: 2.2rem;
@@ -464,6 +502,7 @@ $pdf-neutral-lightest: #f5f5f6;
   color: white;
   padding: 60px 0;
   margin-top: 40px;
+  margin-bottom: 0;
   
   .cta-content {
     text-align: center;
@@ -493,6 +532,113 @@ $pdf-neutral-lightest: #f5f5f6;
         background-color: #3dc54d;
         transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+// SEO Footer Section
+.seo-footer {
+  background-color: #f5f5f6;
+  padding: 60px 0;
+  
+  .seo-content {
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #333;
+      position: relative;
+      padding-bottom: 15px;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(to right, $primary, $secondary);
+      }
+    }
+    
+    p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    .service-areas {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: #444;
+      }
+    }
+  }
+}
+
+// SEO Content in Catalogue Info
+.catalogue-info {
+  .seo-content {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    
+    .content-title {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #333;
+      position: relative;
+      padding-bottom: 15px;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: $primary;
+      }
+    }
+    
+    p {
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+      
+      .feature-item {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 6px;
+        border-left: 3px solid $primary;
+        
+        h4 {
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+          color: #333;
+        }
+        
+        p {
+          margin-bottom: 0;
+          font-size: 0.95rem;
+        }
       }
     }
   }
