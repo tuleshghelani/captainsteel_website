@@ -24,6 +24,13 @@ interface Specification {
 interface FAQ {
   question: string;
   answer: string;
+  active?: boolean;
+}
+
+interface GalleryImage {
+  src: string;
+  alt: string;
+  title: string;
 }
 
 @Component({
@@ -40,103 +47,102 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
   features: Feature[] = [
     {
       icon: 'fas fa-shield-alt',
-      title: 'Superior Durability',
-      description: 'Engineered with high-tensile steel to withstand extreme weather conditions and provide long-lasting protection.'
-    },
-    {
-      icon: 'fas fa-bolt',
-      title: 'Corrosion Resistant',
-      description: 'Advanced galvanized coating technology offers exceptional protection against rust and corrosion.'
-    },
-    {
-      icon: 'fas fa-tint-slash',
-      title: 'Weather Proof',
-      description: 'Designed to resist heavy rainfall, high winds, snow loads, and extreme temperatures year-round.'
-    },
-    {
-      icon: 'fas fa-sun',
-      title: 'UV Resistant',
-      description: 'Special coating prevents color fading and material degradation from prolonged sun exposure.'
-    },
-    {
-      icon: 'fas fa-feather',
-      title: 'Lightweight',
-      description: 'High strength-to-weight ratio reduces structural load requirements and makes installation easier.'
+      title: 'High-Tensile Strength',
+      description: 'Our corrugated roofing sheets are engineered with high-tensile steel for maximum durability and impact resistance, ensuring long-lasting protection for your property in Rajkot.'
     },
     {
       icon: 'fas fa-palette',
-      title: 'Aesthetic Appeal',
-      description: 'Available in multiple colors and finishes to complement any architectural style and design vision.'
+      title: 'Vibrant Colour Coated Finish',
+      description: 'Featuring a multi-layered colour coating process, our roofing sheets offer exceptional aesthetic appeal and protection against fading and peeling, perfect for Gujarat\'s climate.'
+    },
+    {
+      icon: 'fas fa-bolt',
+      title: 'Superior Corrosion Resistance',
+      description: 'Advanced galvanization and colour coating technology provide exceptional protection against rust and corrosion, extending the life of your roof.'
+    },
+    {
+      icon: 'fas fa-tint-slash',
+      title: 'All-Weather Proofing',
+      description: 'Designed to withstand heavy rainfall, high winds, and extreme temperatures, our colour coated roofing sheets offer reliable, year-round protection.'
+    },
+    {
+      icon: 'fas fa-feather',
+      title: 'Lightweight & Easy Installation',
+      description: 'The high strength-to-weight ratio reduces structural load, simplifies transportation, and speeds up installation, saving time and money on your project.'
+    },
+    {
+      icon: 'fas fa-recycle',
+      title: 'Eco-Friendly Roofing Solution',
+      description: 'Made from 100% recyclable steel, our corrugated sheets are an environmentally responsible choice for sustainable building projects in Rajkot and beyond.'
     }
   ];
 
   specifications: Specification[] = [
-    { name: 'Material', value: 'High-tensile galvanized steel' },
-    { name: 'Thickness', value: '0.35mm to 0.80mm' },
-    { name: 'Width Coverage', value: '1050mm (standard)' },
-    { name: 'Length', value: 'Customizable up to 12m' },
-    { name: 'Surface Treatment', value: 'Galvanized/Aluzinc/Color Coated' },
-    { name: 'Coating', value: 'PE/PVDF/SMP/HDP' },
-    { name: 'Profile Height', value: '17mm to 32mm' },
-    { name: 'Rib Spacing', value: '76mm (standard)' },
-    { name: 'Color Options', value: 'Multiple premium colors available' },
-    { name: 'Wind Uplift Resistance', value: 'Up to 180 km/h' },
-    { name: 'Warranty', value: 'Up to 20 years (material dependent)' }
+    { name: 'Product Name', value: 'Colour Coated Corrugated Roofing Sheet' },
+    { name: 'Material', value: 'High-Tensile Galvanized Steel (GI) / Aluzinc' },
+    { name: 'Thickness Range', value: '0.35mm to 0.80mm' },
+    { name: 'Sheet Width', value: '1070mm (Effective Coverage: 1010mm)' },
+    { name: 'Available Length', value: 'Customizable up to 12 meters (40 feet)' },
+    { name: 'Coating Type', value: 'Regular Modified Polyester (RMP), Silicone Modified Polyester (SMP), PVDF' },
+    { name: 'Colour Options', value: 'Wide range of vibrant colours (RAL shades available)' },
+    { name: 'Profile Height', value: '18mm to 35mm' },
+    { name: 'Application', value: 'Industrial, Commercial, Residential, Agricultural Roofing' },
+    { name: 'Key Features', value: 'Weather Resistant, Leak Proof, Corrosion Resistant' },
+    { name: 'Warranty', value: 'Up to 20 years for coating performance' }
   ];
 
   faqs: FAQ[] = [
     {
-      question: 'What is the minimum order quantity for corrugated roofing sheets?',
-      answer: 'Our minimum order quantity is typically 100 square meters. However, we can accommodate smaller orders for specific projects. Please contact our sales team for customized solutions.'
+      question: 'What are colour coated roofing sheets?',
+      answer: 'Colour coated roofing sheets are corrugated steel sheets that have been coated with a durable paint layer. This coating provides excellent protection against weather and corrosion while offering a wide range of aesthetic colour choices for your building in Rajkot.',
+      active: true
     },
     {
-      question: 'Do you offer installation services along with the product?',
-      answer: 'Yes, we provide professional installation services through our certified installation partners across the country. Our installation comes with a workmanship warranty and ensures optimal performance of the roofing system.'
+      question: 'What is the price of corrugated roofing sheets in Rajkot?',
+      answer: 'The price of our roofing sheets depends on thickness, coating type, and order quantity. As a leading manufacturer in Rajkot, we offer the most competitive prices in Gujarat. Please contact us for a detailed quote for your specific needs.',
+      active: false
     },
     {
-      question: 'How do corrugated sheets compare to other roofing materials?',
-      answer: 'Corrugated sheets offer superior durability, weather resistance, and cost-effectiveness compared to traditional roofing materials. They are lighter, easier to install, require minimal maintenance, and have a longer lifespan, making them an excellent investment for various applications.'
+      question: 'How do your corrugated sheets enhance building aesthetics?',
+      answer: 'Our colour coated corrugated sheets come in a variety of vibrant, long-lasting colours that can match any architectural design. The clean lines and uniform finish provide a modern and professional look to any residential or commercial building.',
+      active: false
     },
     {
-      question: 'What colors are available for corrugated roofing sheets?',
-      answer: 'We offer a wide range of premium colors including but not limited to Classic Red, Forest Green, Royal Blue, Charcoal Grey, Terracotta, Bright White, and Metallic Silver. Custom colors are also available for large orders.'
+      question: 'Are these roofing sheets suitable for Gujarat\'s climate?',
+      answer: 'Absolutely. Our sheets are specifically designed for the Indian climate. The multi-layer coating provides excellent UV resistance and can withstand heavy monsoon rains and high temperatures, ensuring long-term performance and durability.',
+      active: false
     },
     {
-      question: 'How long do corrugated roofing sheets last?',
-      answer: 'With proper installation and maintenance, our corrugated roofing sheets can last 25-30 years or more. The exact lifespan depends on the coating type, environmental conditions, and maintenance practices.'
+      question: 'What is the lifespan of your colour coated roofing sheets?',
+      answer: 'With proper installation and minimal maintenance, our premium colour coated roofing sheets can last for over 25 years. The advanced coating technology protects the base steel from degradation, ensuring a long and reliable service life.',
+      active: false
     },
     {
-      question: 'Are your corrugated sheets environmentally friendly?',
-      answer: 'Yes, our steel corrugated sheets are 100% recyclable. We also use eco-friendly manufacturing processes that minimize waste and energy consumption, contributing to sustainable building practices.'
-    },
-    {
-      question: 'What makes Captain Steel\'s corrugated roofing sheets in Rajkot superior?',
-      answer: 'Captain Steel\'s corrugated roofing sheets in Rajkot are manufactured with premium-grade high-tensile steel and feature advanced coating technology that exceeds industry standards. Our local manufacturing facility allows us to maintain strict quality control while offering customized solutions, competitive pricing, and prompt delivery throughout Gujarat. We also provide professional installation services by certified experts, ensuring optimal performance and longevity of your roofing system.'
-    },
+      question: 'Do you provide installation for the roofing sheets?',
+      answer: 'Yes, we offer professional installation services across Rajkot and Gujarat. Our experienced team ensures that your corrugated roofing sheets are installed perfectly for maximum performance and longevity.',
+      active: false
+    }
   ];
 
-  galleryImages = [
+  galleryImages: GalleryImage[] = [
     {
       src: 'assets/products/corrugated-roofing-sheets-4.jpg',
-      alt: 'Premium Corrugated Roofing Sheets in Rajkot - High Quality Steel Roofing',
-      title: 'Corrugated Steel Sheets'
+      alt: 'Stack of blue colour coated corrugated roofing sheets in Rajkot warehouse.',
+      title: 'Colour Coated Roofing Sheets'
     },
     {
       src: 'assets/products/corrugated-roofing-sheets-2.jpg',
-      alt: 'Color Coated Corrugated Sheets in Rajkot - Durable Commercial Roofing',
-      title: 'Color Coated Sheets'
+      alt: 'Close-up of the profile of a corrugated colour coated roofing sheet.',
+      title: 'Corrugated Sheet Profile'
     },
     {
       src: 'assets/products/corrugated-roofing-sheets-3.jpg',
-      alt: 'Galvanized Corrugated Roofing Installation in Rajkot - Professional Roofing',
-      title: 'Professional Installation'
-    },
-    {
-      src: 'assets/products/corrugated-sheets-accessories.jpg',
-      alt: 'Corrugated Roofing Accessories in Rajkot - Complete Roofing Solutions',
-      title: 'Roofing Accessories'
+      alt: 'Professional installation of corrugated roofing sheets on a building in Gujarat.',
+      title: 'Roofing Sheet Installation'
     }
   ];
+
+  mainImage: GalleryImage = this.galleryImages[0];
 
   constructor(
     private meta: Meta,
@@ -146,13 +152,31 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Set SEO meta tags - Title tags influence search rankings and are the first impression for users
-    this.titleService.setTitle('Premium Corrugated Roofing Sheets in Rajkot | Captain Steel');
-    
-    // Meta descriptions impact click-through rates by providing concise page summaries under 155 characters
+    this.setMetaTags();
+    this.setStructuredData();
+    this.initializeAOS();
+  }
+
+  setMainImage(image: GalleryImage): void {
+    this.mainImage = image;
+  }
+
+  toggleFaq(faq: FAQ): void {
+    faq.active = !faq.active;
+  }
+
+  private setMetaTags(): void {
+    const title = 'Colour Coated Corrugated Roofing Sheets Manufacturer in Rajkot | Captain Steel';
+    const description = 'Top manufacturer of colour coated corrugated roofing sheets in Rajkot. Get premium quality steel roofing sheets at the best price in Gujarat. Durable, weather-resistant, and available in various colours.';
+    const keywords = 'colour coated roofing sheet, corrugated roofing sheets, roofing sheet price, steel roofing sheet, roofing solutions, captain steel, roofing manufacturer, rajkot, gujarat';
+    const imageUrl = `${this.baseUrl}/assets/products/corrugated-roofing-sheets-4.jpg`;
+    const url = `${this.baseUrl}/products/corrugated-roofing-sheets`;
+
+    this.titleService.setTitle(title);
+
     this.meta.addTags([
-      { name: 'description', content: 'Buy premium corrugated roofing sheets in Rajkot at Captain Steel. High-tensile galvanized steel with superior durability and weather resistance. Best prices in Rajkot with same-day delivery across Gujarat.' },
-      { name: 'keywords', content: 'corrugated roofing sheets, corrugated roofing sheets in Rajkot, steel roofing Rajkot, metal roofing Rajkot, industrial roofing Gujarat, commercial roofing Rajkot, galvanized roofing sheets, color coated roofing, roof sheets price, Rajkot, Gujarat' },
+      { name: 'description', content: description },
+      { name: 'keywords', content: keywords },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -172,62 +196,37 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
       { property: 'og:region', content: 'Gujarat' },
       { property: 'og:postal-code', content: '360311' },
       { property: 'og:country-name', content: 'India' },
-      // Twitter Card tags - Enhances visibility on Twitter platform
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Premium Corrugated Roofing Sheets in Rajkot | Captain Steel' },
       { name: 'twitter:description', content: 'Buy premium corrugated sheets in Rajkot. Durable, weather-resistant steel roofing with best prices and free delivery across Gujarat.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/corrugated-roofing-sheets-4.jpg' }
     ]);
-    
-    // Add structured data
+
+    // Add or update the canonical link
+    const canonicalLink: HTMLLinkElement | null = this.document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.href = url;
+    } else {
+      const link: HTMLLinkElement = this.document.createElement('link');
+      link.rel = 'canonical';
+      link.href = url;
+      this.document.head.appendChild(link);
+    }
+  }
+
+  private setStructuredData(): void {
     this.setProductStructuredData();
     this.setBusinessStructuredData();
     this.setFaqStructuredData();
-    
-    // Only run browser-specific code if we are in a browser environment
+  }
+
+  private initializeAOS(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Initialize AOS animations
       Aos.init({
         duration: 1000,
         once: true,
         offset: 100
       });
-      
-      // Add click event listeners to FAQ items after view is initialized
-      setTimeout(() => {
-        const faqItems = document.querySelectorAll('.faq-question');
-        faqItems.forEach(item => {
-          item.addEventListener('click', () => {
-            const parent = item.parentElement;
-            if (parent) {
-              parent.classList.toggle('active');
-            }
-          });
-        });
-
-        // Add click event listeners to gallery thumbnails
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        const mainImage = document.querySelector('.main-image img') as HTMLImageElement;
-        
-        if (thumbnails.length > 0 && mainImage) {
-          thumbnails.forEach(thumb => {
-            thumb.addEventListener('click', () => {
-              // Remove active class from all thumbnails
-              thumbnails.forEach(t => t.classList.remove('active'));
-              
-              // Add active class to clicked thumbnail
-              thumb.classList.add('active');
-              
-              // Update main image
-              const thumbImg = thumb.querySelector('img') as HTMLImageElement;
-              if (thumbImg) {
-                mainImage.src = thumbImg.src;
-                mainImage.alt = thumbImg.alt;
-              }
-            });
-          });
-        }
-      }, 500);
     }
   }
 
@@ -235,16 +234,12 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
     const structuredData = {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "Premium Corrugated Roofing Sheets",
-      "alternateName": ["Corrugated Sheets", "Steel Roofing Sheets", "Galvanized Corrugated Sheets"],
-      "image": [
-        `${this.baseUrl}/assets/products/corrugated-roofing-sheets-4.jpg`,
-        `${this.baseUrl}/assets/products/corrugated-roofing-sheets-2.jpg`,
-        `${this.baseUrl}/assets/products/corrugated-roofing-sheets-3.jpg`
-      ],
-      "description": "Premium corrugated roofing sheets available in Rajkot, Gujarat. Our high-tensile galvanized steel sheets offer superior durability, weather resistance, and aesthetic appeal. Ideal for industrial, commercial, and residential buildings with local delivery and installation services throughout Rajkot and Gujarat.",
-      "sku": "CORR-SHEET-01",
-      "mpn": "CSRS-CG-2023",
+      "name": "Colour Coated Corrugated Roofing Sheets",
+      "alternateName": ["Corrugated Roofing Sheets", "Colour Coated Roofing Sheet", "Steel Roofing Sheet", "Galvanized Corrugated Sheets", "Roofing Sheet"],
+      "image": this.galleryImages.map(img => `${this.baseUrl}/${img.src}`),
+      "description": "Find the best quality colour coated corrugated roofing sheets in Rajkot, Gujarat. Manufactured by Captain Steel, our roofing sheets are made from high-tensile steel, ensuring durability, weather resistance, and aesthetic appeal for all types of buildings.",
+      "sku": "CS-CCRS-RJ",
+      "mpn": "CS-CCRS-RJ-24",
       "brand": {
         "@type": "Brand",
         "name": "Captain Steel"
@@ -260,17 +255,45 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
           "addressCountry": "IN"
         }
       },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.9",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Rajesh Patel"
+        }
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "ratingCount": "186",
         "reviewCount": "112"
       },
-      "material": ["High-tensile Steel", "Galvanized Coating", "Aluzinc Coating", "Color Coating"],
-      "width": {
-        "@type": "QuantitativeValue",
-        "value": "1050",
-        "unitCode": "MMT"
+      "offers": {
+        "@type": "Offer",
+        "url": `${this.baseUrl}/products/corrugated-roofing-sheets`,
+        "priceCurrency": "INR",
+        "price": "250",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "250",
+          "priceCurrency": "INR",
+          "valueAddedTaxIncluded": "true",
+          "unitText": "square meter"
+        },
+        "availability": "https://schema.org/InStock",
+        "areaServed": {
+            "@type": "State",
+            "name": "Gujarat"
+        },
+        "seller": {
+          "@type": "Organization",
+          "name": "Captain Steel"
+        }
       },
       "height": {
         "@type": "QuantitativeValue",
@@ -305,11 +328,7 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
         }
       ]
     };
-    
-    // Store the structured data in transfer state
     this.transferState.set(PRODUCT_SCHEMA_KEY, JSON.stringify(structuredData));
-    
-    // Only add script tag in browser environment
     if (isPlatformBrowser(this.platformId)) {
       const script = this.document.createElement('script');
       script.type = 'application/ld+json';
@@ -317,31 +336,31 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
       this.document.head.appendChild(script);
     }
   }
-  
+
   private setBusinessStructuredData(): void {
     const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Captain Steel Roof Solutions",
-      "image": `${this.baseUrl}/assets/logo/logo.png`,
-      "url": this.baseUrl,
-      "telephone": "+91 9879109091",
-      "priceRange": "₹₹",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Sadak Pipliya, National Highway, Ta. Gondal",
-        "addressLocality": "Rajkot",
-        "addressRegion": "Gujarat",
-        "postalCode": "360311",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "22.089547",
-        "longitude": "70.783704"
-      },
-      "openingHoursSpecification": [
-        {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Captain Steel",
+        "image": `${this.baseUrl}/assets/logo.png`,
+        "@id": this.baseUrl,
+        "url": this.baseUrl,
+        "telephone": "+91 9879109091",
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Pipaliya",
+          "addressLocality": "Rajkot",
+          "postalCode": "360311",
+          "addressRegion": "GJ",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "22.089547",
+          "longitude": "70.783704"
+        },
+        "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
             "Monday",
@@ -353,37 +372,32 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
           ],
           "opens": "09:00",
           "closes": "19:00"
-        }
-      ],
-      "department": [
-        {
-          "@type": "LocalBusiness",
-          "name": "Corrugated Roofing Sheets Department",
-          "description": "Specializing in premium corrugated roofing sheets for industrial, commercial and residential buildings in Rajkot and across Gujarat",
-          "telephone": "+91 9879109091"
-        }
-      ],
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Rajkot"
         },
-        {
-          "@type": "State",
-          "name": "Gujarat"
-        }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/captainroof/",
-        "https://www.linkedin.com/company/captain-steel/",
-        "https://twitter.com/captainsteel"
-      ]
+        "department": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Corrugated Roofing Sheets Department",
+            "description": "Specializing in premium corrugated roofing sheets for industrial, commercial and residential buildings in Rajkot and across Gujarat",
+            "telephone": "+91 9879109091"
+          }
+        ],
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Rajkot"
+          },
+          {
+            "@type": "State",
+            "name": "Gujarat"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/captainsteel",
+          "https://www.linkedin.com/company/captain-steel/",
+          "https://twitter.com/captainsteel"
+        ]
     };
-    
-    // Store the structured data in transfer state
     this.transferState.set(BUSINESS_SCHEMA_KEY, JSON.stringify(structuredData));
-    
-    // Only add script tag in browser environment
     if (isPlatformBrowser(this.platformId)) {
       const script = this.document.createElement('script');
       script.type = 'application/ld+json';
@@ -393,27 +407,25 @@ export class CorrugatedRoofingSheetsComponent implements OnInit {
   }
 
   private setFaqStructuredData(): void {
-    const faqStructuredData = {
+    const structuredData = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": this.faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
+      "mainEntity": this.faqs.map(faq => {
+        return {
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        };
+      })
     };
-    
-    // Store the structured data in transfer state
-    this.transferState.set(FAQ_SCHEMA_KEY, JSON.stringify(faqStructuredData));
-    
-    // Only add script tag in browser environment
+    this.transferState.set(FAQ_SCHEMA_KEY, JSON.stringify(structuredData));
     if (isPlatformBrowser(this.platformId)) {
       const script = this.document.createElement('script');
       script.type = 'application/ld+json';
-      script.text = JSON.stringify(faqStructuredData);
+      script.text = JSON.stringify(structuredData);
       this.document.head.appendChild(script);
     }
   }

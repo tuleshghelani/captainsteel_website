@@ -4,23 +4,23 @@
       <div class="hero-overlay"></div>
       <div class="container">
         <div class="hero-content">
-          <h1 class="section-title" data-aos="fade-up">Premium Corrugated Roofing Sheets in Rajkot</h1>
+          <h1 class="section-title" data-aos="fade-up">Colour Coated Corrugated Roofing Sheets in Rajkot</h1>
           <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            <strong>High-quality steel roofing solutions with best prices in Gujarat</strong>
+            <strong>Top Manufacturer of High-Quality Steel Roofing Sheets at Best Prices in Gujarat</strong>
           </p>
           <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
-            <a href="/">Home</a>
+            <a routerLink="/">Home</a>
             <i class="fas fa-chevron-right"></i>
-            <a href="/products">Products</a>
+            <a routerLink="/products">Products</a>
             <i class="fas fa-chevron-right"></i>
-            <span>Corrugated Roofing Sheets</span>
+            <span>Colour Coated Corrugated Sheets</span>
           </div>
           <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
-            <a href="/contact-us" class="btn btn-primary">
+            <a routerLink="/contact-us" class="btn btn-primary">
               <i class="fas fa-phone-alt"></i>
               Get a Quote
             </a>
-            <a href="/catalogue" class="btn btn-outline">
+            <a routerLink="/catalogue" class="btn btn-outline">
               <i class="fas fa-book"></i>
               Download Catalogue
             </a>
@@ -35,32 +35,29 @@
         <div class="overview-grid">
           <div class="product-gallery" data-aos="fade-right">
             <div class="main-image">
-              <img src="assets/products/corrugated-roofing-sheets-4.jpg" alt="Premium Corrugated Roofing Sheets in Rajkot - Captain Steel" loading="lazy">
+              <img [src]="mainImage.src" [alt]="mainImage.alt" [title]="mainImage.title" loading="lazy">
             </div>
             <div class="image-thumbnails">
-              <div class="thumbnail active">
-                <img src="assets/products/corrugated-roofing-sheets-4.jpg" alt="Corrugated Sheet Front View - Captain Steel Rajkot" loading="lazy">
-              </div>
-              <div class="thumbnail">
-                <img src="assets/products/corrugated-roofing-sheets-2.jpg" alt="Corrugated Sheet Side View - Premium Roofing in Rajkot" loading="lazy">
-              </div>
-              <div class="thumbnail">
-                <img src="assets/products/corrugated-roofing-sheets-3.jpg" alt="Corrugated Sheet Installation in Rajkot Gujarat" loading="lazy">
+              <div *ngFor="let image of galleryImages" 
+                   class="thumbnail" 
+                   [class.active]="image.src === mainImage.src" 
+                   (click)="setMainImage(image)">
+                <img [src]="image.src" [alt]="image.alt" [title]="image.title" loading="lazy">
               </div>
             </div>
           </div>
           <div class="product-details" data-aos="fade-left">
-            <h2 class="product-title">Premium Corrugated Roofing Sheets in Rajkot, Gujarat</h2>
+            <h2 class="product-title">Best Colour Coated Corrugated Roofing Sheets in Rajkot</h2>
             <div class="product-rating">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
               <span>(186 Reviews)</span>
             </div>
             <p class="product-description">
-              <strong>Captain Steel's Premium Corrugated Roofing Sheets</strong> combine cutting-edge engineering with superior materials to deliver exceptional durability, weather resistance, and aesthetic appeal. Our corrugated sheets are manufactured in <strong>Rajkot, Gujarat</strong> using high-tensile steel with advanced coating technology to ensure long-lasting performance in all weather conditions.
+              As a leading <strong>roofing sheet manufacturer in Rajkot</strong>, Captain Steel offers premium <strong>colour coated corrugated roofing sheets</strong> that blend superior durability with modern aesthetics. Our sheets are engineered from high-tensile steel and protected with advanced multi-layer coatings, ensuring long-lasting performance and vibrant colour retention, making them the ideal roofing solution for Gujarat's diverse weather conditions.
             </p>
             <div class="product-highlights">
               <div class="highlight-item">
@@ -97,8 +94,8 @@
               </div>
             </div>
             <div class="product-actions">
-              <a href="/contact-us" class="btn btn-primary">Request Quotation</a>
-              <a href="/projects" class="btn btn-outline">View Projects</a>
+              <a routerLink="/contact-us" class="btn btn-primary">Request a Free Quote</a>
+              <a routerLink="/projects" class="btn btn-outline">View Our Projects</a>
             </div>
           </div>
         </div>
@@ -109,8 +106,8 @@
     <section class="specifications-section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2 class="section-title">Technical Specifications</h2>
-          <p class="section-subtitle">Premium corrugated roofing sheets specifications</p>
+          <h2 class="section-title">Technical Specifications for Corrugated Roofing Sheets</h2>
+          <p class="section-subtitle">Detailed information on our premium colour coated roofing sheet products.</p>
         </div>
         
         <div class="specifications-table" data-aos="fade-up" data-aos-delay="100">
@@ -125,8 +122,8 @@
         </div>
         
         <div class="specifications-cta" data-aos="fade-up" data-aos-delay="200">
-          <p>Need custom specifications for your project in Rajkot? Contact our experts for personalized solutions.</p>
-          <a href="/contact-us" class="btn btn-outline">Contact Technical Support</a>
+          <p>Need custom roofing sheet specifications for your project in Rajkot? Our technical team is ready to assist.</p>
+          <a routerLink="/contact-us" class="btn btn-outline">Contact Technical Support</a>
         </div>
       </div>
     </section>
@@ -135,8 +132,8 @@
     <section class="features-section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2 class="section-title">Superior Features of Our Corrugated Sheets</h2>
-          <p class="section-subtitle">What makes our corrugated roofing sheets the best in Rajkot</p>
+          <h2 class="section-title">Why Choose Our Colour Coated Roofing Sheets?</h2>
+          <p class="section-subtitle">Discover what makes our corrugated roofing sheets the preferred choice in Rajkot.</p>
         </div>
         
         <div class="features-grid">
@@ -158,31 +155,31 @@
     <section class="applications-section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2 class="section-title">Applications in Rajkot & Gujarat</h2>
-          <p class="section-subtitle">Ideal solutions for diverse architectural needs throughout Gujarat</p>
+          <h2 class="section-title">Versatile Applications of Corrugated Sheets</h2>
+          <p class="section-subtitle">Our roofing sheets are the ideal solution for a wide range of projects across Gujarat.</p>
         </div>
         
         <div class="applications-grid">
           <div class="application-card" data-aos="fade-up" data-aos-delay="100">
             <div class="application-content">
-              <h3><i class="fas fa-industry"></i> Industrial Buildings in Rajkot</h3>
-              <p>Perfect for factories, warehouses, and manufacturing facilities in Rajkot industrial area requiring durable and low-maintenance roofing solutions.</p>
+              <h3><i class="fas fa-industry"></i> Industrial & Factory Roofing</h3>
+              <p>The high durability of our steel roofing sheets makes them perfect for factories, warehouses, and manufacturing units in Rajkot's industrial zones like Shapar.</p>
               <ul class="application-benefits">
-                <li><i class="fas fa-check"></i> <strong>High load-bearing capacity</strong></li>
-                <li><i class="fas fa-check"></i> <strong>Excellent sound insulation</strong></li>
-                <li><i class="fas fa-check"></i> <strong>Long-term durability</strong></li>
+                <li><i class="fas fa-check"></i> <strong>High Load-Bearing Capacity</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Excellent Corrosion Resistance</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Long-Term, Low-Maintenance Service</strong></li>
               </ul>
             </div>
           </div>
           
           <div class="application-card" data-aos="fade-up" data-aos-delay="200">
             <div class="application-content">
-              <h3><i class="fas fa-building"></i> Commercial Spaces in Gujarat</h3>
-              <p>Ideal for shopping centers, office buildings, and retail outlets in Rajkot & Gujarat demanding both functionality and aesthetic appeal.</p>
+              <h3><i class="fas fa-building"></i> Commercial & Urban Projects</h3>
+              <p>The vibrant colours and sleek profile of our sheets enhance the aesthetic appeal of shopping malls, offices, and retail spaces in Rajkot and other Gujarat cities.</p>
               <ul class="application-benefits">
-                <li><i class="fas fa-check"></i> <strong>Modern aesthetic appeal</strong></li>
-                <li><i class="fas fa-check"></i> <strong>Low maintenance costs</strong></li>
-                <li><i class="fas fa-check"></i> <strong>Versatile design options</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Modern Aesthetic Appeal</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Low Lifetime Cost</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Customizable Colour and Design</strong></li>
               </ul>
             </div>
           </div>
@@ -190,23 +187,23 @@
           <div class="application-card" data-aos="fade-up" data-aos-delay="300">
             <div class="application-content">
               <h3><i class="fas fa-tractor"></i> Agricultural Structures</h3>
-              <p>Reliable protection for barns, storage facilities, and livestock shelters across rural Gujarat against harsh weather conditions.</p>
+              <p>Protect barns, storage facilities, and livestock shelters from harsh weather with our robust and reliable corrugated roofing sheets, trusted by farmers across Gujarat.</p>
               <ul class="application-benefits">
-                <li><i class="fas fa-check"></i> <strong>Weather-resistant properties</strong></li>
-                <li><i class="fas fa-check"></i> <strong>High corrosion resistance</strong></li>
-                <li><i class="fas fa-check"></i> <strong>Cost-effective installation</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Superior Weather Resistance</strong></li>
+                <li><i class="fas fa-check"></i> <strong>High Corrosion & Humidity Resistance</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Cost-Effective and Quick Installation</strong></li>
               </ul>
             </div>
           </div>
           
           <div class="application-card" data-aos="fade-up" data-aos-delay="400">
             <div class="application-content">
-              <h3><i class="fas fa-home"></i> Residential Projects in Rajkot</h3>
-              <p>Stylish and durable solutions for homes, garages, and outdoor structures in Rajkot combining performance with aesthetic value.</p>
+              <h3><i class="fas fa-home"></i> Residential Roofing Solutions</h3>
+              <p>Our stylish and durable colour coated sheets are an excellent choice for homes, garages, and carports in Rajkot, adding value and long-lasting protection.</p>
               <ul class="application-benefits">
-                <li><i class="fas fa-check"></i> <strong>Enhanced property value</strong></li>
-                <li><i class="fas fa-check"></i> <strong>Multiple color options</strong></li>
-                <li><i class="fas fa-check"></i> <strong>25+ years lifespan</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Enhances Property Value</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Wide Range of Colour Choices</strong></li>
+                <li><i class="fas fa-check"></i> <strong>Lifespan of Over 25 Years</strong></li>
               </ul>
             </div>
           </div>
@@ -218,51 +215,51 @@
     <section class="installation-section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2 class="section-title">Professional Installation Process in Rajkot</h2>
-          <p class="section-subtitle">Our certified technicians ensure perfect installation across Gujarat</p>
+          <h2 class="section-title">Professional Roofing Sheet Installation Process</h2>
+          <p class="section-subtitle">Our certified technicians ensure a flawless installation for long-lasting performance.</p>
         </div>
         
         <div class="installation-grid">
           <div class="installation-step" data-aos="fade-up" data-aos-delay="100">
             <div class="step-number">01</div>
-            <h3>Site Assessment</h3>
-            <p>Our Rajkot-based experts evaluate your site conditions, measurements, and specific requirements to ensure the perfect fit.</p>
+            <h3>Site Assessment in Rajkot</h3>
+            <p>Our experts visit your site to take precise measurements and assess specific roofing requirements for a perfect fit.</p>
           </div>
           
           <div class="installation-step" data-aos="fade-up" data-aos-delay="200">
             <div class="step-number">02</div>
-            <h3>Custom Fabrication</h3>
-            <p>Sheets are precision-cut at our Rajkot facility to your exact specifications, ensuring minimal waste and perfect alignment.</p>
+            <h3>Custom Sheet Fabrication</h3>
+            <p>Your roofing sheets are custom-cut to the exact length at our Rajkot facility, ensuring minimal waste and a seamless look.</p>
           </div>
           
           <div class="installation-step" data-aos="fade-up" data-aos-delay="300">
             <div class="step-number">03</div>
-            <h3>Preparation</h3>
-            <p>The roof structure is prepared with proper purlins, insulation, and underlayment as required for Gujarat's climate conditions.</p>
+            <h3>Roof Structure Preparation</h3>
+            <p>We ensure the underlying structure is perfectly prepared to support the new roofing sheets, ideal for Gujarat's climate.</p>
           </div>
           
           <div class="installation-step" data-aos="fade-up" data-aos-delay="400">
             <div class="step-number">04</div>
-            <h3>Installation</h3>
-            <p>Our Gujarat-certified technicians install the sheets with precision, ensuring proper overlap and secure fastening.</p>
+            <h3>Sheet Installation</h3>
+            <p>Our skilled technicians install the colour coated corrugated sheets with precision, ensuring secure fastening and perfect overlaps.</p>
           </div>
           
           <div class="installation-step" data-aos="fade-up" data-aos-delay="500">
             <div class="step-number">05</div>
-            <h3>Finishing</h3>
-            <p>Ridge caps, flashing, and accessories are installed to ensure complete weather protection against Rajkot's seasonal conditions.</p>
+            <h3>Finishing & Accessories</h3>
+            <p>We install all necessary accessories like ridge caps and flashings to ensure a completely weather-proof and finished roof.</p>
           </div>
           
           <div class="installation-step" data-aos="fade-up" data-aos-delay="600">
             <div class="step-number">06</div>
-            <h3>Final Inspection</h3>
-            <p>A thorough quality check by our Rajkot quality assurance team ensures perfect installation and addresses any final adjustments.</p>
+            <h3>Final Quality Inspection</h3>
+            <p>Our Rajkot-based quality team conducts a thorough inspection to guarantee a perfect installation and your complete satisfaction.</p>
           </div>
         </div>
         
         <div class="installation-cta" data-aos="fade-up" data-aos-delay="700">
-          <p>Our professional installation services ensure optimal performance and longevity of your roofing system throughout Gujarat.</p>
-          <a href="/contact-us" class="btn btn-primary">Schedule Installation Consultation</a>
+          <p>Trust our professional installation services for optimal performance and longevity of your roofing system throughout Gujarat.</p>
+          <a routerLink="/contact-us" class="btn btn-primary">Schedule Installation</a>
         </div>
       </div>
     </section>
@@ -271,16 +268,17 @@
     <section class="faq-section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2 class="section-title">Frequently Asked Questions About Corrugated Sheets</h2>
-          <p class="section-subtitle">Everything you need to know about our corrugated roofing sheets in Rajkot</p>
+          <h2 class="section-title">Frequently Asked Questions about Roofing Sheets</h2>
+          <p class="section-subtitle">Your questions about colour coated corrugated sheets, answered.</p>
         </div>
         
         <div class="faq-container">
           <div *ngFor="let faq of faqs; let i = index" 
-               class="faq-item" 
+               class="faq-item"
+               [class.active]="faq.active"
                data-aos="fade-up" 
                [attr.data-aos-delay]="100 * i">
-            <div class="faq-question">
+            <div class="faq-question" (click)="toggleFaq(faq)">
               <h3>{{faq.question}}</h3>
               <div class="toggle-icon">
                 <i class="fas fa-plus plus-icon"></i>
@@ -288,7 +286,7 @@
               </div>
             </div>
             <div class="faq-answer">
-              <p>{{faq.answer}}</p>
+              <p [innerHTML]="faq.answer"></p>
             </div>
           </div>
         </div>
@@ -299,11 +297,11 @@
     <section class="cta-section" id="contact">
       <div class="container">
         <div class="cta-content" data-aos="fade-up">
-          <h2>Ready to Transform Your Roofing Project in Rajkot?</h2>
-          <p>Contact Captain Steel today for a personalized consultation and quotation</p>
+          <h2>Get the Best Roofing Sheet Price in Rajkot Today!</h2>
+          <p>Contact Captain Steel for a free consultation and a no-obligation quote for your roofing needs.</p>
           <div class="cta-buttons">
-            <a href="/contact-us" class="cta-button">Get a Quote</a>
-            <a href="/catalogue" class="secondary-button">Download Catalogue</a>
+            <a routerLink="/contact-us" class="cta-button">Get a Free Quote</a>
+            <a routerLink="/catalogue" class="secondary-button">Download Catalogue</a>
           </div>
         </div>
       </div>
@@ -313,41 +311,41 @@
     <section class="related-products-section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2 class="section-title">Related Roofing Products in Rajkot</h2>
-          <p class="section-subtitle">Explore our other premium roofing solutions available in Gujarat</p>
+          <h2 class="section-title">Explore Other Roofing Solutions</h2>
+          <p class="section-subtitle">A wide range of high-quality roofing products available from our Rajkot facility.</p>
         </div>
         
         <div class="related-products-grid">
           <div class="related-product-card" data-aos="fade-up" data-aos-delay="100">
             <div class="image-container">
-              <img src="assets/products/trapezoidal-profile-sheets.jpg" alt="Trapezoidal Profile Sheets in Rajkot - Captain Steel" loading="lazy">
+              <img src="assets/products/trapezoidal-profile-sheets.jpg" alt="Trapezoidal Profile Steel Roofing Sheets in Rajkot." loading="lazy">
             </div>
             <div class="product-content">
               <h3>Trapezoidal Profile Sheets</h3>
-              <p>Modern roofing solution with superior strength and water drainage capabilities for projects in Rajkot.</p>
-              <a href="/products/trapezoidal-profile-sheets" class="btn btn-outline">View Details</a>
+              <p>A modern roofing sheet profile with high strength, perfect for commercial projects in Rajkot and Gujarat.</p>
+              <a routerLink="/products/trapezoidal-profile-sheets" class="btn btn-outline">View Details</a>
             </div>
           </div>
           
           <div class="related-product-card" data-aos="fade-up" data-aos-delay="200">
             <div class="image-container">
-              <img src="assets/products/insulated-metal-roofing-sheets-2.jpg" alt="Insulated Metal Sheets in Rajkot - Captain Steel" loading="lazy">
+              <img src="assets/products/insulated-metal-roofing-sheets-2.jpg" alt="Insulated sandwich panel roofing sheets for thermal efficiency." loading="lazy">
             </div>
             <div class="product-content">
-              <h3>Insulated Metal Sheets</h3>
-              <p>Energy-efficient roofing with integrated thermal insulation properties for Gujarat's climate.</p>
-              <a href="/products/insulated-metal-sheets" class="btn btn-outline">View Details</a>
+              <h3>Insulated PUF Panels</h3>
+              <p>Energy-efficient roofing with built-in insulation, ideal for temperature-controlled buildings in Gujarat's climate.</p>
+              <a routerLink="/products/insulated-metal-sheets" class="btn btn-outline">View Details</a>
             </div>
           </div>
           
           <div class="related-product-card" data-aos="fade-up" data-aos-delay="300">
             <div class="image-container">
-              <img src="assets/products/crimping-and-accessories-2.jpg" alt="Roofing Accessories in Rajkot - Captain Steel" loading="lazy">
+              <img src="assets/products/crimping-and-accessories-2.jpg" alt="Complete range of roofing accessories available in Rajkot." loading="lazy">
             </div>
             <div class="product-content">
               <h3>Roofing Accessories</h3>
-              <p>Complete your roofing system with our range of quality accessories manufactured in Rajkot.</p>
-              <a href="/products/roofing-accessories" class="btn btn-outline">View Details</a>
+              <p>Finish your project with our high-quality roofing accessories, including flashings, ridges, and fasteners, all made in Rajkot.</p>
+              <a routerLink="/products/roofing-accessories" class="btn btn-outline">View Details</a>
             </div>
           </div>
         </div>
