@@ -349,18 +349,18 @@ export class HomeComponent implements OnInit {
   ];
 
   private setupSEO() {
-    const description = `Captain Steel - Premium Steel Roofing Solutions with ${this.yearsOfExperience}+ years of excellence. Offering high-quality corrugated sheets, trapezoidal sheets, air ventilators, polycarbonate sheets, insulated metal sheets, bamboo profile sheets, roofing gutters and accessories in Rajkot, Gujarat.`;
+    const description = `Captain Steel is the leading manufacturer and supplier of premium roofing sheets, colour coated roofing sheets, and steel roof solutions in Rajkot, Gujarat. Discover our range of corrugated sheets, trapezoidal sheets, polycarbonate sheets, insulated metal sheets, air ventilators, and roofing accessories. Trusted for quality, durability, and innovation.`;
 
-    this.title.setTitle('Captain Steel - Premium Roofing Sheets & Steel Roof Solutions | Best Steel Roof Sheet Manufacturer in Rajkot');
+    this.title.setTitle('Roofing Sheet | Colour Coated Roofing Sheet | Premium Steel Roof Solutions in Rajkot - Captain Steel');
 
     // Meta tags for SEO
     this.meta.updateTag({ name: 'description', content: description });
-    this.meta.updateTag({ name: 'keywords', content: 'roofing sheet, roof sheet, steel roof, sheets for roof, roof accessories, still patra, corrugated sheet, trapezoidal sheet, air ventilator, insulated metal sheet, crimping, polycarbonate sheet, roofing accessories, bamboo profile sheet, roofing gutter, steel roofing sheets, steel roof installation, Captain steel, Rajkot, Gujarat' });
+    this.meta.updateTag({ name: 'keywords', content: 'roofing sheet, colour coated roofing sheet, steel roofing, roof sheet, premium roofing sheets, corrugated sheet, trapezoidal sheet, polycarbonate sheet, insulated metal sheet, air ventilator, roofing accessories, Rajkot, Gujarat, Captain Steel' });
     this.meta.updateTag({ name: 'robots', content: 'index, follow' });
     this.meta.updateTag({ name: 'author', content: 'Captain Steel' });
 
     // Open Graph tags
-    this.meta.updateTag({ property: 'og:title', content: 'Captain Steel - Premium Roofing Sheets & Steel Roof Solutions in Rajkot' });
+    this.meta.updateTag({ property: 'og:title', content: 'Roofing Sheet | Colour Coated Roofing Sheet | Premium Steel Roof Solutions in Rajkot - Captain Steel' });
     this.meta.updateTag({ property: 'og:description', content: description });
     this.meta.updateTag({ property: 'og:image', content: 'assets/home/company.jpg' });
     this.meta.updateTag({ property: 'og:url', content: 'https://captainsteelroofsolution.com' });
@@ -368,7 +368,7 @@ export class HomeComponent implements OnInit {
 
     // Twitter Card tags
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: 'Captain Steel - Premium Roofing Sheets & Steel Roof Solutions in Rajkot' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Roofing Sheet | Colour Coated Roofing Sheet | Premium Steel Roof Solutions in Rajkot - Captain Steel' });
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: 'assets/home/company.jpg' });
     this.meta.updateTag({ name: 'viewport', content: 'width=device-width, initial-scale=1' });
