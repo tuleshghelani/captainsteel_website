@@ -105,14 +105,6 @@ export class HeaderComponent implements OnInit {
         "latitude": "22.089547", 
         "longitude": "70.783704" 
       }, 
-      // "department": [ 
-      //   { 
-      //     "@type": "LocalBusiness", 
-      //     "name": "Bamboo Profile Sheets Department", 
-      //     "description": "Specializing in premium bamboo profile sheets for sustainable roofing in Rajkot and across Gujarat", 
-      //     "telephone": "+91 9879109091" 
-      //   } 
-      // ], 
       "areaServed": [ 
         { 
           "@type": "City", 

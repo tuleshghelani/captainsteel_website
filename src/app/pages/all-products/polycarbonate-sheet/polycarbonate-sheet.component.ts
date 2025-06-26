@@ -16,21 +16,10 @@ interface Feature {
   description: string;
 }
 
-interface Specification {
-  thickness: string;
-  thicknessOptions: string;
-  width: string;
-  widthOptions: string;
-  length: string;
-  lengthOptions: string;
-  lightTransmission: string;
-  impactResistance: string;
-  uvProtection: string;
-  colors: string;
-  colorOptions: string;
-  temperatureResistance: string;
-  fireRating: string;
-  warranty: string;
+interface SpecificationProperty {
+  parameter: string;
+  specification: string;
+  options?: string;
 }
 
 interface Application {
@@ -95,22 +84,56 @@ export class PolycarbonateSheetComponent implements OnInit {
     }
   ];
 
-  specifications: Specification[] = [
+  specifications: SpecificationProperty[] = [
     {
-      thickness: '0.8mm - 12mm',
-      thicknessOptions: 'Standard and custom options available',
-      width: '1000mm - 2100mm',
-      widthOptions: 'Custom widths available on request',
-      length: 'Up to 12 meters',
-      lengthOptions: 'Cut-to-size service available',
-      lightTransmission: '90% for clear sheets',
-      impactResistance: 'High (200x stronger than glass)',
-      uvProtection: 'Yes, on one or both sides',
-      colors: 'Clear, Bronze, Blue, Green, Grey, Opal',
-      colorOptions: 'Custom colors available for bulk orders',
-      temperatureResistance: '-40°C to 120°C',
-      fireRating: 'Class B1 according to DIN 4102',
-      warranty: '10-year limited warranty'
+      parameter: 'Thickness',
+      specification: '0.8mm - 12mm',
+      options: 'Standard and custom options available'
+    },
+    {
+      parameter: 'Width',
+      specification: '1000mm - 2100mm',
+      options: 'Custom widths available on request'
+    },
+    {
+      parameter: 'Length',
+      specification: 'Up to 12 meters',
+      options: 'Cut-to-size service available'
+    },
+    {
+      parameter: 'Light Transmission',
+      specification: 'Up to 90% for clear sheets',
+      options: 'Varies by color and thickness'
+    },
+    {
+      parameter: 'Impact Resistance',
+      specification: 'High (200x stronger than glass)',
+      options: 'Virtually unbreakable'
+    },
+    {
+      parameter: 'UV Protection',
+      specification: 'Yes, on one or both sides',
+      options: 'Co-extruded UV protection available'
+    },
+    {
+      parameter: 'Colors',
+      specification: 'Clear, Bronze, Blue, Green, Grey, Opal',
+      options: 'Custom colors available for bulk orders'
+    },
+    {
+      parameter: 'Temperature Resistance',
+      specification: '-40°C to 120°C',
+      options: 'Handles extreme weather conditions'
+    },
+    {
+      parameter: 'Fire Rating',
+      specification: 'Class B1 (self-extinguishing)',
+      options: 'Meets international safety standards'
+    },
+    {
+      parameter: 'Warranty',
+      specification: '10-year limited warranty',
+      options: 'Against yellowing and breakage'
     }
   ];
 
@@ -226,6 +249,14 @@ export class PolycarbonateSheetComponent implements OnInit {
     {
       question: 'Can polycarbonate sheets be cut to custom sizes?',
       answer: 'Yes, we offer custom cutting services to meet your exact project specifications. Polycarbonate sheets can be easily cut on-site using standard woodworking tools like circular saws with fine-toothed blades. We recommend leaving the protective film in place during cutting to prevent scratches.'
+    },
+    {
+      question: 'What are the primary uses for a polycarbonate roofing sheet?',
+      answer: 'A polycarbonate roofing sheet is incredibly versatile. It\'s an ideal roofing solution for greenhouses, skylights, carports, canopies, and covered walkways. Its durability and transparency also make it perfect for industrial rooflights, architectural features, and even as a protective barrier where visibility is important.'
+    },
+    {
+      question: 'Are these roofing sheets waterproof?',
+      answer: 'Yes, our polycarbonate roofing sheets are completely waterproof when installed correctly. A proper installation includes using the recommended sealants and profiles to ensure a weather-tight seal, protecting your space from rain and moisture effectively.'
     }
   ];
 
@@ -238,11 +269,11 @@ export class PolycarbonateSheetComponent implements OnInit {
 
   ngOnInit() {
     // Set SEO meta tags
-    this.titleService.setTitle('Best Polycarbonate Sheets in Rajkot | Transparent Roofing Solutions | Captain Steel');
+    this.titleService.setTitle('Polycarbonate Roofing Sheet in Rajkot | Captain Steel');
     
     this.meta.addTags([
-      { name: 'description', content: 'Premium polycarbonate roofing sheets in Rajkot with exceptional transparency, impact resistance & UV protection. Best transparent roofing solution for skylights, canopies & greenhouses. 200x stronger than glass at half the weight.' },
-      { name: 'keywords', content: 'polycarbonate sheet, polycarbonate sheets, polycarbonate roofing, polycarbonate roofing sheet, transparent roofing sheet, polycarbonate sheets rajkot, transparent roofing, impact resistant glazing, UV protected sheets, skylight material, greenhouse glazing, polycarbonate panels, clear roofing sheets, lightweight glazing solution, rajkot, gujarat' },
+      { name: 'description', content: 'Discover the best polycarbonate roofing sheets in Rajkot with Captain Steel. Our premium, transparent roofing sheets offer unmatched durability, UV protection, and are 200x stronger than glass. Ideal for any roofing solution.' },
+      { name: 'keywords', content: 'polycarbonate sheet, polycarbonate sheets, roofing sheet, polycarbonate roofing sheet, transparent roofing sheet, polycarbonate sheets rajkot, transparent roofing, impact resistant glazing, UV protected sheets, skylight material, greenhouse glazing, polycarbonate panels, clear roofing sheets, lightweight glazing solution, rajkot, gujarat' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Captain Steel Roof Solutions' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -253,8 +284,8 @@ export class PolycarbonateSheetComponent implements OnInit {
       { name: 'geo.position', content: '22.089547;70.783704' },
       { name: 'ICBM', content: '22.089547, 70.783704' },
       // Open Graph tags for social sharing
-      { property: 'og:title', content: 'Best Polycarbonate Sheets in Rajkot | Transparent Roofing Solutions' },
-      { property: 'og:description', content: 'Premium polycarbonate roofing sheets with exceptional transparency, impact resistance & UV protection. Best transparent roofing solution for skylights, canopies & greenhouses in Rajkot.' },
+      { property: 'og:title', content: 'Premium Polycarbonate Roofing Sheets in Rajkot | Captain Steel' },
+      { property: 'og:description', content: 'High-quality polycarbonate roofing sheets in Rajkot. Experience exceptional transparency, impact resistance & UV protection with our transparent roofing solutions. 200x stronger than glass.' },
       { property: 'og:image', content: 'https://captainsteelroofsolution.com/assets/products/polycarbonate-sheets-2.jpg' },
       { property: 'og:url', content: 'https://captainsteelroofsolution.com/products/polycarbonate-sheet' },
       { property: 'og:type', content: 'product' },
@@ -262,8 +293,8 @@ export class PolycarbonateSheetComponent implements OnInit {
       { property: 'og:locale', content: 'en_IN' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Best Polycarbonate Sheets in Rajkot | Transparent Roofing Solutions' },
-      { name: 'twitter:description', content: 'Premium polycarbonate roofing sheets with exceptional transparency, impact resistance & UV protection. Best transparent roofing solution in Rajkot.' },
+      { name: 'twitter:title', content: 'Premium Polycarbonate Roofing Sheets in Rajkot | Captain Steel' },
+      { name: 'twitter:description', content: 'Discover top-tier polycarbonate roofing sheets in Rajkot. Offering superior durability, UV protection, and clarity for all your roofing needs.' },
       { name: 'twitter:image', content: 'https://captainsteelroofsolution.com/assets/products/polycarbonate-sheets-2.jpg' }
     ]);
     
@@ -323,13 +354,13 @@ export class PolycarbonateSheetComponent implements OnInit {
     const structuredData = {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "Premium Polycarbonate Roofing Sheets in Rajkot",
-      "alternateName": ["Transparent Roofing Sheets", "Polycarbonate Roofing", "Polycarbonate Sheet", "UV Protected Polycarbonate", "Impact Resistant Glazing", "Transparent Roofing Solution"],
+      "name": "Premium Polycarbonate Roofing Sheet",
+      "alternateName": ["Polycarbonate Sheet", "Polycarbonate Sheets", "Roofing Sheet", "Transparent Roofing Sheet", "UV Protected Polycarbonate", "Impact Resistant Glazing", "Transparent Roofing Solution"],
       "image": [
         `${this.baseUrl}/assets/products/polycarbonate-sheets-2.jpg`,
         `${this.baseUrl}/assets/products/polycarbonate-sheets.jpg`
       ],
-      "description": "Premium polycarbonate roofing sheets offering exceptional transparency, impact resistance, and UV protection. Best transparent roofing solution for skylights, canopies, greenhouses, and architectural applications with 200x the strength of glass at half the weight. Available in Rajkot and throughout Gujarat.",
+      "description": "Captain Steel offers premium polycarbonate roofing sheets in Rajkot, Gujarat. These transparent sheets are an ideal roofing solution, providing exceptional durability, high impact resistance (200x stronger than glass), and full UV protection. Perfect for skylights, greenhouses, canopies, and various architectural applications.",
       "sku": "POLYCARB-SHEET-01",
       "mpn": "CSRS-PS-2023",
       "brand": {
@@ -442,7 +473,7 @@ export class PolycarbonateSheetComponent implements OnInit {
           "value": "Clear, Bronze, Blue, Green, Grey, Opal"
         }
       ],
-      "keywords": "polycarbonate sheet, polycarbonate roofing, transparent roofing sheet, polycarbonate sheets rajkot, transparent roofing solution"
+      "keywords": "polycarbonate sheet, polycarbonate sheets, roofing sheet, polycarbonate roofing, transparent roofing sheet, polycarbonate sheets rajkot, transparent roofing solution"
     };
     
     // Store the structured data in transfer state
