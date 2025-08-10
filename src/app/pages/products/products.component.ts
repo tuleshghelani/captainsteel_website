@@ -15,6 +15,17 @@ interface Product {
   image: string;
   link: string;
   aosDelay: number;
+  price?: number;
+  review?: {
+    author: string;
+    reviewRating: number;
+    reviewBody: string;
+    datePublished: string;
+  };
+  aggregateRating?: {
+    ratingValue: number;
+    reviewCount: number;
+  };
 }
 
 @Component({
@@ -50,70 +61,177 @@ export class ProductsComponent implements OnInit {
         description: 'High-quality corrugated sheets for durable and weather-resistant roofing solutions.',
         image: 'assets/products/corrugated-roofing-sheets-4.jpg',
         link: '/products/corrugated-roofing-sheets',
-        aosDelay: 100
+        aosDelay: 100,
+        price: 250,
+        review: {
+          author: 'Rajesh Industries',
+          reviewRating: 5,
+          reviewBody: 'Excellent quality corrugated sheets that have withstood harsh weather conditions for years. Highly recommended for industrial roofing.',
+          datePublished: '2023-08-15'
+        },
+        aggregateRating: {
+          ratingValue: 4.8,
+          reviewCount: 124
+        }
       },
       {
         title: 'Trapezoidal Profile Sheets',
         description: 'Premium trapezoidal sheets offering superior strength and modern aesthetics.',
         image: 'assets/products/trapezoidal-profile-sheets.jpg',
         link: '/products/trapezoidal-profile-sheets',
-        aosDelay: 200
+        aosDelay: 200,
+        price: 300,
+        review: {
+          author: 'Patel Construction',
+          reviewRating: 5,
+          reviewBody: 'The trapezoidal sheets from Captain Steel have transformed our commercial building. Great strength and modern look.',
+          datePublished: '2023-09-22'
+        },
+        aggregateRating: {
+          ratingValue: 4.7,
+          reviewCount: 98
+        }
       },
       {
         title: 'Air Ventilators',
         description: 'Efficient air ventilators for improved airflow and ventilation.',
         image: 'assets/products/air-ventilator.jpeg',
         link: '/products/air-ventilator',
-        aosDelay: 300
+        aosDelay: 300,
+        price: 450,
+        review: {
+          author: 'Mehta Manufacturing',
+          reviewRating: 4,
+          reviewBody: 'These ventilators have significantly improved air circulation in our factory. Energy-efficient and durable.',
+          datePublished: '2023-07-10'
+        },
+        aggregateRating: {
+          ratingValue: 4.5,
+          reviewCount: 76
+        }
       },
       {
         title: 'Insulated Metal Sheets',
         description: 'Insulated sheets providing excellent thermal performance.',
         image: 'assets/products/insulated-metal-roofing-sheets.jpg',
         link: '/products/insulated-metal-sheets',
-        aosDelay: 400
+        aosDelay: 400,
+        price: 500,
+        review: {
+          author: 'Sharma Cold Storage',
+          reviewRating: 5,
+          reviewBody: 'The insulated metal sheets have drastically reduced our cooling costs. Perfect thermal insulation for our cold storage facility.',
+          datePublished: '2023-10-05'
+        },
+        aggregateRating: {
+          ratingValue: 4.9,
+          reviewCount: 87
+        }
       },
       {
         title: 'Crimping Metal Sheet',
         description: 'High-quality crimping solutions for various applications.',
         image: 'assets/products/crimping-and-accessories.jpg',
         link: '/products/crimping',
-        aosDelay: 5000
+        aosDelay: 5000,
+        price: 350,
+        review: {
+          author: 'Joshi Fabricators',
+          reviewRating: 4,
+          reviewBody: 'The crimping metal sheets have excellent finish and durability. Very satisfied with the quality and service.',
+          datePublished: '2023-06-18'
+        },
+        aggregateRating: {
+          ratingValue: 4.6,
+          reviewCount: 65
+        }
       },
       {
         title: 'Polycarbonate Sheet',
         description: 'Durable polycarbonate sheets for versatile applications.',
         image: 'assets/products/polycarbonate-sheets-2.jpg',
         link: '/products/polycarbonate-sheet',
-        aosDelay: 6000
+        aosDelay: 6000,
+        price: 600,
+        review: {
+          author: 'Verma Architects',
+          reviewRating: 5,
+          reviewBody: 'The polycarbonate sheets are perfect for our skylight projects. Excellent light transmission and UV protection.',
+          datePublished: '2023-11-12'
+        },
+        aggregateRating: {
+          ratingValue: 4.7,
+          reviewCount: 92
+        }
       },
       {
         title: 'Polycarbonate Multiwall',
         description: 'Multiwall polycarbonate sheets for enhanced insulation.',
         image: 'assets/products/polycarbonate-sheets.jpg',
         link: '/products/polycarbonate-sheet',
-        aosDelay: 7000
+        aosDelay: 7000,
+        price: 700,
+        review: {
+          author: 'Shah Greenhouses',
+          reviewRating: 5,
+          reviewBody: 'The multiwall polycarbonate sheets provide excellent insulation for our greenhouse projects. Energy-efficient and durable.',
+          datePublished: '2023-08-30'
+        },
+        aggregateRating: {
+          ratingValue: 4.8,
+          reviewCount: 78
+        }
       },
       {
         title: 'Roofing Accessories',
         description: 'A range of accessories to complement our roofing solutions.',
         image: 'assets/products/crimping-and-accessories-2.jpg',
         link: '/products/roofing-accessories',
-        aosDelay: 8000
+        aosDelay: 8000,
+        review: {
+          author: 'Kumar Builders',
+          reviewRating: 4,
+          reviewBody: 'The roofing accessories are of excellent quality and perfectly complement the main roofing products. Great attention to detail.',
+          datePublished: '2023-09-08'
+        },
+        aggregateRating: {
+          ratingValue: 4.6,
+          reviewCount: 54
+        }
       },
       {
         title: 'Bamboo Profile',
         description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
         image: 'assets/products/BAMBOO_PROFILE/UPVC BAMBOO TILE SHEET.png',
         link: '/products/bamboo-profile',
-        aosDelay: 9000
+        aosDelay: 9000,
+        review: {
+          author: 'Green Earth Resorts',
+          reviewRating: 5,
+          reviewBody: 'The bamboo profile sheets are perfect for our eco-resort. Sustainable, beautiful, and durable even in monsoon conditions.',
+          datePublished: '2023-10-25'
+        },
+        aggregateRating: {
+          ratingValue: 4.9,
+          reviewCount: 67
+        }
       },
       {
         title: 'Roofing Gutter',
         description: 'Bamboo profile sheets for sustainable and eco-friendly roofing solutions.',
         image: 'assets/products/HYBRIDE_GUTTER/GUTEER 1.jpeg',
         link: '/products/gutter',
-        aosDelay: 10000
+        aosDelay: 10000,
+        review: {
+          author: 'Desai Properties',
+          reviewRating: 5,
+          reviewBody: 'The roofing gutters are of excellent quality and have been performing flawlessly during heavy rains. Great water management solution.',
+          datePublished: '2023-07-22'
+        },
+        aggregateRating: {
+          ratingValue: 4.7,
+          reviewCount: 83
+        }
       }
     ];
 
